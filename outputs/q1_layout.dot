@@ -1,0 +1,27 @@
+digraph G {
+  rankdir=LR; nodesep=0.35; ranksep=0.7; fontname="Helvetica";
+  node [fontname="Helvetica", fontsize=11, shape=box, style="rounded,filled", color="#44546a", fillcolor="#f4f6fa"];
+  edge [color="#44546a", fontname="Helvetica", fontsize=9];
+
+  kw [label="Keyword\n(command-line argument,\ne.g. africa)", shape=note, fillcolor="#fff4d6", color="#b8860b"];
+
+  subgraph cluster_in { label="1. Input (HDFS)"; style="rounded"; color="#9aa5b8"; fontsize=12;
+    d1 [label="doc1.txt"]; d2 [label="doc2.txt"]; d3 [label="doc3.txt"]; dn [label="... doc7.txt"]; }
+
+  subgraph cluster_map { label="2. Map phase (one mapper per file)"; style="rounded"; color="#9aa5b8"; fontsize=12;
+    m1 [label="Mapper 1\nnumber each line (row)\nregex, ignore case\nemit file<TAB>row,col", fillcolor="#e3f0e6"];
+    m2 [label="Mapper 2\nsame logic", fillcolor="#e3f0e6"];
+    m3 [label="Mapper 3\nsame logic", fillcolor="#e3f0e6"];
+    mn [label="Mapper n\nsame logic", fillcolor="#e3f0e6"]; }
+
+  sh [label="3. Shuffle and sort\ngroup records by\nfile name", shape=box, fillcolor="#ece6f3"];
+
+  r [label="4. Reduce phase\nsort (row,col) numerically\ncount matches per file", fillcolor="#fbe5e1"];
+
+  out [label="5. Output\nfile<TAB>count<TAB>(row,col) ...", shape=note, fillcolor="#fff4d6", color="#b8860b"];
+
+  d1->m1; d2->m2; d3->m3; dn->mn;
+  kw->m1 [style=dashed]; kw->m2 [style=dashed]; kw->m3 [style=dashed]; kw->mn [style=dashed];
+  m1->sh; m2->sh; m3->sh; mn->sh;
+  sh->r->out;
+}

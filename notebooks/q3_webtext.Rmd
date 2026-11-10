@@ -1,0 +1,33 @@
+---
+title: "Question 3 - Web text extraction and summarisation"
+output:
+  html_document:
+    pandoc_args: ["--resource-path=.:.."]
+params:
+  rerun: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, comment = "", message = FALSE, warning = FALSE)
+```
+
+The script fetches one public PyPI page (robots.txt allows it), cleans the text and builds two summaries.
+To avoid requesting the page again every time the notebook is knitted, the notebook shows the code and the
+saved log of the last run. Knit with `params = list(rerun = TRUE)` to fetch the page again.
+
+```{r code, echo=FALSE, results='asis'}
+cat("```r\n", paste(readLines("q3_webtext.R"), collapse = "\n"), "\n```\n", sep = "")
+```
+
+```{r run, eval = params$rerun}
+source("q3_webtext.R", echo = TRUE, max.deparse.length = Inf)
+```
+```{r log, eval = !params$rerun}
+cat(readLines("outputs/q3_console.txt"), sep = "\n")
+```
+
+## Figures
+```{r, echo=FALSE, out.width="90%"}
+knitr::include_graphics(c("outputs/q3_term_frequency.png", "outputs/q3_wordcloud.png",
+                          "outputs/q3_sentence_scores.png", "outputs/q3_textrank_network.png"))
+```

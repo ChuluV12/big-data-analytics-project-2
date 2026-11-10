@@ -1,0 +1,72 @@
+block_id,tag,text,n_words
+4,p,English 简体中文 繁體中文 한국어 Español 日本語 हिन्दी मराठी Русский Português తెలుగు Français Deutsch Italiano Tiếng Việt العربية اردو বাংলা فارسی Română Türkçe,22
+6,p,State-of-the-art pretrained models for inference and training,7
+8,p,"Transformers acts as the model-definition framework for state-of-the-art machine learning with text, computer vision, audio, video, and multimodal models, for both inference and training.",24
+9,p,"It centralizes the model definition so that this definition is agreed upon across the ecosystem. transformers is the pivot across frameworks: if a model definition is supported, it will be compatible with the majority of training frameworks (Axolotl, Unsloth, DeepSpeed, FSDP, PyTorch-Lightning, ...), inference engines (vLLM, SGLang, TGI, ...), and adjacent modeling libraries (llama.cpp, mlx, ...) which leverage the model definition from transformers.",63
+10,p,"We pledge to help support new state-of-the-art models and democratize their usage by having their model definition be simple, customizable, and efficient.",22
+11,p,There are over 1M+ Transformers model checkpoints on the Hugging Face Hub you can use.,15
+12,p,Explore the Hub today to find a model and use Transformers to help you get started right away.,18
+14,p,"Transformers works with Python 3.11+, and PyTorch 2.6+.",8
+15,p,"Create and activate a virtual environment with venv or uv, a fast Rust-based Python package and project manager.",18
+16,p,Install Transformers in your virtual environment.,6
+17,p,"Install Transformers from source if you want the latest changes in the library or are interested in contributing. However, the latest version may not be stable. Feel free to open an issue if you encounter an error.",37
+19,p,"Get started with Transformers right away with the Pipeline API. The Pipeline is a high-level inference class that supports text, audio, vision, and multimodal tasks. It handles preprocessing the input and returns the appropriate output.",35
+20,p,"Instantiate a pipeline and specify model to use for text generation. The model is downloaded and cached so you can easily reuse it again. Finally, pass some text to prompt the model.",32
+21,p,"To chat with a model, the usage pattern is the same. The only difference is you need to construct a chat history (the input to Pipeline) between you and the system.",31
+22,p,Expand the examples below to see how Pipeline works for different modalities and tasks.,14
+25,h2,Why should I use Transformers?,5
+27,li,"High performance on natural language understanding & generation, computer vision, audio, video, and multimodal tasks.",15
+28,li,"Low barrier to entry for researchers, engineers, and developers.",9
+29,li,Few user-facing abstractions with just three classes to learn.,9
+30,li,A unified API for using all our pretrained models.,9
+31,p,"Lower compute costs, smaller carbon footprint:",6
+32,li,Share trained models instead of training from scratch.,8
+33,li,Reduce compute time and production costs.,6
+34,li,Hundreds of model architectures with 1M+ pretrained checkpoints across all modalities.,11
+35,p,Choose the right framework for every part of a model's lifetime:,11
+36,li,Train state-of-the-art models in 3 lines of code.,8
+37,li,Move a single model between PyTorch/JAX/TF2.0 frameworks at will.,9
+38,li,"Pick the right framework for training, evaluation, and production.",9
+39,p,Easily customize a model or an example to your needs:,10
+40,li,We provide examples for each architecture to reproduce the results published by its original authors.,15
+41,li,Model internals are exposed as consistently as possible.,8
+42,li,Model files can be used independently of the library for quick experiments.,12
+43,h2,When shouldn't I use Transformers?,5
+44,li,"This library is not a modular toolbox of building blocks for neural nets. The code in the model files is not refactored with additional abstractions on purpose, so that researchers can quickly iterate on each of the models without diving into additional abstractions/files.",43
+45,li,"The training API is optimized to work with PyTorch models provided by Transformers. For generic machine learning loops, you should use another library like Accelerate.",25
+46,h2,100 projects using Transformers,4
+47,p,"Transformers is more than a toolkit to use pretrained models, it's a community of projects built around it and the Hugging Face Hub. We want Transformers to enable developers, researchers, students, professors, engineers, and anyone else to build their dream projects.",41
+48,p,"In order to celebrate Transformers 100,000 stars, we wanted to put the spotlight on the community with the awesome-transformers page which lists 100 incredible projects built with Transformers.",28
+49,p,"If you own or use a project that you believe should be part of the list, please open a PR to add it!",23
+51,p,You can test most of our models directly on their Hub model pages.,13
+52,p,Expand each modality below to see a few example models for various use cases.,14
+53,li,Audio classification with CLAP,4
+54,li,"Automatic speech recognition with Parakeet, Whisper, GLM-ASR and Moonshine-Streaming",9
+55,li,Keyword spotting with Wav2Vec2,4
+56,li,Speech to speech generation with Moshi,6
+57,li,Text to audio with MusicGen,5
+58,li,Text to speech with CSM,5
+59,li,Automatic mask generation with SAM,5
+60,li,Depth estimation with DepthPro,4
+61,li,Image classification with DINO v2,5
+62,li,Keypoint detection with SuperPoint,4
+63,li,Keypoint matching with SuperGlue,4
+64,li,Object detection with RT-DETRv2,4
+65,li,Pose Estimation with VitPose,4
+66,li,Universal segmentation with OneFormer,4
+67,li,Video classification with VideoMAE,4
+68,li,"Audio or text to text with Voxtral, Audio Flamingo",9
+69,li,Document question answering with LayoutLMv3,5
+70,li,Image or text to text with Qwen-VL,7
+72,li,OCR-based document understanding with GOT-OCR2,5
+73,li,Table question answering with TAPAS,5
+74,li,Unified multimodal understanding and generation with Emu3,7
+75,li,Vision to text with Llava-OneVision,5
+76,li,Visual question answering with Llava,5
+77,li,Visual referring expression segmentation with Kosmos-2,6
+78,li,Masked word completion with ModernBERT,5
+79,li,Named entity recognition with Gemma,5
+80,li,Question answering with Mixtral,4
+83,li,Text generation with Llama,4
+84,li,Text classification with Qwen,4
+86,p,We now have a paper you can cite for the 🤗 Transformers library:,13

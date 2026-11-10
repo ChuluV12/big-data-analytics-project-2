@@ -1,0 +1,4 @@
+release_band,packages,avg_min_python,avg_python3_versions_listed,packages_in_band
+1. Released within 90 days,16,3.1,5.8,"django, joblib, lxml, matplotlib, nltk, numpy, pandas, plotly, psycopg2, pytest, pytz, scikit-learn, scipy, sqlalchemy, statsmodels, tqdm"
+2. Released within a year,5,3.09,5.7,"beautifulsoup4, docutils, flask, requests, tabulate"
+3. Older than a year,5,2.67,5.5,"colorama, gensim, mock, seaborn, six"

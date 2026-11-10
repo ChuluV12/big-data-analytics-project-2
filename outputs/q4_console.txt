@@ -1,0 +1,87 @@
+[1] "C"
+Records scraped: 28 
+
+Missing values in the raw data
+        package      page_title       raw_title     raw_summary    raw_released 
+              0               0               2               2               2 
+   raw_requires     raw_license  raw_maintainer     classifiers   n_code_blocks 
+              3              17               4               2               2 
+        n_links raw_description      scraped_on 
+              2               2              NA 
+
+Spurious records removed: 2 -> simplejson, nose 
+
+Missing values after cleaning
+              package               version         major_version 
+                    0                     0                     0 
+        is_prerelease              released    days_since_release 
+                    0                     0                     0 
+           min_python         n_py_versions         n_classifiers 
+                    0                     0                     0 
+        n_maintainers        license_family     description_words 
+                    0                     0                     0 
+        n_code_blocks               n_links       has_description 
+                    0                     0                     0 
+              summary   description_excerpt    min_python_imputed 
+                    0                     0                     0 
+n_maintainers_imputed       summary_imputed       license_imputed 
+                    0                     0                     0 
+
+Imputed cells: min_python = 1 , n_maintainers = 2 , summary = 0 , license = 3 
+
+        package version   released days_since_release min_python n_py_versions
+         pandas   3.1.1 2026-11-04                  5       3.11             5
+          numpy   2.5.4 2026-10-10                 30       3.12             4
+          scipy  1.18.1 2026-08-21                 80       3.12             4
+     matplotlib  3.11.2 2026-09-11                 59       3.11             4
+        seaborn  0.13.2 2024-01-25               1019       3.08             5
+   scikit-learn   1.9.1 2026-09-10                 60       3.11             4
+    statsmodels  0.15.0 2026-08-27                 74       3.10             5
+       requests  2.34.2 2026-05-14                179       3.10             6
+          flask   3.1.3 2026-02-19                263       3.09             0
+         django   6.1.3 2026-11-03                  6       3.12             4
+ beautifulsoup4  4.15.0 2026-06-07                155       3.07             0
+           lxml   6.1.3 2026-09-02                 68       3.08             8
+           nltk  3.10.4 2026-10-21                 19       3.10             5
+         gensim   4.4.0 2025-10-18                387       3.09             5
+         plotly   7.1.0 2026-09-15                 55       3.08             6
+     sqlalchemy   2.1.8 2026-11-04                  5       3.11             5
+       psycopg2  2.9.13 2026-09-09                 61       3.10             6
+         pytest   9.2.0 2026-10-27                 13       3.10             6
+         joblib   1.6.0 2026-08-31                 70       3.10             5
+           tqdm  4.70.1 2026-09-11                 59       3.08             7
+            six  1.17.0 2024-12-04                705       2.07             0
+       colorama   0.4.6 2022-10-25               1476       2.07             4
+           pytz  2026.6 2026-10-29                 11       3.10            14
+       tabulate  0.10.0 2026-03-04                250       3.10             5
+       docutils    0.23 2026-05-27                166       3.09             6
+           mock   5.2.0 2025-03-03                616       3.06             8
+ n_maintainers license_family description_words
+             3            BSD               785
+             3            MIT               362
+             5            BSD               306
+             3            PSF               180
+             1            BSD               306
+             6            BSD               452
+             5            BSD               537
+             3         Apache               245
+             3            BSD               182
+             3            BSD               221
+             1            MIT               262
+             2        Unknown               171
+             5         Apache               209
+             2        Unknown               512
+             8            MIT               285
+             2            MIT               695
+             2     GPL family               330
+             7            MIT               371
+             4            BSD               484
+             2        Unknown              5341
+             1            MIT                93
+             2            BSD              2017
+             1            MIT              2830
+             1            MIT              4477
+             5            BSD              1312
+             6            BSD                98
+
+Saved data/q4_pypi_raw.csv and data/q4_pypi_clean.csv

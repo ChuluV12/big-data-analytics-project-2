@@ -1,0 +1,20 @@
+Rows loaded: 26 
+
+Investigation 1: documentation by licence family
+  license_family packages avg_description_words avg_code_blocks longest_description
+1        Unknown        3                  2008            18.0                5341
+2            MIT        8                  1172            16.3                4477
+3            BSD       11                   609             4.7                2017
+4     GPL family        1                   330             3.0                 330
+5         Apache        2                   227             2.5                 245
+6            PSF        1                   180             0.0                 180
+
+Investigation 2: release age against Python support
+                release_band packages avg_min_python avg_python3_versions_listed
+1 1. Released within 90 days       16           3.10                         5.8
+2  2. Released within a year        5           3.09                         5.7
+3       3. Older than a year        5           2.67                         5.5
+                                                                                                                           packages_in_band
+1 django, joblib, lxml, matplotlib, nltk, numpy, pandas, plotly, psycopg2, pytest, pytz, scikit-learn, scipy, sqlalchemy, statsmodels, tqdm
+2                                                                                       beautifulsoup4, docutils, flask, requests, tabulate
+3                                                                                                      colorama, gensim, mock, seaborn, six

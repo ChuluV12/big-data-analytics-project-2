@@ -1,0 +1,44 @@
+---
+title: "Question 4 - ETL with R and PostgreSQL"
+output:
+  html_document:
+    pandoc_args: ["--resource-path=.:.."]
+params:
+  rerun: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, comment = "", message = FALSE, warning = FALSE)
+```
+
+## Extract and transform (4.1 and 4.2)
+The notebook shows the code and the saved log of the last run, so knitting does not request the site again.
+Knit with `params = list(rerun = TRUE)` to scrape again.
+
+```{r code, echo=FALSE, results='asis'}
+cat("```r\n", paste(readLines("q4_scrape_clean.R"), collapse = "\n"), "\n```\n", sep = "")
+```
+
+```{r run, eval = params$rerun}
+source("q4_scrape_clean.R", echo = TRUE, max.deparse.length = Inf)
+```
+```{r log, eval = !params$rerun}
+cat(readLines("outputs/q4_console.txt"), sep = "\n")
+```
+
+## Load and analyse in PostgreSQL (4.3)
+The chunk runs when the `PG*` environment variables are set. Otherwise the saved results are shown.
+
+```{r, eval = nzchar(Sys.getenv("PGPASSWORD"))}
+source("q4_load_sql.R", echo = TRUE, max.deparse.length = Inf)
+```
+```{r, eval = !nzchar(Sys.getenv("PGPASSWORD"))}
+read.csv("outputs/q4_sql_investigation_1.csv")
+read.csv("outputs/q4_sql_investigation_2.csv")
+```
+
+## SQL used
+```{r, echo=FALSE, results='asis'}
+for (f in list.files("sql", full.names = TRUE))
+  cat("**", basename(f), "**\n\n```sql\n", paste(readLines(f), collapse = "\n"), "\n```\n\n", sep = "")
+```

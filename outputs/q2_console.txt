@@ -1,0 +1,64 @@
+Documents: 10  Terms kept: 188 
+
+Top 10 words per topic
+       Topic 1    Topic 2        Topic 3
+1     national department         public
+2         days      eskom     government
+3          psc     police administration
+4      gxoyiya     report         africa
+5      payment   expected        country
+6  development      power    governments
+7   management    african           role
+8      million       west         school
+9     officers   continue     governance
+10      ensure       made       ensuring
+
+Word probabilities per topic (beta)
+   topic           term       beta
+1      1       national 0.06900726
+2      1           days 0.05286521
+3      1            psc 0.04882970
+4      1        gxoyiya 0.04479419
+5      1        payment 0.02865214
+6      1    development 0.02461663
+7      1     management 0.02461663
+8      1        million 0.02461663
+9      1       officers 0.02461663
+10     1         ensure 0.02058111
+11     2     department 0.08403068
+12     2          eskom 0.04218968
+13     2         police 0.03870293
+14     2         report 0.03521618
+15     2       expected 0.02824268
+16     2          power 0.02824268
+17     2        african 0.02475593
+18     2           west 0.02475593
+19     2       continue 0.02126918
+20     2           made 0.02126918
+21     3         public 0.09294872
+22     3     government 0.07158120
+23     3 administration 0.04309117
+24     3         africa 0.04309117
+25     3        country 0.03596866
+26     3    governments 0.03240741
+27     3           role 0.02884615
+28     3         school 0.02884615
+29     3     governance 0.02172365
+30     3       ensuring 0.01816239
+
+Topic distribution per document (gamma)
+      document Topic 1 Topic 2 Topic 3 dominant
+1   news_1.txt   0.218   0.535   0.247  Topic 2
+2   news_2.txt   0.275   0.336   0.388  Topic 3
+3   news_3.txt   0.302   0.378   0.321  Topic 2
+4   news_4.txt   0.210   0.569   0.221  Topic 2
+5   news_5.txt   0.274   0.485   0.241  Topic 2
+6   news_6.txt   0.623   0.199   0.178  Topic 1
+7   news_7.txt   0.283   0.229   0.488  Topic 3
+8   news_8.txt   0.235   0.167   0.598  Topic 3
+9   news_9.txt   0.401   0.245   0.354  Topic 1
+10 news_10.txt   0.255   0.536   0.208  Topic 2
+null device 
+          1 
+
+Saved figures and tables to outputs/

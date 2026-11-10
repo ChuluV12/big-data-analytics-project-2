@@ -1,0 +1,4552 @@
+package,page_title,raw_title,raw_summary,raw_released,raw_requires,raw_license,raw_maintainer,classifiers,n_code_blocks,n_links,raw_description,scraped_on
+pandas,pandas · PyPI,pandas 3.1.1,"Powerful data structures for data analysis, time series, and statistics","Released: Nov 4, 2026 ",Requires | Python >=3.11 ,License expression | BSD-3-Clause ,3 maintainers,Development Status :: 5 - Production/Stable;Environment :: Console;Intended Audience :: Science/Research;Operating System :: OS Independent;Programming Language :: Cython;Programming Language :: Python;Programming Language :: Python :: 3;Programming Language :: Python :: 3 :: Only;Programming Language :: Python :: 3.11;Programming Language :: Python :: 3.12;Programming Language :: Python :: 3.13;Programming Language :: Python :: 3.14;Programming Language :: Python :: 3.15;Topic :: Scientific/Engineering,5,82,"pandas: A Powerful Python Data Analysis Toolkit
+Testing Package Meta
+What is it?
+
+pandas is a Python package that provides fast, flexible, and expressive data structures designed to make working with ""relational"" or ""labeled"" data both easy and intuitive. It aims to be the fundamental high-level building block for doing practical, real-world data analysis in Python. Additionally, it has the broader goal of becoming the most powerful and flexible open-source data analysis/manipulation tool available in any language. It is already well on its way towards this goal.
+
+Table of Contents
+Main Features
+Where to get it
+Dependencies
+Installation from sources
+License
+Documentation
+Background
+Getting Help
+Discussion and Development
+Contributing to pandas
+Main Features
+
+Here are just a few of the things that pandas does well:
+
+Easy handling of missing data (represented as NaN, NA, or NaT) in floating point as well as non-floating point data
+Size mutability: columns can be inserted and deleted from DataFrame and higher dimensional objects
+Automatic and explicit data alignment: objects can be explicitly aligned to a set of labels, or the user can simply ignore the labels and let Series, DataFrame, etc. automatically align the data for you in computations
+Powerful, flexible group by functionality to perform split-apply-combine operations on data sets, for both aggregating and transforming data
+Make it easy to convert ragged, differently-indexed data in other Python and NumPy data structures into DataFrame objects
+Intelligent label-based slicing, fancy indexing, and subsetting of large data sets
+Intuitive merging and joining data sets
+Flexible reshaping and pivoting of data sets
+Hierarchical labeling of axes (possible to have multiple labels per tick)
+Robust I/O tools for loading data from flat files (CSV and delimited), Excel files, databases, and saving/loading data from the ultrafast HDF5 format
+Time series-specific functionality: date range generation and frequency conversion, moving window statistics, date shifting and lagging
+Where to get it
+
+The source code is currently hosted on GitHub at: https://github.com/pandas-dev/pandas
+
+Binary installers for the latest released version are available at the Python Package Index (PyPI) and on Conda.
+
+# conda
+conda install -c conda-forge pandas
+
+# or PyPI
+pip install pandas
+
+
+The list of changes to pandas between each release can be found here. For full details, see the commit logs at https://github.com/pandas-dev/pandas.
+
+Dependencies
+NumPy - Adds support for large, multi-dimensional arrays, matrices and high-level mathematical functions to operate on these arrays
+python-dateutil - Provides powerful extensions to the standard datetime module
+tzdata - Provides an IANA time zone database (Only required on Windows/Emscripten)
+
+See the full installation instructions for minimum supported versions of required, recommended and optional dependencies.
+
+Installation from sources
+
+To install pandas from source you need Cython in addition to the normal dependencies above. Cython can be installed from PyPI:
+
+pip install cython
+
+
+In the pandas directory (same one where you found this file after cloning the git repo), execute:
+
+pip install .
+
+
+or for installing in development mode:
+
+python -m pip install -ve . --no-build-isolation --config-settings editable-verbose=true
+
+
+See the full instructions for installing from source.
+
+License
+
+BSD 3
+
+Documentation
+
+The official documentation is hosted on PyData.org.
+
+Background
+
+Work on pandas started at AQR (a quantitative hedge fund) in 2008 and has been under active development since then.
+
+Getting Help
+
+For usage questions, the best place to go to is Stack Overflow. Further, general questions and discussions can also take place on the pydata mailing list.
+
+Discussion and Development
+
+Most development discussions take place on GitHub in this repo, via the GitHub issue tracker.
+
+Further, the pandas-dev mailing list can also be used for specialized discussions or design issues, and a Slack channel is available for quick development related questions.
+
+There are also frequent community meetings for project maintainers open to the community as well as monthly new contributor meetings to help support new contributors.
+
+Additional information on the communication channels can be found on the contributor community page.
+
+Contributing to pandas
+
+All contributions, bug reports, bug fixes, documentation improvements, enhancements, and ideas are welcome.
+
+A detailed overview on how to contribute can be found in the contributing guide.
+
+You can also triage issues which may include reproducing bug reports, or asking for vital information such as version numbers or reproduction instructions. If you would like to start triaging issues, one easy way to get started is to subscribe to pandas on CodeTriage.
+
+Or maybe through using pandas you have an idea of your own or are looking for something in the documentation and thinking ‘this can be improved’... you can do something about it!
+
+Feel free to ask questions on the mailing list or on Slack.
+
+As contributors and maintainers to this project, you are expected to abide by pandas' code of conduct. More information can be found at: Contributor Code of Conduct
+
+Go to Top",2026-11-09
+numpy,numpy · PyPI,numpy 2.5.4,Fundamental package for array computing in Python,"Released: Oct 10, 2026 ",Requires | Python >=3.12 ,License expression | BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0 ,3 maintainers,Development Status :: 5 - Production/Stable;Intended Audience :: Developers;Intended Audience :: Science/Research;Operating System :: MacOS;Operating System :: Microsoft :: Windows;Operating System :: POSIX;Operating System :: Unix;Programming Language :: C;Programming Language :: Python;Programming Language :: Python :: 3;Programming Language :: Python :: 3 :: Only;Programming Language :: Python :: 3.12;Programming Language :: Python :: 3.13;Programming Language :: Python :: 3.14;Programming Language :: Python :: 3.15;Programming Language :: Python :: Implementation :: CPython;Topic :: Scientific/Engineering;Topic :: Software Development;Typing :: Typed,1,25,"
+
+
+NumPy is the fundamental package for scientific computing with Python.
+
+Website: https://numpy.org
+Documentation: https://numpy.org/doc
+Mailing list: https://mail.python.org/mailman/listinfo/numpy-discussion
+Source code: https://github.com/numpy/numpy
+Contributing: https://numpy.org/devdocs/dev/index.html
+Bug reports: https://github.com/numpy/numpy/issues
+Report a security vulnerability: https://github.com/numpy/numpy/security/policy (via Tidelift)
+
+It provides:
+
+a powerful N-dimensional array object
+sophisticated (broadcasting) functions
+tools for integrating C/C++ and Fortran code
+useful linear algebra, Fourier transform, and random number capabilities
+
+Testing:
+
+NumPy requires pytest and hypothesis. Tests can then be run after installation with:
+
+python -c ""import numpy, sys; sys.exit(numpy.test() is False)""
+
+Code of Conduct
+
+NumPy is a community-driven open source project developed by a diverse group of contributors. The NumPy leadership has made a strong commitment to creating an open, inclusive, and positive community. Please read the NumPy Code of Conduct for guidance on how to interact with others in a way that makes our community thrive.
+
+Call for Contributions
+
+The NumPy project welcomes your expertise and enthusiasm!
+
+Small improvements or fixes are always appreciated. If you are considering larger contributions to the source code, please contact us through the mailing list first.
+
+Writing code isn’t the only way to contribute to NumPy. You can also:
+
+review pull requests
+help us stay on top of new and old issues
+develop tutorials, presentations, and other educational materials
+maintain and improve our website
+develop graphic design for our brand assets and promotional materials
+translate website content
+help with outreach and onboard new contributors
+write grant proposals and help with other fundraising efforts
+
+For more information about the ways you can contribute to NumPy, visit our website. If you’re unsure where to start or how your skills fit in, reach out! You can ask on the mailing list or here, on GitHub, by opening a new issue or leaving a comment on a relevant issue that is already open.
+
+Our preferred channels of communication are all public, but if you’d like to speak to us in private first, contact our community coordinators at numpy-team@googlegroups.com or on Slack (write numpy-team@googlegroups.com for an invitation).
+
+We also have a biweekly community call, details of which are announced on the mailing list. You are very welcome to join.
+
+If you are new to contributing to open source, this guide helps explain why, what, and how to successfully get involved.",2026-11-09
+scipy,scipy · PyPI,scipy 1.18.1,Fundamental algorithms for scientific computing in Python,"Released: Aug 21, 2026 ",Requires | Python >=3.12 ,NA,5 maintainers,Development Status :: 5 - Production/Stable;Intended Audience :: Developers;Intended Audience :: Science/Research;License :: OSI Approved :: BSD License;Operating System :: MacOS;Operating System :: Microsoft :: Windows;Operating System :: POSIX;Operating System :: POSIX :: Linux;Operating System :: Unix;Programming Language :: C;Programming Language :: Python;Programming Language :: Python :: 3;Programming Language :: Python :: 3.12;Programming Language :: Python :: 3.13;Programming Language :: Python :: 3.14;Programming Language :: Python :: 3.15;Topic :: Scientific/Engineering;Topic :: Software Development :: Libraries,0,24,"SciPy (pronounced “Sigh Pie”) is an open-source software for mathematics, science, and engineering. It includes modules for statistics, optimization, integration, linear algebra, Fourier transforms, signal and image processing, ODE solvers, and more.
+
+Website: https://scipy.org
+
+Documentation: https://docs.scipy.org/doc/scipy/
+
+Development version of the documentation: https://scipy.github.io/devdocs
+
+SciPy development forum: https://discuss.scientific-python.org/c/contributor/scipy
+
+Stack Overflow: https://stackoverflow.com/questions/tagged/scipy
+
+Source code: https://github.com/scipy/scipy
+
+Contributing: https://scipy.github.io/devdocs/dev/index.html
+
+Bug reports: https://github.com/scipy/scipy/issues
+
+Code of Conduct: https://docs.scipy.org/doc/scipy/dev/conduct/code_of_conduct.html
+
+Report a security vulnerability: via Tidelift, as explained in our docs on Security
+
+Citing in your work: https://www.scipy.org/citing-scipy/
+
+SciPy is built to work with NumPy arrays, and provides many user-friendly and efficient numerical routines, such as routines for numerical integration and optimization. Together, they run on all popular operating systems, are quick to install, and are free of charge. NumPy and SciPy are easy to use, but powerful enough to be depended upon by some of the world’s leading scientists and engineers. If you need to manipulate numbers on a computer and display or publish the results, give SciPy a try!
+
+For the installation instructions, see our install guide.
+
+Call for Contributions
+
+We appreciate and welcome contributions. Small improvements or fixes are always appreciated; issues labeled as “good first issue” may be a good starting point. Have a look at our contributing guide.
+
+Writing code isn’t the only way to contribute to SciPy. You can also:
+
+review pull requests
+
+triage issues
+
+develop tutorials, presentations, and other educational materials
+
+maintain and improve our website
+
+develop graphic design for our brand assets and promotional materials
+
+help with outreach and onboard new contributors
+
+write grant proposals and help with other fundraising efforts
+
+If you’re unsure where to start or how your skills fit in, reach out! You can ask on the forum or here, on GitHub, by leaving a comment on a relevant issue that is already open.
+
+If you are new to contributing to open source, this guide helps explain why, what, and how to get involved.",2026-11-09
+matplotlib,matplotlib · PyPI,matplotlib 3.11.2,Python plotting package,"Released: Sep 11, 2026 ",Requires | Python >=3.11 ,NA,3 maintainers,Development Status :: 5 - Production/Stable;Framework :: Matplotlib;Intended Audience :: Education;Intended Audience :: Science/Research;License :: OSI Approved :: Python Software Foundation License;Programming Language :: Python;Programming Language :: Python :: 3;Programming Language :: Python :: 3.11;Programming Language :: Python :: 3.12;Programming Language :: Python :: 3.13;Programming Language :: Python :: 3.14;Topic :: Scientific/Engineering :: Visualization,0,30,"Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python.
+
+Check out our home page for more information.
+
+Matplotlib produces publication-quality figures in a variety of hardcopy formats and interactive environments across platforms. Matplotlib can be used in Python scripts, Python/IPython shells, web application servers, and various graphical user interface toolkits.
+
+Install
+
+See the install documentation, which is generated from /doc/install/index.rst
+
+Contribute
+
+You've discovered a bug or something else you want to change — excellent!
+
+You've worked out a way to fix it — even better!
+
+You want to tell us about it — best of all!
+
+Start at the contributing guide!
+
+Contact
+
+Discourse is the discussion forum for general questions and discussions and our recommended starting point.
+
+Our active mailing lists (which are mirrored on Discourse) are:
+
+Users mailing list: matplotlib-users@python.org
+Announcement mailing list: matplotlib-announce@python.org
+Development mailing list: matplotlib-devel@python.org
+
+Discourse Chat is for coordinating development and asking questions directly related to contributing to matplotlib.
+
+Citing Matplotlib
+
+If Matplotlib contributes to a project that leads to publication, please acknowledge this by citing Matplotlib.
+
+A ready-made citation entry is available.",2026-11-09
+seaborn,seaborn · PyPI,seaborn 0.13.2,Statistical data visualization,"Released: Jan 25, 2024 ",Requires | Python >=3.8 ,NA,1 maintainer,Framework :: Matplotlib;Intended Audience :: Science/Research;License :: OSI Approved :: BSD License;Operating System :: OS Independent;Programming Language :: Python :: 3.8;Programming Language :: Python :: 3.9;Programming Language :: Python :: 3.10;Programming Language :: Python :: 3.11;Programming Language :: Python :: 3.12;Topic :: Multimedia :: Graphics;Topic :: Scientific/Engineering :: Visualization,3,29,"
+
+
+seaborn: statistical data visualization
+
+Seaborn is a Python visualization library based on matplotlib. It provides a high-level interface for drawing attractive statistical graphics.
+
+Documentation
+
+Online documentation is available at seaborn.pydata.org.
+
+The docs include a tutorial, example gallery, API reference, FAQ, and other useful information.
+
+To build the documentation locally, please refer to doc/README.md.
+
+Dependencies
+
+Seaborn supports Python 3.8+.
+
+Installation requires numpy, pandas, and matplotlib. Some advanced statistical functionality requires scipy and/or statsmodels.
+
+Installation
+
+The latest stable release (and required dependencies) can be installed from PyPI:
+
+pip install seaborn
+
+
+It is also possible to include optional statistical dependencies:
+
+pip install seaborn[stats]
+
+
+Seaborn can also be installed with conda:
+
+conda install seaborn
+
+
+Note that the main anaconda repository lags PyPI in adding new releases, but conda-forge (-c conda-forge) typically updates quickly.
+
+Citing
+
+A paper describing seaborn has been published in the Journal of Open Source Software. The paper provides an introduction to the key features of the library, and it can be used as a citation if seaborn proves integral to a scientific publication.
+
+Testing
+
+Testing seaborn requires installing additional dependencies; they can be installed with the dev extra (e.g., pip install .[dev]).
+
+To test the code, run make test in the source directory. This will exercise the unit tests (using pytest) and generate a coverage report.
+
+Code style is enforced with flake8 using the settings in the setup.cfg file. Run make lint to check. Alternately, you can use pre-commit to automatically run lint checks on any files you are committing: just run pre-commit install to set it up, and then commit as usual going forward.
+
+Development
+
+Seaborn development takes place on Github: https://github.com/mwaskom/seaborn
+
+Please submit bugs that you encounter to the issue tracker with a reproducible example demonstrating the problem. Questions about usage are more at home on StackOverflow, where there is a seaborn tag.",2026-11-09
+scikit-learn,scikit-learn · PyPI,scikit-learn 1.9.1,A set of python modules for machine learning and data mining,"Released: Sep 10, 2026 ",Requires | Python >=3.11 ,License expression | BSD-3-Clause ,6 maintainers,Development Status :: 5 - Production/Stable;Intended Audience :: Developers;Intended Audience :: Science/Research;Operating System :: MacOS;Operating System :: Microsoft :: Windows;Operating System :: POSIX;Operating System :: Unix;Programming Language :: C;Programming Language :: Python;Programming Language :: Python :: 3;Programming Language :: Python :: 3.11;Programming Language :: Python :: 3.12;Programming Language :: Python :: 3.13;Programming Language :: Python :: 3.14;Programming Language :: Python :: Implementation :: CPython;Topic :: Scientific/Engineering;Topic :: Software Development,4,62,"scikit-learn is a Python module for machine learning built on top of SciPy and is distributed under the 3-Clause BSD license.
+
+The project was started in 2007 by David Cournapeau as a Google Summer of Code project, and since then many volunteers have contributed. See the About us page for a list of core contributors.
+
+It is currently maintained by a community of contributors, with volunteers but also support from several organisations.
+
+Website: https://scikit-learn.org
+
+Installation
+Dependencies
+
+scikit-learn requires:
+
+Python (>= 3.11)
+
+NumPy (>= 1.24.1)
+
+SciPy (>= 1.10.0)
+
+Narwhals (>= 2.0.1)
+
+joblib (>= 1.4.0)
+
+threadpoolctl (>= 3.5.0)
+
+Scikit-learn plotting capabilities (i.e., functions start with plot_ and classes end with Display) require Matplotlib (>= 3.6.1). For running the examples Matplotlib >= 3.6.1 is required. A few examples require scikit-image >= 0.22.0, a few examples require pandas >= 1.5.0, some examples require seaborn >= 0.13.0 and Plotly >= 5.22.0.
+
+User installation
+
+If you already have a working installation of NumPy and SciPy, the easiest way to install scikit-learn is using pip:
+
+pip install -U scikit-learn
+
+or conda:
+
+conda install -c conda-forge scikit-learn
+
+The documentation includes more detailed installation instructions.
+
+Changelog
+
+See the changelog for a history of notable changes to scikit-learn.
+
+Development
+
+We welcome new contributors of all experience levels. The scikit-learn community goals are to be helpful, welcoming, and effective. The Development Guide has detailed information about contributing code, documentation, tests, and more. We’ve included some basic information in this README.
+
+Important links
+
+Official source code repo: https://github.com/scikit-learn/scikit-learn
+
+Download releases: https://pypi.org/project/scikit-learn/
+
+Issue tracker: https://github.com/scikit-learn/scikit-learn/issues
+
+Source code
+
+You can check the latest sources with the command:
+
+git clone https://github.com/scikit-learn/scikit-learn.git
+Contributing
+
+To learn more about making a contribution to scikit-learn, please see our Contributing guide.
+
+Testing
+
+After installation, you can launch the test suite from outside the source directory (you will need to have pytest >= 7.1.2 installed):
+
+pytest sklearn
+
+See the web page https://scikit-learn.org/dev/developers/contributing.html#testing-and-improving-test-coverage for more information.
+
+Random number generation can be controlled during testing by setting the SKLEARN_SEED environment variable. See https://scikit-learn.org/dev/developers/global_configuration.html#sklearn-seed for details.
+
+Submitting a Pull Request
+
+Before opening a Pull Request, have a look at the full Contributing page to make sure your code complies with our guidelines: https://scikit-learn.org/stable/developers/index.html
+
+Project History
+
+The project was started in 2007 by David Cournapeau as a Google Summer of Code project, and since then many volunteers have contributed. See the About us page for a list of core contributors.
+
+Note: scikit-learn was previously referred to as scikits.learn.
+
+Help and Support
+Documentation
+
+HTML documentation (stable release): https://scikit-learn.org
+
+HTML documentation (development version): https://scikit-learn.org/dev/
+
+FAQ: https://scikit-learn.org/stable/faq.html
+
+Communication
+Main Channels
+
+Website: https://scikit-learn.org
+
+Blog: https://blog.scikit-learn.org
+
+Mailing list: https://mail.python.org/mailman/listinfo/scikit-learn
+
+Developer & Support
+
+GitHub Discussions: https://github.com/scikit-learn/scikit-learn/discussions
+
+Stack Overflow: https://stackoverflow.com/questions/tagged/scikit-learn
+
+Discord: https://discord.gg/h9qyrK8Jc8
+
+Social Media Platforms
+
+LinkedIn: https://www.linkedin.com/company/scikit-learn
+
+YouTube: https://www.youtube.com/channel/UCJosFjYm0ZYVUARxuOZqnnw/playlists
+
+Facebook: https://www.facebook.com/scikitlearnofficial/
+
+Instagram: https://www.instagram.com/scikitlearnofficial/
+
+TikTok: https://www.tiktok.com/@scikit.learn
+
+Bluesky: https://bsky.app/profile/scikit-learn.org
+
+Mastodon: https://mastodon.social/@sklearn@fosstodon.org
+
+Resources
+
+Calendar: https://blog.scikit-learn.org/calendar/
+
+Logos & Branding: https://github.com/scikit-learn/scikit-learn/tree/main/doc/logos
+
+Citation
+
+If you use scikit-learn in a scientific publication, we would appreciate citations: https://scikit-learn.org/stable/about.html#citing-scikit-learn",2026-11-09
+statsmodels,statsmodels · PyPI,statsmodels 0.15.0,Statistical computations and models for Python,"Released: Aug 27, 2026 ",Requires | Python >=3.10 ,License expression | BSD-3-Clause ,5 maintainers,Development Status :: 4 - Beta;Environment :: Console;Intended Audience :: Developers;Intended Audience :: End Users/Desktop;Intended Audience :: Science/Research;Natural Language :: English;Operating System :: OS Independent;Programming Language :: Cython;Programming Language :: Python :: 3.10;Programming Language :: Python :: 3.11;Programming Language :: Python :: 3.12;Programming Language :: Python :: 3.13;Programming Language :: Python :: 3.14;Topic :: Office/Business :: Financial;Topic :: Scientific/Engineering,1,30,"About statsmodels
+
+statsmodels is a Python package that provides a complement to scipy for statistical computations including descriptive statistics and estimation and inference for statistical models.
+
+Documentation
+
+The documentation for the latest release is at
+
+https://www.statsmodels.org/stable/
+
+The documentation for the development version is at
+
+https://www.statsmodels.org/dev/
+
+Recent improvements are highlighted in the release notes
+
+https://www.statsmodels.org/stable/release/
+
+Backups of documentation are available at https://statsmodels.github.io/stable/ and https://statsmodels.github.io/dev/.
+
+Main Features
+Linear regression models:
+Ordinary least squares
+Generalized least squares
+Weighted least squares
+Least squares with autoregressive errors
+Quantile regression
+Recursive least squares
+Mixed Linear Model with mixed effects and variance components
+GLM: Generalized linear models with support for all of the one-parameter exponential family distributions
+Bayesian Mixed GLM for Binomial and Poisson
+GEE: Generalized Estimating Equations for one-way clustered or longitudinal data
+Discrete models:
+Logit and Probit
+Multinomial logit (MNLogit)
+Poisson and Generalized Poisson regression
+Negative Binomial regression
+Zero-Inflated Count models
+RLM: Robust linear models with support for several M-estimators.
+Time Series Analysis: models for time series analysis
+Complete StateSpace modeling framework
+Seasonal ARIMA and ARIMAX models
+VARMA and VARMAX models
+Dynamic Factor models
+Unobserved Component models
+Markov switching models (MSAR), also known as Hidden Markov Models (HMM)
+Univariate time series analysis: AR, ARIMA
+Vector autoregressive models, VAR and structural VAR
+Vector error correction model, VECM
+exponential smoothing, Holt-Winters
+Hypothesis tests for time series: unit root, cointegration and others
+Descriptive statistics and process models for time series analysis
+Survival analysis:
+Proportional hazards regression (Cox models)
+Survivor function estimation (Kaplan-Meier)
+Cumulative incidence function estimation
+Multivariate:
+Principal Component Analysis with missing data
+Factor Analysis with rotation
+MANOVA
+Canonical Correlation
+Nonparametric statistics: Univariate and multivariate kernel density estimators
+Datasets: Datasets used for examples and in testing
+Statistics: a wide range of statistical tests
+diagnostics and specification tests
+goodness-of-fit and normality tests
+functions for multiple testing
+various additional statistical tests
+Imputation with MICE, regression on order statistic and Gaussian imputation
+Mediation analysis
+Graphics includes plot functions for visual analysis of data and model results
+I/O
+Tools for reading Stata .dta files, but pandas has a more recent version
+Table output to ascii, latex, and html
+Miscellaneous models
+Sandbox: statsmodels contains a sandbox folder with code in various stages of development and testing which is not considered ""production ready"". This covers among others
+Generalized method of moments (GMM) estimators
+Kernel regression
+Various extensions to scipy.stats.distributions
+Panel data models
+Information theoretic measures
+How to get it
+
+The main branch on GitHub is the most up to date code
+
+https://www.github.com/statsmodels/statsmodels
+
+Source download of release tags are available on GitHub
+
+https://github.com/statsmodels/statsmodels/tags
+
+Binaries and source distributions are available from PyPi
+
+https://pypi.org/project/statsmodels/
+
+Binaries can be installed in Anaconda
+
+conda install statsmodels
+
+Getting the latest code
+Installing the most recent nightly wheel
+
+The most recent nightly wheel can be installed using pip.
+
+python -m pip install -i https://pypi.anaconda.org/scientific-python-nightly-wheels/simple statsmodels --upgrade --use-deprecated=legacy-resolver
+
+Installing from sources
+
+See INSTALL.txt for requirements or see the documentation
+
+https://statsmodels.github.io/dev/install.html
+
+Contributing
+
+Contributions in any form are welcome, including:
+
+Documentation improvements
+Additional tests
+New features to existing models
+New models
+
+https://www.statsmodels.org/stable/dev/test_notes
+
+for instructions on installing statsmodels in editable mode.
+
+License
+
+Modified BSD (3-clause)
+
+Discussion and Development
+
+Discussions take place on the mailing list
+
+https://groups.google.com/group/pystatsmodels
+
+and in the issue tracker. We are very interested in feedback about usability and suggestions for improvements.
+
+Bug Reports
+
+Bug reports can be submitted to the issue tracker at
+
+https://github.com/statsmodels/statsmodels/issues",2026-11-09
+requests,requests · PyPI,requests 2.34.2,Python HTTP for Humans.,"Released: May 14, 2026 ",Requires | Python >=3.10 ,NA,3 maintainers,Development Status :: 5 - Production/Stable;Environment :: Web Environment;Intended Audience :: Developers;License :: OSI Approved :: Apache Software License;Natural Language :: English;Operating System :: OS Independent;Programming Language :: Python;Programming Language :: Python :: 3;Programming Language :: Python :: 3 :: Only;Programming Language :: Python :: 3.10;Programming Language :: Python :: 3.11;Programming Language :: Python :: 3.12;Programming Language :: Python :: 3.13;Programming Language :: Python :: 3.14;Programming Language :: Python :: 3.15;Programming Language :: Python :: Free Threading :: 2 - Beta;Programming Language :: Python :: Implementation :: CPython;Programming Language :: Python :: Implementation :: PyPy;Topic :: Internet :: WWW/HTTP;Topic :: Software Development :: Libraries,4,13,"Requests
+
+Requests is a simple, yet elegant, HTTP library.
+
+>>> import requests
+>>> r = requests.get('https://httpbin.org/basic-auth/user/pass', auth=('user', 'pass'))
+>>> r.status_code
+200
+>>> r.headers['content-type']
+'application/json; charset=utf8'
+>>> r.encoding
+'utf-8'
+>>> r.text
+'{""authenticated"": true, ...'
+>>> r.json()
+{'authenticated': True, ...}
+
+
+Requests allows you to send HTTP/1.1 requests extremely easily. There’s no need to manually add query strings to your URLs, or to form-encode your PUT & POST data — but nowadays, just use the json method!
+
+Requests is one of the most downloaded Python packages today, pulling in around 300M downloads / week — according to GitHub, Requests is currently depended upon by 4,000,000+ repositories.
+
+Installing Requests and Supported Versions
+
+Requests is available on PyPI:
+
+$ python -m pip install requests
+
+
+Requests officially supports Python 3.10+.
+
+Supported Features & Best–Practices
+
+Requests is ready for the demands of building robust and reliable HTTP–speaking applications, for the needs of today.
+
+Keep-Alive & Connection Pooling
+International Domains and URLs
+Sessions with Cookie Persistence
+Browser-style TLS/SSL Verification
+Basic & Digest Authentication
+Familiar dict–like Cookies
+Automatic Content Decompression and Decoding
+Multi-part File Uploads
+SOCKS Proxy Support
+Connection Timeouts
+Streaming Downloads
+Automatic honoring of .netrc
+Chunked HTTP Requests
+Cloning the repository
+
+When cloning the Requests repository, you may need to add the -c fetch.fsck.badTimezone=ignore flag to avoid an error about a bad commit timestamp (see this issue for more background):
+
+git clone -c fetch.fsck.badTimezone=ignore https://github.com/psf/requests.git
+
+
+You can also apply this setting to your global Git config:
+
+git config --global fetch.fsck.badTimezone ignore
+",2026-11-09
+flask,Flask · PyPI,Flask 3.1.3,A simple framework for building complex web applications.,"Released: Feb 19, 2026 ",Requires | Python >=3.9 ,License expression | BSD-3-Clause ,NA,Development Status :: 5 - Production/Stable;Environment :: Web Environment;Framework :: Flask;Intended Audience :: Developers;Operating System :: OS Independent;Programming Language :: Python;Topic :: Internet :: WWW/HTTP :: Dynamic Content;Topic :: Internet :: WWW/HTTP :: WSGI;Topic :: Internet :: WWW/HTTP :: WSGI :: Application;Topic :: Software Development :: Libraries :: Application Frameworks;Typing :: Typed,2,9,"Flask
+
+Flask is a lightweight WSGI web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications. It began as a simple wrapper around Werkzeug and Jinja, and has become one of the most popular Python web application frameworks.
+
+Flask offers suggestions, but doesn't enforce any dependencies or project layout. It is up to the developer to choose the tools and libraries they want to use. There are many extensions provided by the community that make adding new functionality easy.
+
+A Simple Example
+# save this as app.py
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route(""/"")
+def hello():
+    return ""Hello, World!""
+
+$ flask run
+  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+
+Donate
+
+The Pallets organization develops and supports Flask and the libraries it uses. In order to grow the community of contributors and users, and allow the maintainers to devote more time to the projects, please donate today.
+
+Contributing
+
+See our detailed contributing documentation for many ways to contribute, including reporting issues, requesting features, asking or answering questions, and making PRs.",2026-11-09
+django,Django · PyPI,Django 6.1.3,"A high-level Python web framework that encourages rapid development and clean, pragmatic design.","Released: Nov 3, 2026 ",Requires | Python >=3.12 ,License expression | BSD-3-Clause ,NA,Development Status :: 5 - Production/Stable;Environment :: Web Environment;Framework :: Django;Intended Audience :: Developers;Operating System :: OS Independent;Programming Language :: Python;Programming Language :: Python :: 3;Programming Language :: Python :: 3 :: Only;Programming Language :: Python :: 3.12;Programming Language :: Python :: 3.13;Programming Language :: Python :: 3.14;Programming Language :: Python :: 3.15;Topic :: Internet :: WWW/HTTP;Topic :: Internet :: WWW/HTTP :: Dynamic Content;Topic :: Internet :: WWW/HTTP :: WSGI;Topic :: Software Development :: Libraries :: Application Frameworks;Topic :: Software Development :: Libraries :: Python Modules,0,9,"Django
+
+Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. Thanks for checking it out.
+
+All documentation is in the “docs” directory and online at https://docs.djangoproject.com/en/stable/. If you’re just getting started, here’s how we recommend you read the docs:
+
+First, read docs/intro/install.txt for instructions on installing Django.
+
+Next, work through the tutorials in order (docs/intro/tutorial01.txt, docs/intro/tutorial02.txt, etc.).
+
+If you want to set up an actual deployment server, read docs/howto/deployment/index.txt for instructions.
+
+You’ll probably want to read through the topical guides (in docs/topics) next; from there you can jump to the HOWTOs (in docs/howto) for specific problems, and check out the reference (docs/ref) for gory details.
+
+See docs/README for instructions on building an HTML version of the docs.
+
+Docs are updated rigorously. If you find any problems in the docs, or think they should be clarified in any way, please take 30 seconds to fill out a ticket here: https://code.djangoproject.com/newticket
+
+To get more help:
+
+Join the Django Discord community.
+
+Join the community on the Django Forum.
+
+To contribute to Django:
+
+Check out https://docs.djangoproject.com/en/dev/internals/contributing/ for information about getting involved.
+
+To run Django’s test suite:
+
+Follow the instructions in the “Unit tests” section of docs/internals/contributing/writing-code/unit-tests.txt, published online at https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/unit-tests/#running-the-unit-tests
+
+Supporting the Development of Django
+
+Django’s development depends on your contributions.
+
+If you depend on Django, remember to support the Django Software Foundation: https://www.djangoproject.com/fundraising/",2026-11-09
+beautifulsoup4,beautifulsoup4 · PyPI,beautifulsoup4 4.15.0,Screen-scraping library,"Released: Jun 7, 2026 ",Requires | Python >=3.7.0 ,NA,1 maintainer,Development Status :: 5 - Production/Stable;Intended Audience :: Developers;License :: OSI Approved :: MIT License;Programming Language :: Python;Programming Language :: Python :: 3;Topic :: Software Development :: Libraries :: Python Modules;Topic :: Text Processing :: Markup :: HTML;Topic :: Text Processing :: Markup :: SGML;Topic :: Text Processing :: Markup :: XML,2,15,"Beautiful Soup is a library that makes it easy to scrape information from web pages. It sits atop an HTML or XML parser, providing Pythonic idioms for iterating, searching, and modifying the parse tree.
+
+Quick start
+>>> from bs4 import BeautifulSoup
+>>> soup = BeautifulSoup(""<p>Some<b>bad<i>HTML"")
+>>> print(soup.prettify())
+<html>
+ <body>
+  <p>
+   Some
+   <b>
+    bad
+    <i>
+     HTML
+    </i>
+   </b>
+  </p>
+ </body>
+</html>
+>>> soup.find(string=""bad"")
+'bad'
+>>> soup.i
+<i>HTML</i>
+#
+>>> soup = BeautifulSoup(""<tag1>Some<tag2/>bad<tag3>XML"", ""xml"")
+#
+>>> print(soup.prettify())
+<?xml version=""1.0"" encoding=""utf-8""?>
+<tag1>
+ Some
+ <tag2/>
+ bad
+ <tag3>
+  XML
+ </tag3>
+</tag1>
+
+
+To go beyond the basics, comprehensive documentation is available.
+
+Links
+Homepage
+Documentation
+Discussion group
+Development
+Bug tracker
+Complete changelog
+Note on Python 2 sunsetting
+
+Beautiful Soup's support for Python 2 was discontinued on December 31, 2020: one year after the sunset date for Python 2 itself. From this point onward, new Beautiful Soup development will exclusively target Python 3. The final release of Beautiful Soup 4 to support Python 2 was 4.9.3.
+
+Supporting the project
+
+If you use Beautiful Soup as part of your professional work, please consider a Tidelift subscription. This will support many of the free software projects your organization depends on, not just Beautiful Soup.
+
+If you use Beautiful Soup for personal projects, the best way to say thank you is to read Tool Safety, a zine I wrote about what Beautiful Soup has taught me about software development.
+
+Building the documentation
+
+The bs4/doc/ directory contains full documentation in Sphinx format. Run make html in that directory to create HTML documentation.
+
+Running the unit tests
+
+Beautiful Soup supports unit test discovery using Pytest:
+
+$ pytest
+",2026-11-09
+lxml,lxml · PyPI,lxml 6.1.3,Powerful and Pythonic XML processing library combining libxml2/libxslt with the ElementTree API.,"Released: Sep 2, 2026 ",Requires | Python >=3.8 ,NA,2 maintainers,Development Status :: 5 - Production/Stable;Intended Audience :: Developers;Intended Audience :: Information Technology;Operating System :: OS Independent;Programming Language :: C;Programming Language :: Cython;Programming Language :: Python :: 3;Programming Language :: Python :: 3.8;Programming Language :: Python :: 3.9;Programming Language :: Python :: 3.10;Programming Language :: Python :: 3.11;Programming Language :: Python :: 3.12;Programming Language :: Python :: 3.13;Programming Language :: Python :: 3.14;Programming Language :: Python :: 3.15;Topic :: Software Development :: Libraries :: Python Modules;Topic :: Text Processing :: Markup :: HTML;Topic :: Text Processing :: Markup :: XML,0,6,"lxml is a Pythonic, mature binding for the libxml2 and libxslt libraries. It provides safe and convenient access to these libraries using the ElementTree API.
+
+It extends the ElementTree API significantly to offer support for XPath, RelaxNG, XML Schema, XSLT, C14N and much more.
+
+To contact the project, go to the project home page or see our bug tracker at https://launchpad.net/lxml
+
+In case you want to use the current in-development version of lxml, you can get it from the github repository at https://github.com/lxml/lxml . Note that this requires Cython to build the sources, see the build instructions on the project home page.
+
+After an official release of a new stable series, bug fixes may become available at https://github.com/lxml/lxml/tree/lxml-6.1 . Running pip install https://github.com/lxml/lxml/archive/refs/heads/lxml-6.1.tar.gz will install the unreleased branch state as soon as a maintenance branch has been established. Note that this requires Cython to be installed at an appropriate version for the build.
+
+6.1.3 (2026-09-02)
+Bugs fixed
+
+LP#2165901: External parameter entity parsing was allowed by default (with resolve_entities=""internal""). Issue found by Tomer Fichman.",2026-11-09
+nltk,nltk · PyPI,nltk 3.10.4,Natural Language Toolkit,"Released: Oct 21, 2026 ",Requires | Python >=3.10 ,NA,5 maintainers,Development Status :: 5 - Production/Stable;Intended Audience :: Developers;Intended Audience :: Education;Intended Audience :: Information Technology;Intended Audience :: Science/Research;License :: OSI Approved :: Apache Software License;Operating System :: OS Independent;Programming Language :: Python :: 3.10;Programming Language :: Python :: 3.11;Programming Language :: Python :: 3.12;Programming Language :: Python :: 3.13;Programming Language :: Python :: 3.14;Topic :: Scientific/Engineering;Topic :: Scientific/Engineering :: Artificial Intelligence;Topic :: Scientific/Engineering :: Human Machine Interfaces;Topic :: Scientific/Engineering :: Information Analysis;Topic :: Text Processing;Topic :: Text Processing :: Filters;Topic :: Text Processing :: General;Topic :: Text Processing :: Indexing;Topic :: Text Processing :: Linguistic,1,12,"Natural Language Toolkit (NLTK)
+
+NLTK -- the Natural Language Toolkit -- is a suite of open source Python modules, data sets, and tutorials supporting research and development in Natural Language Processing. NLTK requires Python version from 3.10 up to the latest 3.14.
+
+For documentation, please visit nltk.org.
+
+Contributing
+
+Do you want to contribute to NLTK development? Great! Please read CONTRIBUTING.md for more details.
+
+See also how to contribute to NLTK.
+
+Donate
+
+Have you found the toolkit helpful? Please support NLTK development by donating to the project via PayPal, using the link on the NLTK homepage.
+
+Citing
+
+If you publish work that uses NLTK, please cite the NLTK book, as follows:
+
+Bird, Steven, Edward Loper and Ewan Klein (2009).
+Natural Language Processing with Python.  O'Reilly Media Inc.
+
+Copyright
+
+Copyright (C) 2001-2026 NLTK Project
+
+For license information, see LICENSE.txt.
+
+AUTHORS.md contains a list of everyone who has contributed to NLTK.
+
+Redistributing
+NLTK source code is distributed under the Apache 2.0 License.
+NLTK documentation is distributed under the Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 United States license.
+NLTK corpora are provided under the terms given in the README file for each corpus; all are redistributable and available for non-commercial use.
+NLTK may be freely redistributed, subject to the provisions of these licenses.",2026-11-09
+gensim,gensim · PyPI,gensim 4.4.0,Python framework for fast Vector Space Modelling,"Released: Oct 18, 2025 ",Requires | Python >=3.9 ,NA,2 maintainers,Development Status :: 5 - Production/Stable;Environment :: Console;Intended Audience :: Science/Research;Operating System :: OS Independent;Programming Language :: Python :: 3 :: Only;Programming Language :: Python :: 3.9;Programming Language :: Python :: 3.10;Programming Language :: Python :: 3.11;Programming Language :: Python :: 3.12;Programming Language :: Python :: 3.13;Topic :: Scientific/Engineering :: Artificial Intelligence;Topic :: Scientific/Engineering :: Information Analysis;Topic :: Text Processing :: Linguistic,3,25,"gensim – Topic Modelling in Python
+
+Gensim is a Python library for topic modelling, document indexing and similarity retrieval with large corpora. Target audience is the natural language processing (NLP) and information retrieval (IR) community.
+
+Features
+
+All algorithms are memory-independent w.r.t. the corpus size (can process input larger than RAM, streamed, out-of-core)
+
+Intuitive interfaces
+
+easy to plug in your own input corpus/datastream (simple streaming API)
+
+easy to extend with other Vector Space algorithms (simple transformation API)
+
+Efficient multicore implementations of popular algorithms, such as online Latent Semantic Analysis (LSA/LSI/SVD), Latent Dirichlet Allocation (LDA), Random Projections (RP), Hierarchical Dirichlet Process (HDP) or word2vec deep learning.
+
+Distributed computing: can run Latent Semantic Analysis and Latent Dirichlet Allocation on a cluster of computers.
+
+Extensive documentation and Jupyter Notebook tutorials.
+
+If this feature list left you scratching your head, you can first read more about the Vector Space Model and unsupervised document analysis on Wikipedia.
+
+Installation
+
+This software depends on NumPy and Scipy, two Python packages for scientific computing. You must have them installed prior to installing gensim.
+
+It is also recommended you install a fast BLAS library before installing NumPy. This is optional, but using an optimized BLAS such as MKL, ATLAS or OpenBLAS is known to improve performance by as much as an order of magnitude. On OSX, NumPy picks up its vecLib BLAS automatically, so you don’t need to do anything special.
+
+Install the latest version of gensim:
+
+pip install --upgrade gensim
+
+Or, if you have instead downloaded and unzipped the source tar.gz package:
+
+python setup.py install
+
+For alternative modes of installation, see the documentation.
+
+Gensim is being continuously tested under all supported Python versions. Support for Python 2.7 was dropped in gensim 4.0.0 – install gensim 3.8.3 if you must use Python 2.7.
+
+How come gensim is so fast and memory efficient? Isn’t it pure Python, and isn’t Python slow and greedy?
+
+Many scientific algorithms can be expressed in terms of large matrix operations (see the BLAS note above). Gensim taps into these low-level BLAS libraries, by means of its dependency on NumPy. So while gensim-the-top-level-code is pure Python, it actually executes highly optimized Fortran/C under the hood, including multithreading (if your BLAS is so configured).
+
+Memory-wise, gensim makes heavy use of Python’s built-in generators and iterators for streamed data processing. Memory efficiency was one of gensim’s design goals, and is a central feature of gensim, rather than something bolted on as an afterthought.
+
+Documentation
+
+QuickStart
+
+Tutorials
+
+Tutorial Videos
+
+Official Documentation and Walkthrough
+
+Citing gensim
+
+When citing gensim in academic papers and theses, please use this BibTeX entry:
+
+@inproceedings{rehurek_lrec,
+      title = {{Software Framework for Topic Modelling with Large Corpora}},
+      author = {Radim {\v R}eh{\r u}{\v r}ek and Petr Sojka},
+      booktitle = {{Proceedings of the LREC 2010 Workshop on New
+           Challenges for NLP Frameworks}},
+      pages = {45--50},
+      year = 2010,
+      month = May,
+      day = 22,
+      publisher = {ELRA},
+      address = {Valletta, Malta},
+      language={English}
+}
+
+Gensim is open source software released under the GNU LGPLv2.1 license. Copyright (c) 2009-now Radim Rehurek",2026-11-09
+plotly,plotly · PyPI,plotly 7.1.0,An open-source interactive data visualization library for Python,"Released: Sep 15, 2026 ",Requires | Python >=3.8 ,License expression | MIT ,8 maintainers,Development Status :: 5 - Production/Stable;License :: OSI Approved :: MIT License;Programming Language :: Python :: 3.8;Programming Language :: Python :: 3.9;Programming Language :: Python :: 3.10;Programming Language :: Python :: 3.11;Programming Language :: Python :: 3.12;Programming Language :: Python :: 3.13;Topic :: Scientific/Engineering :: Visualization,7,30,"plotly.py
+Latest Release User forum PyPI Downloads License
+Quickstart
+
+pip install plotly
+
+import plotly.express as px
+fig = px.bar(x=[""a"", ""b"", ""c""], y=[1, 3, 2])
+fig.show()
+
+
+See the Python documentation for more examples.
+
+Overview
+
+plotly.py is an interactive, open-source, and browser-based graphing library for Python ✨
+
+Built on top of plotly.js, plotly.py is a high-level, declarative charting library. plotly.js ships with over 30 chart types, including scientific charts, 3D graphs, statistical charts, SVG maps, financial charts, and more.
+
+plotly.py is MIT Licensed. Plotly graphs can be viewed in Jupyter notebooks, other Python notebook software such as marimo, as standalone HTML files, or integrated into Dash applications.
+
+Contact us for consulting, dashboard development, application integration, and feature additions.
+
+Online Documentation
+Contributing to plotly
+Changelog
+Code of Conduct
+Community forum
+Installation
+
+plotly.py may be installed using pip
+
+pip install plotly
+
+
+or conda.
+
+conda install -c conda-forge plotly
+
+Jupyter Widget Support
+
+For use as a Jupyter widget, install jupyter and anywidget packages using pip:
+
+pip install jupyter anywidget
+
+
+or conda:
+
+conda install jupyter anywidget
+
+Static Image Export
+
+plotly.py supports static image export, using the kaleido package (version 1.0 or greater).
+
+Kaleido has minimal dependencies and can be installed using pip
+
+pip install -U kaleido
+
+
+or conda
+
+conda install -c conda-forge python-kaleido
+
+
+Kaleido requires Chrome or Chromium to generate images. By default, Kaleido will use the Chrome or Chromium version already installed on your system. If you don't have it installed or Kaleido can't find it, you may need to install it by running the command:
+
+plotly_get_chrome
+
+on your command line.
+
+Copyright and Licenses
+
+Code and documentation copyright 2026 Plotly, Inc.
+
+Code released under the MIT license.
+
+Docs released under the Creative Commons license.",2026-11-09
+sqlalchemy,SQLAlchemy · PyPI,SQLAlchemy 2.1.8,Database Abstraction Library,"Released: Nov 4, 2026 ",Requires | Python >=3.11 ,License expression | MIT ,2 maintainers,Development Status :: 5 - Production/Stable;Intended Audience :: Developers;Operating System :: OS Independent;Programming Language :: Python;Programming Language :: Python :: 3;Programming Language :: Python :: 3.11;Programming Language :: Python :: 3.12;Programming Language :: Python :: 3.13;Programming Language :: Python :: 3.14;Programming Language :: Python :: 3.15;Programming Language :: Python :: Implementation :: CPython;Programming Language :: Python :: Implementation :: PyPy;Topic :: Database :: Front-Ends,0,15,"SQLAlchemy
+
+The Python SQL Toolkit and Object Relational Mapper
+
+Introduction
+
+SQLAlchemy is the Python SQL toolkit and Object Relational Mapper that gives application developers the full power and flexibility of SQL. SQLAlchemy provides a full suite of well known enterprise-level persistence patterns, designed for efficient and high-performing database access, adapted into a simple and Pythonic domain language.
+
+Major SQLAlchemy features include:
+
+An industrial strength ORM, built from the core on the identity map, unit of work, and data mapper patterns. These patterns allow transparent persistence of objects using a declarative configuration system. Domain models can be constructed and manipulated naturally, and changes are synchronized with the current transaction automatically.
+
+A relationally-oriented query system, exposing the full range of SQL’s capabilities explicitly, including joins, subqueries, correlation, and most everything else, in terms of the object model. Writing queries with the ORM uses the same techniques of relational composition you use when writing SQL. While you can drop into literal SQL at any time, it’s virtually never needed.
+
+A comprehensive and flexible system of eager loading for related collections and objects. Collections are cached within a session, and can be loaded on individual access, all at once using joins, or by query per collection across the full result set.
+
+A Core SQL construction system and DBAPI interaction layer. The SQLAlchemy Core is separate from the ORM and is a full database abstraction layer in its own right, and includes an extensible Python-based SQL expression language, schema metadata, connection pooling, type coercion, and custom types.
+
+Primary and foreign key constraints may be composite and natural. Surrogate integer primary keys are of course still the norm, but SQLAlchemy never assumes or hardcodes to this model.
+
+Database introspection and generation. Database schemas can be “reflected” in one step into Python structures representing database metadata; those same structures can then generate CREATE statements right back out - all within the Core, independent of the ORM.
+
+SQLAlchemy’s philosophy:
+
+SQL databases behave less and less like object collections the more size and performance start to matter; object collections behave less and less like tables and rows the more abstraction starts to matter. SQLAlchemy aims to accommodate both of these principles.
+
+An ORM doesn’t need to hide the “R”. A relational database provides rich, set-based functionality that should be fully exposed. SQLAlchemy’s ORM provides an open-ended set of patterns that allow a developer to construct a custom mediation layer between a domain model and a relational schema, turning the so-called “object relational impedance” issue into a distant memory.
+
+The developer, in all cases, makes all decisions regarding the design, structure, and naming conventions of both the object model as well as the relational schema. SQLAlchemy only provides the means to automate the execution of these decisions.
+
+With SQLAlchemy, there’s no such thing as “the ORM generated a bad query” - you retain full control over the structure of queries, including how joins are organized, how subqueries and correlation is used, what columns are requested. Everything SQLAlchemy does is ultimately the result of a developer-initiated decision.
+
+Don’t use an ORM if the problem doesn’t need one. SQLAlchemy consists of a Core and separate ORM component. The Core offers a full SQL expression language that allows Pythonic construction of SQL constructs that render directly to SQL strings for a target database, returning result sets that are essentially enhanced DBAPI cursors.
+
+Transactions should be the norm. With SQLAlchemy’s ORM, nothing goes to permanent storage until commit() is called. SQLAlchemy encourages applications to create a consistent means of delineating the start and end of a series of operations.
+
+Never render a literal value in a SQL statement. Bound parameters are used to the greatest degree possible, allowing query optimizers to cache query plans effectively and making SQL injection attacks a non-issue.
+
+Documentation
+
+Latest documentation is at:
+
+https://www.sqlalchemy.org/docs/
+
+Installation / Requirements
+
+Full documentation for installation is at Installation.
+
+Getting Help / Development / Bug reporting
+
+Please refer to the SQLAlchemy Community Guide.
+
+Code of Conduct
+
+Above all, SQLAlchemy places great emphasis on polite, thoughtful, and constructive communication between users and developers. Please see our current Code of Conduct at Code of Conduct.
+
+License
+
+SQLAlchemy is distributed under the MIT license.",2026-11-09
+psycopg2,psycopg2 · PyPI,psycopg2 2.9.13,psycopg2 - Python-PostgreSQL Database Adapter,"Released: Sep 9, 2026 ",Requires | Python >=3.10 ,NA,2 maintainers,Development Status :: 5 - Production/Stable;Intended Audience :: Developers;License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL);Operating System :: Microsoft :: Windows;Operating System :: Unix;Programming Language :: C;Programming Language :: Python;Programming Language :: Python :: 3;Programming Language :: Python :: 3 :: Only;Programming Language :: Python :: 3.10;Programming Language :: Python :: 3.11;Programming Language :: Python :: 3.12;Programming Language :: Python :: 3.13;Programming Language :: Python :: 3.14;Programming Language :: Python :: 3.15;Programming Language :: Python :: Implementation :: CPython;Programming Language :: SQL;Topic :: Database;Topic :: Database :: Front-Ends;Topic :: Software Development;Topic :: Software Development :: Libraries :: Python Modules,3,11,"Psycopg is the most popular PostgreSQL database adapter for the Python programming language. Its main features are the complete implementation of the Python DB API 2.0 specification and the thread safety (several threads can share the same connection). It was designed for heavily multi-threaded applications that create and destroy lots of cursors and make a large number of concurrent “INSERT”s or “UPDATE”s.
+
+Psycopg 2 is mostly implemented in C as a libpq wrapper, resulting in being both efficient and secure. It features client-side and server-side cursors, asynchronous communication and notifications, “COPY TO/COPY FROM” support. Many Python types are supported out-of-the-box and adapted to matching PostgreSQL data types; adaptation can be extended and customized thanks to a flexible objects adaptation system.
+
+Psycopg 2 is both Unicode and Python 3 friendly.
+
+Note
+
+The psycopg2 package is still widely used and actively maintained, but it is not expected to receive new features.
+
+Psycopg 3 is the evolution of psycopg2 and is where new features are being developed: if you are starting a new project you should probably start from 3!
+
+Documentation
+
+Documentation is included in the doc directory and is available online.
+
+For any other resource (source code repository, bug tracker, mailing list) please check the project homepage.
+
+Installation
+
+Building Psycopg requires a few prerequisites (a C compiler, some development packages): please check the install and the faq documents in the doc dir or online for the details.
+
+If prerequisites are met, you can install psycopg like any other Python package, using pip to download it from PyPI:
+
+$ pip install psycopg2
+
+or using setup.py if you have downloaded the source package locally:
+
+$ python setup.py build
+$ sudo python setup.py install
+
+You can also obtain a stand-alone package, not requiring a compiler or external libraries, by installing the psycopg2-binary package from PyPI:
+
+$ pip install psycopg2-binary
+
+The binary package is a practical choice for development and testing but in production it is advised to use the package built from sources.
+
+Build status:",2026-11-09
+pytest,pytest · PyPI,pytest 9.2.0,pytest: simple powerful testing with Python,"Released: Oct 27, 2026 ",Requires | Python >=3.10 ,License expression | MIT ,7 maintainers,Development Status :: 6 - Mature;Intended Audience :: Developers;Operating System :: MacOS;Operating System :: Microsoft :: Windows;Operating System :: POSIX;Operating System :: Unix;Programming Language :: Python :: 3 :: Only;Programming Language :: Python :: 3.10;Programming Language :: Python :: 3.11;Programming Language :: Python :: 3.12;Programming Language :: Python :: 3.13;Programming Language :: Python :: 3.14;Programming Language :: Python :: 3.15;Topic :: Software Development :: Libraries;Topic :: Software Development :: Testing;Topic :: Utilities,2,33,"The pytest framework makes it easy to write small tests, yet scales to support complex functional testing for applications and libraries.
+
+An example of a simple test:
+
+# content of test_sample.py
+def inc(x):
+    return x + 1
+
+
+def test_answer():
+    assert inc(3) == 5
+
+To execute it:
+
+$ pytest
+============================= test session starts =============================
+collected 1 items
+
+test_sample.py F
+
+================================== FAILURES ===================================
+_________________________________ test_answer _________________________________
+
+    def test_answer():
+>       assert inc(3) == 5
+E       assert 4 == 5
+E        +  where 4 = inc(3)
+
+test_sample.py:5: AssertionError
+========================== 1 failed in 0.04 seconds ===========================
+
+Thanks to pytest’s detailed assertion introspection, you can simply use plain assert statements. See getting-started for more examples.
+
+Features
+
+Detailed info on failing assert statements (no need to remember self.assert* names)
+
+Auto-discovery of test modules and functions
+
+Modular fixtures for managing small or parametrized long-lived test resources
+
+Can run unittest (or trial) test suites out of the box
+
+Python 3.10+ or PyPy3
+
+Rich plugin architecture, with over 1300+ external plugins and thriving community
+
+Documentation
+
+For full documentation, including installation, tutorials and PDF documents, please see https://docs.pytest.org/en/stable/.
+
+Bugs/Requests
+
+Please use the GitHub issue tracker to submit bugs or request features.
+
+Changelog
+
+Consult the Changelog page for fixes and enhancements of each version.
+
+Support pytest
+
+Open Collective is an online funding platform for open and transparent communities. It provides tools to raise money and share your finances in full transparency.
+
+It is the platform of choice for individuals and companies that want to make one-time or monthly donations directly to the project.
+
+See more details in the pytest collective.
+
+pytest for enterprise
+
+Available as part of the Tidelift Subscription.
+
+The maintainers of pytest and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use.
+
+Learn more.
+
+Security
+
+If you have found an issue that you believe is a security vulnerability, please do not create an issue – instead, report it via a new security advisory.
+
+License
+
+Copyright Holger Krekel and others, 2004.
+
+Distributed under the terms of the MIT license, pytest is free and open source software.",2026-11-09
+joblib,joblib · PyPI,joblib 1.6.0,Lightweight pipelining with Python functions,"Released: Aug 31, 2026 ",Requires | Python >=3.10 ,License expression | BSD-3-Clause ,4 maintainers,Development Status :: 5 - Production/Stable;Environment :: Console;Intended Audience :: Developers;Intended Audience :: Education;Intended Audience :: Science/Research;Operating System :: OS Independent;Programming Language :: Python :: 3;Programming Language :: Python :: 3.10;Programming Language :: Python :: 3.11;Programming Language :: Python :: 3.12;Programming Language :: Python :: 3.13;Programming Language :: Python :: 3.14;Topic :: Scientific/Engineering;Topic :: Software Development :: Libraries;Topic :: Utilities,10,22,"The homepage of joblib with user documentation is located on:
+
+https://joblib.readthedocs.io
+
+Getting the latest code
+
+To get the latest code using git, simply type:
+
+git clone https://github.com/joblib/joblib.git
+
+If you don’t have git installed, you can download a zip of the latest code: https://github.com/joblib/joblib/archive/refs/heads/main.zip
+
+Installing
+
+You can use pip to install joblib from any directory:
+
+pip install joblib
+
+or install it in editable mode from the source directory:
+
+pip install -e .
+Dependencies
+
+Joblib supports Python >= 3.10.
+
+The only dependency is cloudpickle >= 3.
+
+Joblib includes its own vendored copy of loky for process management.
+
+Joblib can efficiently dump and load numpy arrays but does not require numpy to be installed. The oldest numpy version supported is the oldest numpy version supported by Python 3.10 (numpy version 1.21.3).
+
+Joblib can use Dask distributed backend but does not require distributed to be installed. The oldest distributed version supported is 2022.8.1.
+
+Joblib has an optional dependency on python-lz4 as a faster alternative to zlib and gzip for compressed serialization.
+
+Joblib has an optional dependency on psutil to mitigate memory leaks in parallel worker processes.
+
+Some examples require external dependencies such as pandas. See the instructions in the Building the docs section for details.
+
+Workflow to contribute
+
+To contribute to joblib, first create an account on github. Once this is done, fork the joblib repository to have your own repository, clone it using git clone. Make your changes in a branch of your clone, push them to your github account, test them locally, and when you are happy with them, send a pull request to the main repository.
+
+You can use pre-commit to run code style checks before each commit:
+
+pip install pre-commit
+pre-commit install
+
+pre-commit checks can be disabled for a single commit with:
+
+git commit -n
+Running the test suite
+
+To run the test suite, you need the pytest (version >= 3) and coverage modules. Run the test suite using:
+
+pip install joblib[test]
+pytest joblib
+
+from the root of the project.
+
+Building the docs
+
+To build the docs you need to have sphinx (>=1.4) and some dependencies installed:
+
+pip install .[docs]
+
+The docs can then be built with the following command:
+
+make doc
+
+The html docs are located in the doc/_build/html directory.
+
+Making a source tarball
+
+To create a source tarball, eg for packaging or distributing, run the following command:
+
+pip install build
+python -m build --sdist
+
+The tarball will be created in the dist directory. This command will create the resulting tarball that can be installed with no extra dependencies than the Python standard library.
+
+Making a release and uploading it to PyPI
+
+To generate a release, create a new Release in GitHub; the release will be automatically published to PyPI.
+
+Updating the changelog
+
+Changes are listed in the CHANGES.rst file. They must be manually updated but, the following git command may be used to generate the lines:
+
+git log --abbrev-commit --date=short --no-merges --sparse",2026-11-09
+tqdm,tqdm · PyPI,tqdm 4.70.1,"Fast, Extensible Progress Meter","Released: Sep 11, 2026 ",Requires | Python >=3.8 ,NA,2 maintainers,Development Status :: 5 - Production/Stable;Environment :: Console;Environment :: MacOS X;Environment :: Other Environment;Environment :: Win32 (MS Windows);Environment :: X11 Applications;Framework :: IPython;Framework :: Jupyter;Intended Audience :: Developers;Intended Audience :: Education;Intended Audience :: End Users/Desktop;Intended Audience :: Other Audience;Intended Audience :: System Administrators;Operating System :: MacOS;Operating System :: MacOS :: MacOS X;Operating System :: Microsoft;Operating System :: Microsoft :: MS-DOS;Operating System :: Microsoft :: Windows;Operating System :: POSIX;Operating System :: POSIX :: BSD;Operating System :: POSIX :: BSD :: FreeBSD;Operating System :: POSIX :: Linux;Operating System :: POSIX :: SunOS/Solaris;Operating System :: Unix;Programming Language :: Python;Programming Language :: Python :: 3;Programming Language :: Python :: 3 :: Only;Programming Language :: Python :: 3.8;Programming Language :: Python :: 3.9;Programming Language :: Python :: 3.10;Programming Language :: Python :: 3.11;Programming Language :: Python :: 3.12;Programming Language :: Python :: 3.13;Programming Language :: Python :: 3.14;Programming Language :: Python :: Implementation;Programming Language :: Python :: Implementation :: IronPython;Programming Language :: Python :: Implementation :: PyPy;Programming Language :: Unix Shell;Topic :: Desktop Environment;Topic :: Education :: Computer Aided Instruction (CAI);Topic :: Education :: Testing;Topic :: Office/Business;Topic :: Other/Nonlisted Topic;Topic :: Software Development :: Build Tools;Topic :: Software Development :: Libraries;Topic :: Software Development :: Libraries :: Python Modules;Topic :: Software Development :: Pre-processors;Topic :: Software Development :: User Interfaces;Topic :: System :: Installation/Setup;Topic :: System :: Logging;Topic :: System :: Monitoring;Topic :: System :: Shells;Topic :: Terminals;Topic :: Utilities,51,216,"tqdm
+
+tqdm derives from the Arabic word taqaddum (تقدّم) which can mean “progress,” and is an abbreviation for “I love you so much” in Spanish (te quiero demasiado).
+
+Instantly make your loops show a smart progress meter - just wrap any iterable with tqdm(iterable), and you’re done!
+
+from tqdm import tqdm
+for i in tqdm(range(10000)):
+    ...
+
+76%|████████████████████████ | 7568/10000 [00:33<00:10, 229.00it/s]
+
+trange(N) can also be used as a convenient shortcut for tqdm(range(N)).
+
+It can also be executed as a module with pipes:
+
+$ seq 9999999 | tqdm --bytes | wc -l
+75.2MB [00:00, 217MB/s]
+9999999
+
+$ tar -zcf - docs/ | tqdm --bytes --total `du -sb docs/ | cut -f1` \
+    > backup.tgz
+ 32%|██████████▍                      | 8.89G/27.9G [00:42<01:31, 223MB/s]
+
+Overhead is low – about 60ns per iteration (80ns with tqdm.gui), and is unit tested against performance regression. By comparison, the well-established ProgressBar has an 800ns/iter overhead.
+
+In addition to its low overhead, tqdm uses smart algorithms to predict the remaining time and to skip unnecessary iteration displays, which allows for a negligible overhead in most cases.
+
+tqdm works on any platform (Linux, Windows, Mac, FreeBSD, NetBSD, Solaris/SunOS), in any console or in a GUI, and is also friendly with IPython/Jupyter notebooks.
+
+tqdm does not require any dependencies (not even curses!), just Python and an environment supporting carriage return \r and line feed \n control characters.
+
+Featured Sponsors
+
+Your Logo Here OpenAI Sponsors
+
+Table of contents
+
+Installation
+
+Latest PyPI stable release
+
+Latest development release on GitHub
+
+Latest Conda release
+
+Latest Snapcraft release
+
+Latest Docker release
+
+Other
+
+Changelog
+
+Usage
+
+Iterable-based
+
+Manual
+
+Module
+
+FAQ and Known Issues
+
+Documentation
+
+Parameters
+
+Extra CLI Options
+
+Returns
+
+Convenience Functions
+
+Submodules
+
+contrib
+
+Examples and Advanced Usage
+
+Description and additional stats
+
+Nested progress bars
+
+Hooks and callbacks
+
+asyncio
+
+Pandas Integration
+
+Keras Integration
+
+Dask Integration
+
+IPython/Jupyter Integration
+
+Custom Integration
+
+Dynamic Monitor/Meter
+
+Writing messages
+
+Redirecting writing
+
+Redirecting logging
+
+Monitoring thread, intervals and miniters
+
+Merch
+
+Contributions
+
+Ports to Other Languages
+
+LICENCE
+
+Installation
+Latest PyPI stable release
+
+pip install tqdm
+Latest development release on GitHub
+
+Pull and install pre-release devel branch:
+
+pip install ""git+https://github.com/tqdm/tqdm.git@devel#egg=tqdm""
+Latest Conda release
+
+conda install -c conda-forge tqdm
+Latest Snapcraft release
+
+There are 3 channels to choose from:
+
+snap install tqdm  # implies --stable, i.e. latest tagged release
+snap install tqdm  --candidate  # master branch
+snap install tqdm  --edge  # devel branch
+
+Note that snap binaries are purely for CLI use (not import-able), and automatically set up bash tab-completion.
+
+Latest Docker release
+
+docker pull tqdm/tqdm
+docker run -i --rm tqdm/tqdm --help
+Other
+
+There are other (unofficial) places where tqdm may be downloaded, particularly for CLI use:
+
+Changelog
+
+The list of all changes is available either on GitHub’s Releases: , on the wiki, or on the website.
+
+Usage
+
+tqdm is very versatile and can be used in a number of ways. The three main ones are given below.
+
+Iterable-based
+
+Wrap tqdm() around any iterable:
+
+from tqdm import tqdm
+from time import sleep
+
+text = """"
+for char in tqdm([""a"", ""b"", ""c"", ""d""]):
+    sleep(0.25)
+    text = text + char
+
+trange(i) is a special optimised instance of tqdm(range(i)):
+
+from tqdm import trange
+
+for i in trange(100):
+    sleep(0.01)
+
+Instantiation outside of the loop allows for manual control over tqdm():
+
+pbar = tqdm([""a"", ""b"", ""c"", ""d""])
+for char in pbar:
+    sleep(0.25)
+    pbar.set_description(""Processing %s"" % char)
+Manual
+
+Manual control of tqdm() updates using a with statement:
+
+with tqdm(total=100) as pbar:
+    for i in range(10):
+        sleep(0.1)
+        pbar.update(10)
+
+If the optional variable total (or an iterable with len()) is provided, predictive stats are displayed.
+
+with is also optional (you can just assign tqdm() to a variable, but in this case don’t forget to del or close() at the end:
+
+pbar = tqdm(total=100)
+for i in range(10):
+    sleep(0.1)
+    pbar.update(10)
+pbar.close()
+Module
+
+Perhaps the most wonderful use of tqdm is in a script or on the command line. Simply inserting tqdm (or python -m tqdm) between pipes will pass through all stdin to stdout while printing progress to stderr.
+
+The example below demonstrate counting the number of lines in all Python files in the current directory, with timing information included.
+
+$ time find . -name '*.py' -type f -exec cat \{} \; | wc -l
+857365
+
+real    0m3.458s
+user    0m0.274s
+sys     0m3.325s
+
+$ time find . -name '*.py' -type f -exec cat \{} \; | tqdm | wc -l
+857366it [00:03, 246471.31it/s]
+857365
+
+real    0m3.585s
+user    0m0.862s
+sys     0m3.358s
+
+Note that the usual arguments for tqdm can also be specified.
+
+$ find . -name '*.py' -type f -exec cat \{} \; |
+    tqdm --unit loc --unit_scale --total 857366 >> /dev/null
+100%|█████████████████████████████████| 857K/857K [00:04<00:00, 246Kloc/s]
+
+Backing up a large directory?
+
+$ tar -zcf - docs/ | tqdm --bytes --total `du -sb docs/ | cut -f1` \
+  > backup.tgz
+ 44%|██████████████▊                   | 153M/352M [00:14<00:18, 11.0MB/s]
+
+This can be beautified further:
+
+$ BYTES=$(du -sb docs/ | cut -f1)
+$ tar -cf - docs/ \
+  | tqdm --bytes --total ""$BYTES"" --desc Processing | gzip \
+  | tqdm --bytes --total ""$BYTES"" --desc Compressed --position 1 \
+  > ~/backup.tgz
+Processing: 100%|██████████████████████| 352M/352M [00:14<00:00, 30.2MB/s]
+Compressed:  42%|█████████▎            | 148M/352M [00:14<00:19, 10.9MB/s]
+
+Or done on a file level using 7-zip:
+
+$ 7z a -bd -r backup.7z docs/ | grep Compressing \
+  | tqdm --total $(find docs/ -type f | wc -l) --unit files \
+  | grep -v Compressing
+100%|██████████████████████████▉| 15327/15327 [01:00<00:00, 712.96files/s]
+
+Pre-existing CLI programs already outputting basic progress information will benefit from tqdm’s --update and --update_to flags:
+
+$ seq 3 0.1 5 | tqdm --total 5 --update_to --null
+100%|████████████████████████████████████| 5.0/5 [00:00<00:00, 9673.21it/s]
+$ seq 10 | tqdm --update --null  # 1 + 2 + ... + 10 = 55 iterations
+55it [00:00, 90006.52it/s]
+FAQ and Known Issues
+
+The most common issues relate to excessive output on multiple lines, instead of a neat one-line progress bar.
+
+Consoles in general: require support for carriage return (CR, \r).
+
+Some cloud logging consoles which don’t support \r properly (cloudwatch, K8s) may benefit from export TQDM_POSITION=-1.
+
+Nested progress bars:
+
+Consoles in general: require support for moving cursors up to the previous line. For example, IDLE, ConEmu and PyCharm (also here, here, and here) lack full support.
+
+Windows: additionally may require the Python module colorama to ensure nested bars stay within their respective lines.
+
+Unicode:
+
+Environments which report that they support unicode will have solid smooth progress bars. The fallback is an ascii-only bar.
+
+Windows consoles often only partially support unicode and thus often require explicit ascii=True (also here). This is due to either normal-width unicode characters being incorrectly displayed as “wide”, or some unicode characters not rendering.
+
+Wrapping generators:
+
+Generator wrapper functions tend to hide the length of iterables. tqdm does not.
+
+Replace tqdm(enumerate(...)) with enumerate(tqdm(...)) or tqdm(enumerate(x), total=len(x), ...). The same applies to numpy.ndenumerate.
+
+Replace tqdm(zip(a, b)) with zip(tqdm(a), b) or even zip(tqdm(a), tqdm(b)).
+
+The same applies to itertools.
+
+Some useful convenience functions can be found under tqdm.contrib.
+
+No intermediate output in docker-compose: use docker-compose run instead of docker-compose up and tty: true.
+
+Overriding defaults via environment variables: e.g. in CI/cloud jobs, export TQDM_MININTERVAL=5 to avoid log spam. This override logic is handled by the tqdm.utils.envwrap decorator (useful independent of tqdm).
+
+If you come across any other difficulties, browse and file .
+
+Documentation
+
+(Since 19 May 2016)
+
+class tqdm():
+  """"""
+  Decorate an iterable object, returning an iterator which acts exactly
+  like the original iterable, but prints a dynamically updating
+  progress bar every time a value is requested.
+  """"""
+
+  @envwrap(""tqdm"")  # override defaults via env vars
+  def __init__(self, iterable=None, desc=None, total=None, leave=True,
+               file=None, ncols=None, mininterval=0.1,
+               maxinterval=10.0, miniters=None, ascii=None, disable=False,
+               unit='it', unit_scale=False, dynamic_ncols=False,
+               smoothing=0.3, bar_format=None, initial=0, position=None,
+               postfix=None, unit_divisor=1000, write_bytes=False,
+               lock_args=None, nrows=None, colour=None, delay=0):
+Parameters
+iterableiterable, optional
+
+Iterable to decorate with a progress bar. Leave blank to manually manage the updates.
+
+descstr, optional
+
+Prefix for the progress bar.
+
+totalint or float, optional
+
+The number of expected iterations. If unspecified, len(iterable) is used if possible. If float(“inf”) or as a last resort, only basic progress statistics are displayed (no ETA, no progress bar). If gui is True and this parameter needs subsequent updating, specify an initial arbitrary large positive number, e.g. 9e9.
+
+leavebool, optional
+
+If [default: True], keeps all traces of the progress bar upon termination of iteration. If None, will leave only if position is 0.
+
+fileio.TextIOWrapper or io.StringIO, optional
+
+Specifies where to output the progress messages (default: sys.stderr). Uses file.write(str) and file.flush() methods. For encoding, see write_bytes.
+
+ncolsint, optional
+
+The width of the entire output message. If specified, dynamically resizes the progress bar to stay within this bound. If unspecified, attempts to use environment width. The fallback is a meter width of 10 and no limit for the counter and statistics. If 0, will not print any meter (only stats).
+
+minintervalfloat, optional
+
+Minimum progress display update interval [default: 0.1] seconds.
+
+maxintervalfloat, optional
+
+Maximum progress display update interval [default: 10] seconds. Automatically adjusts miniters to correspond to mininterval after long display update lag. Only works if dynamic_miniters or monitor thread is enabled.
+
+minitersint or float, optional
+
+Minimum progress display update interval, in iterations. If 0 and dynamic_miniters, will automatically adjust to equal mininterval (more CPU efficient, good for tight loops). If > 0, will skip display of specified number of iterations. Tweak this and mininterval to get very efficient loops. If your progress is erratic with both fast and slow iterations (network, skipping items, etc) you should set miniters=1.
+
+asciibool or str, optional
+
+If unspecified or False, use unicode (smooth blocks) to fill the meter. The fallback is to use ASCII characters “ 123456789#”.
+
+disablebool, optional
+
+Whether to disable the entire progress bar wrapper [default: False]. If set to None, disable on non-TTY.
+
+unitstr, optional
+
+String that will be used to define the unit of each iteration [default: it].
+
+unit_scalebool or int or float, optional
+
+If 1 or True, the number of iterations will be reduced/scaled automatically and a metric prefix following the International System of Units standard will be added (kilo, mega, etc.) [default: False]. If any other non-zero number, will scale total and n.
+
+dynamic_ncolsbool, optional
+
+If set, constantly alters ncols and nrows to the environment (allowing for window resizes) [default: False].
+
+smoothingfloat, optional
+
+Exponential moving average smoothing factor for speed estimates (ignored in GUI mode). Ranges from 0 (average speed) to 1 (current/instantaneous speed) [default: 0.3].
+
+bar_formatstr, optional
+
+Specify a custom bar string formatting. May impact performance. [default: ‘{l_bar}{bar}{r_bar}’], where l_bar=’{desc}: {percentage:3.0f}%|’ and r_bar=’| {n_fmt}/{total_fmt} [{elapsed}<{remaining}, ‘ ‘{rate_fmt}{postfix}]’ Possible vars: l_bar, bar, r_bar, n, n_fmt, total, total_fmt, percentage, elapsed, elapsed_s, ncols, nrows, desc, unit, rate, rate_fmt, rate_noinv, rate_noinv_fmt, rate_inv, rate_inv_fmt, postfix, unit_divisor, remaining, remaining_s, eta. Note that a trailing “: “ is automatically removed after {desc} if the latter is empty.
+
+initialint or float, optional
+
+The initial counter value. Useful when restarting a progress bar [default: 0]. If using float, consider specifying {n:.3f} or similar in bar_format, or specifying unit_scale.
+
+positionint, optional
+
+Specify the line offset to print this bar (starting from 0) Automatic if unspecified. Useful to manage multiple bars at once (eg, from threads).
+
+postfixdict or *, optional
+
+Specify additional stats to display at the end of the bar. Calls set_postfix(**postfix) if possible (dict).
+
+unit_divisorfloat, optional
+
+[default: 1000], ignored unless unit_scale is True.
+
+write_bytesbool, optional
+
+Whether to write bytes. If (default: False) will write unicode.
+
+lock_argstuple, optional
+
+Passed to refresh for intermediate output (initialisation, iterating, and updating).
+
+nrowsint, optional
+
+The screen height. If specified, hides nested bars outside this bound. If unspecified, attempts to use environment height. The fallback is 20.
+
+colourstr, optional
+
+Bar colour (e.g. ‘green’, ‘#00ff00’).
+
+delayfloat, optional
+
+Don’t display until [default: 0] seconds have elapsed.
+
+Extra CLI Options
+delimchr, optional
+
+Delimiting character [default: ‘n’]. Use ‘0’ for null. N.B.: on Windows systems, Python converts ‘n’ to ‘rn’.
+
+buf_sizeint, optional
+
+String buffer size in bytes [default: 256] used when delim is specified.
+
+bytesbool, optional
+
+If true, will count bytes, ignore delim, and default unit_scale to True, unit_divisor to 1024, and unit to ‘B’.
+
+teebool, optional
+
+If true, passes stdin to both stderr and stdout.
+
+updatebool, optional
+
+If true, will treat input as newly elapsed iterations, i.e. numbers to pass to update(). Note that this is slow (~2e5 it/s) since every input must be decoded as a number.
+
+update_tobool, optional
+
+If true, will treat input as total elapsed iterations, i.e. numbers to assign to self.n. Note that this is slow (~2e5 it/s) since every input must be decoded as a number.
+
+nullbool, optional
+
+If true, will discard input (no stdout).
+
+manpathstr, optional
+
+Directory in which to install tqdm man pages.
+
+comppathstr, optional
+
+Directory in which to place tqdm completion.
+
+logstr, optional
+
+CRITICAL|FATAL|ERROR|WARN(ING)|[default: ‘INFO’]|DEBUG|NOTSET.
+
+Returns
+
+out : decorated iterator.
+
+class tqdm():
+  def update(self, n=1):
+      """"""
+      Manually update the progress bar, useful for streams
+      such as reading files.
+      E.g.:
+      >>> t = tqdm(total=filesize) # Initialise
+      >>> for current_buffer in stream:
+      ...    ...
+      ...    t.update(len(current_buffer))
+      >>> t.close()
+      The last line is highly recommended, but possibly not necessary if
+      `t.update()` will be called in such a way that `filesize` will be
+      exactly reached and printed.
+
+      Parameters
+      ----------
+      n  : int or float, optional
+          Increment to add to the internal counter of iterations
+          [default: 1]. If using float, consider specifying `{n:.3f}`
+          or similar in `bar_format`, or specifying `unit_scale`.
+
+      Returns
+      -------
+      out  : bool or None
+          True if a `display()` was triggered.
+      """"""
+
+  def close(self):
+      """"""Cleanup and (if leave=False) close the progress bar.""""""
+
+  def clear(self, nomove=False):
+      """"""Clear current bar display.""""""
+
+  def refresh(self):
+      """"""
+      Force refresh the display of this bar.
+
+      Parameters
+      ----------
+      nolock  : bool, optional
+          If `True`, does not lock.
+          If [default: `False`]: calls `acquire()` on internal lock.
+      lock_args  : tuple, optional
+          Passed to internal lock's `acquire()`.
+          If specified, will only `display()` if `acquire()` returns `True`.
+      """"""
+
+  def unpause(self):
+      """"""Restart tqdm timer from last print time.""""""
+
+  def reset(self, total=None):
+      """"""
+      Resets to 0 iterations for repeated use.
+
+      Consider combining with `leave=True`.
+
+      Parameters
+      ----------
+      total  : int or float, optional. Total to use for the new bar.
+      """"""
+
+  def set_description(self, desc=None, refresh=True):
+      """"""
+      Set/modify description of the progress bar.
+
+      Parameters
+      ----------
+      desc  : str, optional
+      refresh  : bool, optional
+          Forces refresh [default: True].
+      """"""
+
+  def set_postfix(self, ordered_dict=None, refresh=True, **tqdm_kwargs):
+      """"""
+      Set/modify postfix (additional stats)
+      with automatic formatting based on datatype.
+
+      Parameters
+      ----------
+      ordered_dict  : dict or OrderedDict, optional
+      refresh  : bool, optional
+          Forces refresh [default: True].
+      kwargs  : dict, optional
+      """"""
+
+  @classmethod
+  def write(cls, s, file=sys.stdout, end=""\n""):
+      """"""Print a message via tqdm (without overlap with bars).""""""
+
+  @property
+  def format_dict(self):
+      """"""Public API for read-only member access.""""""
+
+  def display(self, msg=None, pos=None):
+      """"""
+      Use `self.sp` to display `msg` in the specified `pos`.
+
+      Consider overloading this function when inheriting to use e.g.:
+      `self.some_frontend(**self.format_dict)` instead of `self.sp`.
+
+      Parameters
+      ----------
+      msg  : str, optional. What to display (default: `repr(self)`).
+      pos  : int, optional. Position to `moveto`
+        (default: `abs(self.pos)`).
+      """"""
+
+  @classmethod
+  @contextmanager
+  def wrapattr(cls, stream, method, total=None, bytes=True, **tqdm_kwargs):
+      """"""
+      stream  : file-like object.
+      method  : str, ""read"" or ""write"". The result of `read()` and
+          the first argument of `write()` should have a `len()`.
+
+      >>> with tqdm.wrapattr(file_obj, ""read"", total=file_obj.size) as fobj:
+      ...     while True:
+      ...         chunk = fobj.read(chunk_size)
+      ...         if not chunk:
+      ...             break
+      """"""
+
+  @classmethod
+  def pandas(cls, *targs, **tqdm_kwargs):
+      """"""Registers the current `tqdm` class with `pandas`.""""""
+
+def trange(*args, **tqdm_kwargs):
+    """"""Shortcut for `tqdm(range(*args), **tqdm_kwargs)`.""""""
+Convenience Functions
+def tqdm.contrib.tenumerate(iterable, start=0, total=None,
+                            tqdm_class=tqdm.auto.tqdm, **tqdm_kwargs):
+    """"""Equivalent of `numpy.ndenumerate` or builtin `enumerate`.""""""
+
+def tqdm.contrib.tzip(iter1, *iter2plus, **tqdm_kwargs):
+    """"""Equivalent of builtin `zip`.""""""
+
+def tqdm.contrib.tmap(function, *sequences, **tqdm_kwargs):
+    """"""Equivalent of builtin `map`.""""""
+Submodules
+class tqdm.notebook.tqdm(tqdm.tqdm):
+    """"""IPython/Jupyter Notebook widget.""""""
+
+class tqdm.auto.tqdm(tqdm.tqdm):
+    """"""Automatically chooses between `tqdm.notebook` and `tqdm.tqdm`.""""""
+
+class tqdm.asyncio.tqdm(tqdm.tqdm):
+  """"""Asynchronous version.""""""
+  @classmethod
+  def as_completed(cls, fs, *, loop=None, timeout=None, total=None,
+                   **tqdm_kwargs):
+      """"""Wrapper for `asyncio.as_completed`.""""""
+
+class tqdm.gui.tqdm(tqdm.tqdm):
+    """"""Matplotlib GUI version.""""""
+
+class tqdm.tk.tqdm(tqdm.tqdm):
+    """"""Tkinter GUI version.""""""
+
+class tqdm.rich.tqdm(tqdm.tqdm):
+    """"""`rich.progress` version.""""""
+
+class tqdm.keras.TqdmCallback(keras.callbacks.Callback):
+    """"""Keras callback for epoch and batch progress.""""""
+
+class tqdm.dask.TqdmCallback(dask.callbacks.Callback):
+    """"""Dask callback for task progress.""""""
+contrib
+
+The tqdm.contrib package also contains experimental modules:
+
+tqdm.contrib.itertools: Thin wrappers around itertools
+
+tqdm.contrib.concurrent: Thin wrappers around concurrent.futures
+
+tqdm.contrib.slack: Posts to Slack bots
+
+tqdm.contrib.discord: Posts to Discord bots
+
+tqdm.contrib.telegram: Posts to Telegram bots
+
+tqdm.contrib.bells: Automagically enables all optional features
+
+auto, pandas, slack, discord, telegram
+
+Examples and Advanced Usage
+
+See the examples folder;
+
+import the module and run help();
+
+consult the wiki;
+
+this has an excellent article on how to make a great progress bar;
+
+check out the slides from PyData London, or
+
+run the .
+
+Description and additional stats
+
+Custom information can be displayed and updated dynamically on tqdm bars with the desc and postfix arguments:
+
+from tqdm import tqdm, trange
+from random import random, randint
+from time import sleep
+
+with trange(10) as t:
+    for i in t:
+        # Description will be displayed on the left
+        t.set_description('GEN %i' % i)
+        # Postfix will be displayed on the right,
+        # formatted automatically based on argument's datatype
+        t.set_postfix(loss=random(), gen=randint(1,999), str='h',
+                      lst=[1, 2])
+        sleep(0.1)
+
+with tqdm(total=10, bar_format=""{postfix[0]} {postfix[1][value]:>8.2g}"",
+          postfix=[""Batch"", {""value"": 0}]) as t:
+    for i in range(10):
+        sleep(0.1)
+        t.postfix[1][""value""] = i / 2
+        t.update()
+
+Points to remember when using {postfix[...]} in the bar_format string:
+
+postfix also needs to be passed as an initial argument in a compatible format, and
+
+postfix will be auto-converted to a string if it is a dict-like object. To prevent this behaviour, insert an extra item into the dictionary where the key is not a string.
+
+Additional bar_format parameters may also be defined by overriding format_dict, and the bar itself may be modified using ascii:
+
+from tqdm import tqdm
+class TqdmExtraFormat(tqdm):
+    """"""Provides a `total_time` format parameter""""""
+    @property
+    def format_dict(self):
+        d = super().format_dict
+        total_time = d[""elapsed""] * (d[""total""] or 0) / max(d[""n""], 1)
+        d.update(total_time=self.format_interval(total_time) + "" in total"")
+        return d
+
+for i in TqdmExtraFormat(
+      range(9), ascii="" .oO0"",
+      bar_format=""{total_time}: {percentage:.0f}%|{bar}{r_bar}""):
+    if i == 4:
+        break
+00:00 in total: 44%|0000.     | 4/9 [00:00<00:00, 962.93it/s]
+
+Note that {bar} also supports a format specifier [width][type].
+
+width
+
+unspecified (default): automatic to fill ncols
+
+int >= 0: fixed width overriding ncols logic
+
+int < 0: subtract from the automatic default
+
+type
+
+a: ascii (ascii=True override)
+
+u: unicode (ascii=False override)
+
+b: blank (ascii="" "" override)
+
+This means a fixed bar with right-justified text may be created by using: bar_format=""{l_bar}{bar:10}|{bar:-10b}right-justified""
+
+Nested progress bars
+
+tqdm supports nested progress bars. Here’s an example:
+
+from tqdm.auto import trange
+from time import sleep
+
+for i in trange(4, desc='1st loop'):
+    for j in trange(5, desc='2nd loop'):
+        for k in trange(50, desc='3rd loop', leave=False):
+            sleep(0.01)
+
+For manual control over positioning (e.g. for multi-processing use), you may specify position=n where n=0 for the outermost bar, n=1 for the next, and so on. However, it’s best to check if tqdm can work without manual position first.
+
+from time import sleep
+from tqdm import trange, tqdm
+from multiprocessing import Pool, RLock, freeze_support
+
+L = list(range(9))
+
+def progresser(n):
+    interval = 0.001 / (n + 2)
+    total = 5000
+    text = f""#{n}, est. {interval * total:<04.2}s""
+    for _ in trange(total, desc=text, position=n):
+        sleep(interval)
+
+if __name__ == '__main__':
+    freeze_support()  # for Windows support
+    tqdm.set_lock(RLock())  # for managing output contention
+    p = Pool(initializer=tqdm.set_lock, initargs=(tqdm.get_lock(),))
+    p.map(progresser, L)
+
+Note that in Python 3, tqdm.write is thread-safe:
+
+from time import sleep
+from tqdm import tqdm, trange
+from concurrent.futures import ThreadPoolExecutor
+
+L = list(range(9))
+
+def progresser(n):
+    interval = 0.001 / (n + 2)
+    total = 5000
+    text = f""#{n}, est. {interval * total:<04.2}s""
+    for _ in trange(total, desc=text):
+        sleep(interval)
+    if n == 6:
+        tqdm.write(""n == 6 completed."")
+        tqdm.write(""`tqdm.write()` is thread-safe in py3!"")
+
+if __name__ == '__main__':
+    with ThreadPoolExecutor() as p:
+        p.map(progresser, L)
+Hooks and callbacks
+
+tqdm can easily support callbacks/hooks and manual updates. Here’s an example with urllib:
+
+``urllib.urlretrieve`` documentation
+
+[…]
+If present, the hook function will be called once
+on establishment of the network connection and once after each block read
+thereafter. The hook will be passed three arguments; a count of blocks
+transferred so far, a block size in bytes, and the total size of the file.
+[…]
+import urllib, os
+from tqdm import tqdm
+urllib = getattr(urllib, 'request', urllib)
+
+class TqdmUpTo(tqdm):
+    """"""Provides `update_to(n)` which uses `tqdm.update(delta_n)`.""""""
+    def update_to(self, b=1, bsize=1, tsize=None):
+        """"""
+        b  : int, optional
+            Number of blocks transferred so far [default: 1].
+        bsize  : int, optional
+            Size of each block (in tqdm units) [default: 1].
+        tsize  : int, optional
+            Total size (in tqdm units). If [default: None] remains unchanged.
+        """"""
+        if tsize is not None:
+            self.total = tsize
+        return self.update(b * bsize - self.n)  # also sets self.n = b * bsize
+
+eg_link = ""https://cgi.cdcl.ml/matryoshka.zip""
+with TqdmUpTo(unit='B', unit_scale=True, unit_divisor=1024, miniters=1,
+              desc=eg_link.split('/')[-1]) as t:  # all optional kwargs
+    urllib.urlretrieve(eg_link, filename=os.devnull,
+                       reporthook=t.update_to, data=None)
+    t.total = t.n
+
+Inspired by twine#242. Functional alternative in examples/tqdm_wget.py.
+
+It is recommend to use miniters=1 whenever there is potentially large differences in iteration speed (e.g. downloading a file over a patchy connection).
+
+Wrapping read/write methods
+
+To measure throughput through a file-like object’s read or write methods, use CallbackIOWrapper:
+
+from tqdm.auto import tqdm
+from tqdm.utils import CallbackIOWrapper
+
+with tqdm(total=file_obj.size,
+          unit='B', unit_scale=True, unit_divisor=1024) as t:
+    fobj = CallbackIOWrapper(t.update, file_obj, ""read"")
+    while True:
+        chunk = fobj.read(chunk_size)
+        if not chunk:
+            break
+    t.reset()
+    # ... continue to use `t` for something else
+
+Alternatively, use the even simpler wrapattr convenience function, which would condense both the urllib and CallbackIOWrapper examples down to:
+
+import urllib, os
+from tqdm import tqdm
+
+eg_link = ""https://cgi.cdcl.ml/matryoshka.zip""
+response = getattr(urllib, 'request', urllib).urlopen(eg_link)
+with tqdm.wrapattr(open(os.devnull, ""wb""), ""write"",
+                   miniters=1, desc=eg_link.split('/')[-1],
+                   total=getattr(response, 'length', None)) as fout:
+    for chunk in response:
+        fout.write(chunk)
+
+The requests equivalent is nearly identical:
+
+import requests, os
+from tqdm import tqdm
+
+eg_link = ""https://cgi.cdcl.ml/matryoshka.zip""
+response = requests.get(eg_link, stream=True)
+with tqdm.wrapattr(open(os.devnull, ""wb""), ""write"",
+                   miniters=1, desc=eg_link.split('/')[-1],
+                   total=int(response.headers.get('content-length', 0))) as fout:
+    for chunk in response.iter_content(chunk_size=4096):
+        fout.write(chunk)
+
+Custom callback
+
+tqdm is known for intelligently skipping unnecessary displays. To make a custom callback take advantage of this, simply use the return value of update(). This is set to True if a display() was triggered.
+
+from tqdm.auto import tqdm as std_tqdm
+
+def external_callback(*args, **kwargs):
+    ...
+
+class TqdmExt(std_tqdm):
+    def update(self, n=1):
+        displayed = super().update(n)
+        if displayed:
+            external_callback(**self.format_dict)
+        return displayed
+asyncio
+
+Note that break isn’t currently caught by asynchronous iterators. This means that tqdm cannot clean up after itself in this case:
+
+from tqdm.asyncio import tqdm
+
+async for i in tqdm(range(9)):
+    if i == 2:
+        break
+
+Instead, either call pbar.close() manually or use the context manager syntax:
+
+from tqdm.asyncio import tqdm
+
+with tqdm(range(9)) as pbar:
+    async for i in pbar:
+        if i == 2:
+            break
+Pandas Integration
+
+Due to popular demand we’ve added support for pandas – here’s an example for DataFrame.progress_apply and DataFrameGroupBy.progress_apply:
+
+import pandas as pd
+import numpy as np
+from tqdm import tqdm
+
+df = pd.DataFrame(np.random.randint(0, 100, (100000, 6)))
+
+# Register `pandas.progress_apply` and `pandas.Series.map_apply` with `tqdm`
+# (can use `tqdm.gui.tqdm`, `tqdm.notebook.tqdm`, optional kwargs, etc.)
+tqdm.pandas(desc=""my bar!"")
+
+# Now you can use `progress_apply` instead of `apply`
+# and `progress_map` instead of `map`
+df.progress_apply(lambda x: x**2)
+# can also groupby:
+# df.groupby(0).progress_apply(lambda x: x**2)
+
+In case you’re interested in how this works (and how to modify it for your own callbacks), see the examples folder or import the module and run help().
+
+Keras Integration
+
+A keras callback is also available:
+
+from tqdm.keras import TqdmCallback
+
+...
+
+model.fit(..., verbose=0, callbacks=[TqdmCallback()])
+Dask Integration
+
+A dask callback is also available:
+
+from tqdm.dask import TqdmCallback
+
+with TqdmCallback(desc=""compute""):
+    ...
+    arr.compute()
+
+# or use callback globally
+cb = TqdmCallback(desc=""global"")
+cb.register()
+arr.compute()
+IPython/Jupyter Integration
+
+IPython/Jupyter is supported via the tqdm.notebook submodule:
+
+from tqdm.notebook import trange, tqdm
+from time import sleep
+
+for i in trange(3, desc='1st loop'):
+    for j in tqdm(range(100), desc='2nd loop'):
+        sleep(0.01)
+
+In addition to tqdm features, the submodule provides a native Jupyter widget (compatible with IPython v1-v4 and Jupyter), fully working nested bars and colour hints (blue: normal, green: completed, red: error/interrupt, light blue: no ETA); as demonstrated below.
+
+The notebook version supports percentage or pixels for overall width (e.g.: ncols='100%' or ncols='480px').
+
+It is also possible to let tqdm automatically choose between console or notebook versions by using the autonotebook submodule:
+
+from tqdm.autonotebook import tqdm
+tqdm.pandas()
+
+Note that this will issue a TqdmExperimentalWarning if run in a notebook since it is not meant to be possible to distinguish between jupyter notebook and jupyter console. Use auto instead of autonotebook to suppress this warning.
+
+Note that notebooks will display the bar in the cell where it was created. This may be a different cell from the one where it is used. If this is not desired, either
+
+delay the creation of the bar to the cell where it must be displayed, or
+
+create the bar with display=False, and in a later cell call display(bar.container):
+
+from tqdm.notebook import tqdm
+pbar = tqdm(..., display=False)
+# different cell
+display(pbar.container)
+
+The keras callback has a display() method which can be used likewise:
+
+from tqdm.keras import TqdmCallback
+cbk = TqdmCallback(display=False)
+# different cell
+cbk.display()
+model.fit(..., verbose=0, callbacks=[cbk])
+
+Another possibility is to have a single bar (near the top of the notebook) which is constantly re-used (using reset() rather than close()). For this reason, the notebook version (unlike the CLI version) does not automatically call close() upon Exception.
+
+from tqdm.notebook import tqdm
+pbar = tqdm()
+# different cell
+iterable = range(100)
+pbar.reset(total=len(iterable))  # initialise with new `total`
+for i in iterable:
+    pbar.update()
+pbar.refresh()  # force print final status but don't `close()`
+Custom Integration
+
+To change the default arguments (such as making dynamic_ncols=True), simply use built-in Python magic:
+
+from functools import partial
+from tqdm import tqdm as std_tqdm
+tqdm = partial(std_tqdm, dynamic_ncols=True)
+
+For further customisation, tqdm may be inherited from to create custom callbacks (as with the TqdmUpTo example above) or for custom frontends (e.g. GUIs such as notebook or plotting packages). In the latter case:
+
+def __init__() to call super().__init__(..., gui=True) to disable terminal status_printer creation.
+
+Redefine: close(), clear(), display().
+
+Consider overloading display() to use e.g. self.frontend(**self.format_dict) instead of self.sp(repr(self)).
+
+Some submodule examples of inheritance:
+
+tqdm/notebook.py
+
+tqdm/gui.py
+
+tqdm/tk.py
+
+tqdm/contrib/slack.py
+
+tqdm/contrib/discord.py
+
+tqdm/contrib/telegram.py
+
+Dynamic Monitor/Meter
+
+You can use a tqdm as a meter which is not monotonically increasing. This could be because n decreases (e.g. a CPU usage monitor) or total changes.
+
+One example would be recursively searching for files. The total is the number of objects found so far, while n is the number of those objects which are files (rather than folders):
+
+from tqdm import tqdm
+import os.path
+
+def find_files_recursively(path, show_progress=True):
+    files = []
+    # total=1 assumes `path` is a file
+    t = tqdm(total=1, unit=""file"", disable=not show_progress)
+    if not os.path.exists(path):
+        raise IOError(""Cannot find:"" + path)
+
+    def append_found_file(f):
+        files.append(f)
+        t.update()
+
+    def list_found_dir(path):
+        """"""returns os.listdir(path) assuming os.path.isdir(path)""""""
+        listing = os.listdir(path)
+        # subtract 1 since a ""file"" we found was actually this directory
+        t.total += len(listing) - 1
+        # fancy way to give info without forcing a refresh
+        t.set_postfix(dir=path[-10:], refresh=False)
+        t.update(0)  # may trigger a refresh
+        return listing
+
+    def recursively_search(path):
+        if os.path.isdir(path):
+            for f in list_found_dir(path):
+                recursively_search(os.path.join(path, f))
+        else:
+            append_found_file(path)
+
+    recursively_search(path)
+    t.set_postfix(dir=path)
+    t.close()
+    return files
+
+Using update(0) is a handy way to let tqdm decide when to trigger a display refresh to avoid console spamming.
+
+Writing messages
+
+This is a work in progress (see #737).
+
+Since tqdm uses a simple printing mechanism to display progress bars, you should not write any message in the terminal using print() while a progress bar is open.
+
+To write messages in the terminal without any collision with tqdm bar display, a .write() method is provided:
+
+from tqdm.auto import tqdm, trange
+from time import sleep
+
+bar = trange(10)
+for i in bar:
+    # Print using tqdm class method .write()
+    sleep(0.1)
+    if not (i % 3):
+        tqdm.write(""Done task %i"" % i)
+    # Can also use bar.write()
+
+By default, this will print to standard output sys.stdout. but you can specify any file-like object using the file argument. For example, this can be used to redirect the messages writing to a log file or class.
+
+Redirecting writing
+
+If using a library that can print messages to the console, editing the library by replacing print() with tqdm.write() may not be desirable. In that case, redirecting sys.stdout to tqdm.write() is an option.
+
+To redirect sys.stdout, create a file-like class that will write any input string to tqdm.write(), and supply the arguments file=sys.stdout, dynamic_ncols=True.
+
+A reusable canonical example is given below:
+
+from time import sleep
+import contextlib
+import sys
+from tqdm import tqdm
+from tqdm.contrib import DummyTqdmFile
+
+
+@contextlib.contextmanager
+def std_out_err_redirect_tqdm():
+    orig_out_err = sys.stdout, sys.stderr
+    try:
+        sys.stdout, sys.stderr = map(DummyTqdmFile, orig_out_err)
+        yield orig_out_err[0]
+    # Relay exceptions
+    except Exception as exc:
+        raise exc
+    # Always restore sys.stdout/err if necessary
+    finally:
+        sys.stdout, sys.stderr = orig_out_err
+
+def some_fun(i):
+    print(""Fee, fi, fo,"".split()[i])
+
+# Redirect stdout to tqdm.write() (don't forget the `as save_stdout`)
+with std_out_err_redirect_tqdm() as orig_stdout:
+    # tqdm needs the original stdout
+    # and dynamic_ncols=True to autodetect console width
+    for i in tqdm(range(3), file=orig_stdout, dynamic_ncols=True):
+        sleep(.5)
+        some_fun(i)
+
+# After the `with`, printing is restored
+print(""Done!"")
+Redirecting logging
+
+Similar to sys.stdout/sys.stderr as detailed above, console logging may also be redirected to tqdm.write().
+
+Warning: if also redirecting sys.stdout/sys.stderr, make sure to redirect logging first if needed.
+
+Helper methods are available in tqdm.contrib.logging. For example:
+
+import logging
+from tqdm import trange
+from tqdm.contrib.logging import logging_redirect_tqdm
+
+LOG = logging.getLogger(__name__)
+
+if __name__ == '__main__':
+    logging.basicConfig(level=logging.INFO)
+    with logging_redirect_tqdm():
+        for i in trange(9):
+            if i == 4:
+                LOG.info(""console logging redirected to `tqdm.write()`"")
+    # logging restored
+Monitoring thread, intervals and miniters
+
+tqdm implements a few tricks to increase efficiency and reduce overhead.
+
+Avoid unnecessary frequent bar refreshing: mininterval defines how long to wait between each refresh. tqdm always gets updated in the background, but it will display only every mininterval.
+
+Reduce number of calls to check system clock/time.
+
+mininterval is more intuitive to configure than miniters. A clever adjustment system dynamic_miniters will automatically adjust miniters to the amount of iterations that fit into time mininterval. Essentially, tqdm will check if it’s time to print without actually checking time. This behaviour can be still be bypassed by manually setting miniters.
+
+However, consider a case with a combination of fast and slow iterations. After a few fast iterations, dynamic_miniters will set miniters to a large number. When iteration rate subsequently slows, miniters will remain large and thus reduce display update frequency. To address this:
+
+maxinterval defines the maximum time between display refreshes. A concurrent monitoring thread checks for overdue updates and forces one where necessary.
+
+The monitoring thread should not have a noticeable overhead, and guarantees updates at least every 10 seconds by default. This value can be directly changed by setting the monitor_interval of any tqdm instance (i.e. t = tqdm.tqdm(...); t.monitor_interval = 2). The monitor thread may be disabled application-wide by setting tqdm.tqdm.monitor_interval = 0 before instantiation of any tqdm bar.
+
+Merch
+
+You can buy tqdm branded merch now!
+
+Contributions
+
+All source code is hosted on GitHub. Contributions are welcome.
+
+See the CONTRIBUTING file for more information.
+
+Developers who have contributed more that 5 loc (surviving lines of code):
+
+Honourable mentions:
+
+Casper da Costa-Luis casperdcl primary maintainer
+
+Stephen Larroque lrq3000 maintainer
+
+Hadrien Mary hadim maintainer
+
+Mikhail Korobov kmike maintainer
+
+Noam Yorav-Raphael noamraph original author
+
+Ports to Other Languages
+
+A list is available on this wiki page.
+
+LICENCE
+
+Open Source (OSI approved):
+
+Citation information:
+
+(Since 19 May 2016)",2026-11-09
+six,six · PyPI,six 1.17.0,Python 2 and 3 compatibility utilities,"Released: Dec 4, 2024 ","Requires | Python !=3.0.*, !=3.1.*, !=3.2.*, >=2.7 ",NA,1 maintainer,Development Status :: 5 - Production/Stable;Intended Audience :: Developers;License :: OSI Approved :: MIT License;Programming Language :: Python :: 2;Programming Language :: Python :: 3;Topic :: Software Development :: Libraries;Topic :: Utilities,0,5,"Six is a Python 2 and 3 compatibility library. It provides utility functions for smoothing over the differences between the Python versions with the goal of writing Python code that is compatible on both Python versions. See the documentation for more information on what is provided.
+
+Six supports Python 2.7 and 3.3+. It is contained in only one Python file, so it can be easily copied into your project. (The copyright and license notice must be retained.)
+
+Online documentation is at https://six.readthedocs.io/.
+
+Bugs can be reported to https://github.com/benjaminp/six. The code can also be found there.",2026-11-09
+colorama,colorama · PyPI,colorama 0.4.6,Cross-platform colored terminal text.,"Released: Oct 25, 2022 ","Requires | Python !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*, !=3.6.*, >=2.7 ",NA,2 maintainers,Development Status :: 5 - Production/Stable;Environment :: Console;Intended Audience :: Developers;License :: OSI Approved :: BSD License;Operating System :: OS Independent;Programming Language :: Python;Programming Language :: Python :: 2;Programming Language :: Python :: 2.7;Programming Language :: Python :: 3;Programming Language :: Python :: 3.7;Programming Language :: Python :: 3.8;Programming Language :: Python :: 3.9;Programming Language :: Python :: 3.10;Programming Language :: Python :: Implementation :: CPython;Programming Language :: Python :: Implementation :: PyPy;Topic :: Terminals,13,27,"Colorama
+
+Makes ANSI escape character sequences (for producing colored terminal text and cursor positioning) work under MS Windows.
+
+PyPI for releases | Github for source | Colorama for enterprise on Tidelift
+
+If you find Colorama useful, please to the authors. Thank you!
+
+Installation
+
+Tested on CPython 2.7, 3.7, 3.8, 3.9 and 3.10 and Pypy 2.7 and 3.8.
+
+No requirements other than the standard library.
+
+pip install colorama
+# or
+conda install -c anaconda colorama
+Description
+
+ANSI escape character sequences have long been used to produce colored terminal text and cursor positioning on Unix and Macs. Colorama makes this work on Windows, too, by wrapping stdout, stripping ANSI sequences it finds (which would appear as gobbledygook in the output), and converting them into the appropriate win32 calls to modify the state of the terminal. On other platforms, Colorama does nothing.
+
+This has the upshot of providing a simple cross-platform API for printing colored terminal text from Python, and has the happy side-effect that existing applications or libraries which use ANSI sequences to produce colored output on Linux or Macs can now also work on Windows, simply by calling colorama.just_fix_windows_console() (since v0.4.6) or colorama.init() (all versions, but may have other side-effects – see below).
+
+An alternative approach is to install ansi.sys on Windows machines, which provides the same behaviour for all applications running in terminals. Colorama is intended for situations where that isn’t easy (e.g., maybe your app doesn’t have an installer.)
+
+Demo scripts in the source code repository print some colored text using ANSI sequences. Compare their output under Gnome-terminal’s built in ANSI handling, versus on Windows Command-Prompt using Colorama:
+
+These screenshots show that, on Windows, Colorama does not support ANSI ‘dim text’; it looks the same as ‘normal text’.
+
+Usage
+Initialisation
+
+If the only thing you want from Colorama is to get ANSI escapes to work on Windows, then run:
+
+from colorama import just_fix_windows_console
+just_fix_windows_console()
+
+If you’re on a recent version of Windows 10 or better, and your stdout/stderr are pointing to a Windows console, then this will flip the magic configuration switch to enable Windows’ built-in ANSI support.
+
+If you’re on an older version of Windows, and your stdout/stderr are pointing to a Windows console, then this will wrap sys.stdout and/or sys.stderr in a magic file object that intercepts ANSI escape sequences and issues the appropriate Win32 calls to emulate them.
+
+In all other circumstances, it does nothing whatsoever. Basically the idea is that this makes Windows act like Unix with respect to ANSI escape handling.
+
+It’s safe to call this function multiple times. It’s safe to call this function on non-Windows platforms, but it won’t do anything. It’s safe to call this function when one or both of your stdout/stderr are redirected to a file – it won’t do anything to those streams.
+
+Alternatively, you can use the older interface with more features (but also more potential footguns):
+
+from colorama import init
+init()
+
+This does the same thing as just_fix_windows_console, except for the following differences:
+
+It’s not safe to call init multiple times; you can end up with multiple layers of wrapping and broken ANSI support.
+
+Colorama will apply a heuristic to guess whether stdout/stderr support ANSI, and if it thinks they don’t, then it will wrap sys.stdout and sys.stderr in a magic file object that strips out ANSI escape sequences before printing them. This happens on all platforms, and can be convenient if you want to write your code to emit ANSI escape sequences unconditionally, and let Colorama decide whether they should actually be output. But note that Colorama’s heuristic is not particularly clever.
+
+init also accepts explicit keyword args to enable/disable various functionality – see below.
+
+To stop using Colorama before your program exits, simply call deinit(). This will restore stdout and stderr to their original values, so that Colorama is disabled. To resume using Colorama again, call reinit(); it is cheaper than calling init() again (but does the same thing).
+
+Most users should depend on colorama >= 0.4.6, and use just_fix_windows_console. The old init interface will be supported indefinitely for backwards compatibility, but we don’t plan to fix any issues with it, also for backwards compatibility.
+
+Colored Output
+
+Cross-platform printing of colored text can then be done using Colorama’s constant shorthand for ANSI escape sequences. These are deliberately rudimentary, see below.
+
+from colorama import Fore, Back, Style
+print(Fore.RED + 'some red text')
+print(Back.GREEN + 'and with a green background')
+print(Style.DIM + 'and in dim text')
+print(Style.RESET_ALL)
+print('back to normal now')
+
+…or simply by manually printing ANSI sequences from your own code:
+
+print('\033[31m' + 'some red text')
+print('\033[39m') # and reset to default color
+
+…or, Colorama can be used in conjunction with existing ANSI libraries such as the venerable Termcolor the fabulous Blessings, or the incredible _Rich.
+
+If you wish Colorama’s Fore, Back and Style constants were more capable, then consider using one of the above highly capable libraries to generate colors, etc, and use Colorama just for its primary purpose: to convert those ANSI sequences to also work on Windows:
+
+SIMILARLY, do not send PRs adding the generation of new ANSI types to Colorama. We are only interested in converting ANSI codes to win32 API calls, not shortcuts like the above to generate ANSI characters.
+
+from colorama import just_fix_windows_console
+from termcolor import colored
+
+# use Colorama to make Termcolor work on Windows too
+just_fix_windows_console()
+
+# then use Termcolor for all colored text output
+print(colored('Hello, World!', 'green', 'on_red'))
+
+Available formatting constants are:
+
+Fore: BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, RESET.
+Back: BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, RESET.
+Style: DIM, NORMAL, BRIGHT, RESET_ALL
+
+Style.RESET_ALL resets foreground, background, and brightness. Colorama will perform this reset automatically on program exit.
+
+These are fairly well supported, but not part of the standard:
+
+Fore: LIGHTBLACK_EX, LIGHTRED_EX, LIGHTGREEN_EX, LIGHTYELLOW_EX, LIGHTBLUE_EX, LIGHTMAGENTA_EX, LIGHTCYAN_EX, LIGHTWHITE_EX
+Back: LIGHTBLACK_EX, LIGHTRED_EX, LIGHTGREEN_EX, LIGHTYELLOW_EX, LIGHTBLUE_EX, LIGHTMAGENTA_EX, LIGHTCYAN_EX, LIGHTWHITE_EX
+Cursor Positioning
+
+ANSI codes to reposition the cursor are supported. See demos/demo06.py for an example of how to generate them.
+
+Init Keyword Args
+
+init() accepts some **kwargs to override default behaviour.
+
+init(autoreset=False):
+
+If you find yourself repeatedly sending reset sequences to turn off color changes at the end of every print, then init(autoreset=True) will automate that:
+
+from colorama import init
+init(autoreset=True)
+print(Fore.RED + 'some red text')
+print('automatically back to default color again')
+init(strip=None):
+
+Pass True or False to override whether ANSI codes should be stripped from the output. The default behaviour is to strip if on Windows or if output is redirected (not a tty).
+
+init(convert=None):
+
+Pass True or False to override whether to convert ANSI codes in the output into win32 calls. The default behaviour is to convert if on Windows and output is to a tty (terminal).
+
+init(wrap=True):
+
+On Windows, Colorama works by replacing sys.stdout and sys.stderr with proxy objects, which override the .write() method to do their work. If this wrapping causes you problems, then this can be disabled by passing init(wrap=False). The default behaviour is to wrap if autoreset or strip or convert are True.
+
+When wrapping is disabled, colored printing on non-Windows platforms will continue to work as normal. To do cross-platform colored output, you can use Colorama’s AnsiToWin32 proxy directly:
+
+import sys
+from colorama import init, AnsiToWin32
+init(wrap=False)
+stream = AnsiToWin32(sys.stderr).stream
+
+# Python 2
+print >>stream, Fore.BLUE + 'blue text on stderr'
+
+# Python 3
+print(Fore.BLUE + 'blue text on stderr', file=stream)
+Recognised ANSI Sequences
+
+ANSI sequences generally take the form:
+
+ESC [ <param> ; <param> ... <command>
+
+Where <param> is an integer, and <command> is a single letter. Zero or more params are passed to a <command>. If no params are passed, it is generally synonymous with passing a single zero. No spaces exist in the sequence; they have been inserted here simply to read more easily.
+
+The only ANSI sequences that Colorama converts into win32 calls are:
+
+ESC [ 0 m       # reset all (colors and brightness)
+ESC [ 1 m       # bright
+ESC [ 2 m       # dim (looks same as normal brightness)
+ESC [ 22 m      # normal brightness
+
+# FOREGROUND:
+ESC [ 30 m      # black
+ESC [ 31 m      # red
+ESC [ 32 m      # green
+ESC [ 33 m      # yellow
+ESC [ 34 m      # blue
+ESC [ 35 m      # magenta
+ESC [ 36 m      # cyan
+ESC [ 37 m      # white
+ESC [ 39 m      # reset
+
+# BACKGROUND
+ESC [ 40 m      # black
+ESC [ 41 m      # red
+ESC [ 42 m      # green
+ESC [ 43 m      # yellow
+ESC [ 44 m      # blue
+ESC [ 45 m      # magenta
+ESC [ 46 m      # cyan
+ESC [ 47 m      # white
+ESC [ 49 m      # reset
+
+# cursor positioning
+ESC [ y;x H     # position cursor at x across, y down
+ESC [ y;x f     # position cursor at x across, y down
+ESC [ n A       # move cursor n lines up
+ESC [ n B       # move cursor n lines down
+ESC [ n C       # move cursor n characters forward
+ESC [ n D       # move cursor n characters backward
+
+# clear the screen
+ESC [ mode J    # clear the screen
+
+# clear the line
+ESC [ mode K    # clear the line
+
+Multiple numeric params to the 'm' command can be combined into a single sequence:
+
+ESC [ 36 ; 45 ; 1 m     # bright cyan text on magenta background
+
+All other ANSI sequences of the form ESC [ <param> ; <param> ... <command> are silently stripped from the output on Windows.
+
+Any other form of ANSI sequence, such as single-character codes or alternative initial characters, are not recognised or stripped. It would be cool to add them though. Let me know if it would be useful for you, via the Issues on GitHub.
+
+Status & Known Problems
+
+I’ve personally only tested it on Windows XP (CMD, Console2), Ubuntu (gnome-terminal, xterm), and OS X.
+
+Some valid ANSI sequences aren’t recognised.
+
+If you’re hacking on the code, see README-hacking.md. ESPECIALLY, see the explanation there of why we do not want PRs that allow Colorama to generate new types of ANSI codes.
+
+See outstanding issues and wish-list: https://github.com/tartley/colorama/issues
+
+If anything doesn’t work for you, or doesn’t do what you expected or hoped for, I’d love to hear about it on that issues list, would be delighted by patches, and would be happy to grant commit access to anyone who submits a working patch or two.
+
+License
+
+Copyright Jonathan Hartley & Arnon Yaari, 2013-2020. BSD 3-Clause license; see LICENSE file.
+
+Professional support
+Professional support for colorama is available as part of the Tidelift Subscription. Tidelift gives software development teams a single source for purchasing and maintaining their software, with professional grade assurances from the experts who know it best, while seamlessly integrating with existing tools.
+Thanks
+
+See the CHANGELOG for more thanks!
+
+Marc Schlaich (schlamar) for a setup.py fix for Python2.5.
+
+Marc Abramowitz, reported & fixed a crash on exit with closed stdout, providing a solution to issue #7’s setuptools/distutils debate, and other fixes.
+
+User ‘eryksun’, for guidance on correctly instantiating ctypes.windll.
+
+Matthew McCormick for politely pointing out a longstanding crash on non-Win.
+
+Ben Hoyt, for a magnificent fix under 64-bit Windows.
+
+Jesse at Empty Square for submitting a fix for examples in the README.
+
+User ‘jamessp’, an observant documentation fix for cursor positioning.
+
+User ‘vaal1239’, Dave Mckee & Lackner Kristof for a tiny but much-needed Win7 fix.
+
+Julien Stuyck, for wisely suggesting Python3 compatible updates to README.
+
+Daniel Griffith for multiple fabulous patches.
+
+Oscar Lesta for a valuable fix to stop ANSI chars being sent to non-tty output.
+
+Roger Binns, for many suggestions, valuable feedback, & bug reports.
+
+Tim Golden for thought and much appreciated feedback on the initial idea.
+
+User ‘Zearin’ for updates to the README file.
+
+John Szakmeister for adding support for light colors
+
+Charles Merriam for adding documentation to demos
+
+Jurko for a fix on 64-bit Windows CPython2.5 w/o ctypes
+
+Florian Bruhin for a fix when stdout or stderr are None
+
+Thomas Weininger for fixing ValueError on Windows
+
+Remi Rampin for better Github integration and fixes to the README file
+
+Simeon Visser for closing a file handle using ‘with’ and updating classifiers to include Python 3.3 and 3.4
+
+Andy Neff for fixing RESET of LIGHT_EX colors.
+
+Jonathan Hartley for the initial idea and implementation.",2026-11-09
+pytz,pytz · PyPI,pytz 2026.6,"World timezone definitions, modern and historical","Released: Oct 29, 2026 ",NA,NA,1 maintainer,Development Status :: 6 - Mature;Intended Audience :: Developers;License :: OSI Approved :: MIT License;Natural Language :: English;Operating System :: OS Independent;Programming Language :: Python;Programming Language :: Python :: 2;Programming Language :: Python :: 2.4;Programming Language :: Python :: 2.5;Programming Language :: Python :: 2.6;Programming Language :: Python :: 2.7;Programming Language :: Python :: 3;Programming Language :: Python :: 3.1;Programming Language :: Python :: 3.2;Programming Language :: Python :: 3.3;Programming Language :: Python :: 3.4;Programming Language :: Python :: 3.5;Programming Language :: Python :: 3.6;Programming Language :: Python :: 3.7;Programming Language :: Python :: 3.8;Programming Language :: Python :: 3.9;Programming Language :: Python :: 3.10;Programming Language :: Python :: 3.11;Programming Language :: Python :: 3.12;Programming Language :: Python :: 3.13;Programming Language :: Python :: 3.14;Topic :: Software Development :: Libraries :: Python Modules,39,37,"pytz - World Timezone Definitions for Python
+Author:
+
+Stuart Bishop <stuart@stuartbishop.net>
+
+Introduction
+
+pytz brings the Olson tz database into Python. This library allows accurate and cross platform timezone calculations using Python 2.4 or higher. It also solves the issue of ambiguous times at the end of daylight saving time, which you can read more about in the Python Library Reference (datetime.tzinfo).
+
+Almost all of the Olson timezones are supported.
+
+Caution!
+
+Deprecated. This library fails for dates starting 2038. Use modern Python and the Python standard library. Updates continue to be made for legacy systems.
+
+Note
+
+Projects using Python 3.9 or later should use the standard library zoneinfo module with time zone database updates from tzdata package. pytz offers no advantages beyond backwards compatibility with code written for earlier versions of Python.
+
+Note
+
+This library differs from the documented Python API for tzinfo implementations; if you want to create local wallclock times you need to use the localize() method documented in this document. In addition, if you perform date arithmetic on local times that cross DST boundaries, the result may be in an incorrect timezone (ie. subtract 1 minute from 2002-10-27 1:00 EST and you get 2002-10-27 0:59 EST instead of the correct 2002-10-27 1:59 EDT). A normalize() method is provided to correct this. Unfortunately these issues cannot be resolved without modifying the Python datetime implementation (see PEP-431). Attaching the timezone info from this module directly into datetime(tzinfo=pytz.timezone('US/Eastern')) will result in incorrect behaviour.
+
+Installation
+
+This package can either be installed using pip or from a tarball using the standard Python distutils.
+
+If you are installing using pip, you don’t need to download anything as the latest version will be downloaded for you from PyPI:
+
+pip install pytz
+
+If you are installing from a tarball, run the following command as an administrative user:
+
+python setup.py install
+pytz for Enterprise
+
+Available as part of the Tidelift Subscription.
+
+The maintainers of pytz and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. Learn more..
+
+Example & Usage
+Localized times and date arithmetic
+>>> from datetime import datetime, timedelta
+>>> from pytz import timezone
+>>> import pytz
+>>> utc = pytz.utc
+>>> utc.zone
+'UTC'
+>>> eastern = timezone('US/Eastern')
+>>> eastern.zone
+'US/Eastern'
+>>> amsterdam = timezone('Europe/Amsterdam')
+>>> fmt = '%Y-%m-%d %H:%M:%S %Z%z'
+
+
+This library only supports two ways of building a localized time. The first is to use the localize() method provided by the pytz library. This is used to localize a naive datetime (datetime with no timezone information):
+
+>>> loc_dt = eastern.localize(datetime(2002, 10, 27, 6, 0, 0))
+>>> print(loc_dt.strftime(fmt))
+2002-10-27 06:00:00 EST-0500
+
+
+The second way of building a localized time is by converting an existing localized time using the standard astimezone() method:
+
+>>> ams_dt = loc_dt.astimezone(amsterdam)
+>>> ams_dt.strftime(fmt)
+'2002-10-27 12:00:00 CET+0100'
+
+
+Unfortunately using the tzinfo argument of the standard datetime constructors ‘’does not work’’ with pytz for many timezones.
+
+>>> datetime(2002, 10, 27, 12, 0, 0, tzinfo=amsterdam).strftime(fmt)  # /!\ Does not work this way!
+'2002-10-27 12:00:00 LMT+0018'
+
+
+It is safe for timezones without daylight saving transitions though, such as UTC:
+
+>>> datetime(2002, 10, 27, 12, 0, 0, tzinfo=pytz.utc).strftime(fmt)  # /!\ Not recommended except for UTC
+'2002-10-27 12:00:00 UTC+0000'
+
+
+The preferred way of dealing with times is to always work in UTC, converting to localtime only when generating output to be read by humans.
+
+>>> utc_dt = datetime(2002, 10, 27, 6, 0, 0, tzinfo=utc)
+>>> loc_dt = utc_dt.astimezone(eastern)
+>>> loc_dt.strftime(fmt)
+'2002-10-27 01:00:00 EST-0500'
+
+
+This library also allows you to do date arithmetic using local times, although it is more complicated than working in UTC as you need to use the normalize() method to handle daylight saving time and other timezone transitions. In this example, loc_dt is set to the instant when daylight saving time ends in the US/Eastern timezone.
+
+>>> before = loc_dt - timedelta(minutes=10)
+>>> before.strftime(fmt)
+'2002-10-27 00:50:00 EST-0500'
+>>> eastern.normalize(before).strftime(fmt)
+'2002-10-27 01:50:00 EDT-0400'
+>>> after = eastern.normalize(before + timedelta(minutes=20))
+>>> after.strftime(fmt)
+'2002-10-27 01:10:00 EST-0500'
+
+
+Creating local times is also tricky, and the reason why working with local times is not recommended. Unfortunately, you cannot just pass a tzinfo argument when constructing a datetime (see the next section for more details)
+
+>>> dt = datetime(2002, 10, 27, 1, 30, 0)
+>>> dt1 = eastern.localize(dt, is_dst=True)
+>>> dt1.strftime(fmt)
+'2002-10-27 01:30:00 EDT-0400'
+>>> dt2 = eastern.localize(dt, is_dst=False)
+>>> dt2.strftime(fmt)
+'2002-10-27 01:30:00 EST-0500'
+
+
+Converting between timezones is more easily done, using the standard astimezone method.
+
+>>> utc_dt = datetime.fromtimestamp(1143408899, tz=utc)
+>>> utc_dt.strftime(fmt)
+'2006-03-26 21:34:59 UTC+0000'
+>>> au_tz = timezone('Australia/Sydney')
+>>> au_dt = utc_dt.astimezone(au_tz)
+>>> au_dt.strftime(fmt)
+'2006-03-27 08:34:59 AEDT+1100'
+>>> utc_dt2 = au_dt.astimezone(utc)
+>>> utc_dt2.strftime(fmt)
+'2006-03-26 21:34:59 UTC+0000'
+>>> utc_dt == utc_dt2
+True
+
+
+You can take shortcuts when dealing with the UTC side of timezone conversions. normalize() and localize() are not really necessary when there are no daylight saving time transitions to deal with.
+
+>>> utc_dt = datetime.fromtimestamp(1143408899, tz=utc)
+>>> utc_dt.strftime(fmt)
+'2006-03-26 21:34:59 UTC+0000'
+>>> au_tz = timezone('Australia/Sydney')
+>>> au_dt = au_tz.normalize(utc_dt.astimezone(au_tz))
+>>> au_dt.strftime(fmt)
+'2006-03-27 08:34:59 AEDT+1100'
+>>> utc_dt2 = au_dt.astimezone(utc)
+>>> utc_dt2.strftime(fmt)
+'2006-03-26 21:34:59 UTC+0000'
+
+tzinfo API
+
+The tzinfo instances returned by the timezone() function have been extended to cope with ambiguous times by adding an is_dst parameter to the utcoffset(), dst() && tzname() methods.
+
+>>> tz = timezone('America/St_Johns')
+
+>>> normal = datetime(2009, 9, 1)
+>>> ambiguous = datetime(2009, 10, 31, 23, 30)
+
+
+The is_dst parameter is ignored for most timestamps. It is only used during DST transition ambiguous periods to resolve that ambiguity.
+
+>>> print(tz.utcoffset(normal, is_dst=True))
+-1 day, 21:30:00
+>>> print(tz.dst(normal, is_dst=True))
+1:00:00
+>>> tz.tzname(normal, is_dst=True)
+'NDT'
+
+>>> print(tz.utcoffset(ambiguous, is_dst=True))
+-1 day, 21:30:00
+>>> print(tz.dst(ambiguous, is_dst=True))
+1:00:00
+>>> tz.tzname(ambiguous, is_dst=True)
+'NDT'
+
+>>> print(tz.utcoffset(normal, is_dst=False))
+-1 day, 21:30:00
+>>> tz.dst(normal, is_dst=False).seconds
+3600
+>>> tz.tzname(normal, is_dst=False)
+'NDT'
+
+>>> print(tz.utcoffset(ambiguous, is_dst=False))
+-1 day, 20:30:00
+>>> tz.dst(ambiguous, is_dst=False)
+datetime.timedelta(0)
+>>> tz.tzname(ambiguous, is_dst=False)
+'NST'
+
+
+If is_dst is not specified, ambiguous timestamps will raise an pytz.exceptions.AmbiguousTimeError exception.
+
+>>> print(tz.utcoffset(normal))
+-1 day, 21:30:00
+>>> print(tz.dst(normal))
+1:00:00
+>>> tz.tzname(normal)
+'NDT'
+
+>>> import pytz.exceptions
+>>> try:
+...     tz.utcoffset(ambiguous)
+... except pytz.exceptions.AmbiguousTimeError:
+...     print('pytz.exceptions.AmbiguousTimeError: %s' % ambiguous)
+pytz.exceptions.AmbiguousTimeError: 2009-10-31 23:30:00
+>>> try:
+...     tz.dst(ambiguous)
+... except pytz.exceptions.AmbiguousTimeError:
+...     print('pytz.exceptions.AmbiguousTimeError: %s' % ambiguous)
+pytz.exceptions.AmbiguousTimeError: 2009-10-31 23:30:00
+>>> try:
+...     tz.tzname(ambiguous)
+... except pytz.exceptions.AmbiguousTimeError:
+...     print('pytz.exceptions.AmbiguousTimeError: %s' % ambiguous)
+pytz.exceptions.AmbiguousTimeError: 2009-10-31 23:30:00
+
+Problems with Localtime
+
+The major problem we have to deal with is that certain datetimes may occur twice in a year. For example, in the US/Eastern timezone on the last Sunday morning in October, the following sequence happens:
+
+01:00 EDT occurs
+
+1 hour later, instead of 2:00am the clock is turned back 1 hour and 01:00 happens again (this time 01:00 EST)
+
+In fact, every instant between 01:00 and 02:00 occurs twice. This means that if you try and create a time in the ‘US/Eastern’ timezone the standard datetime syntax, there is no way to specify if you meant before of after the end-of-daylight-saving-time transition. Using the pytz custom syntax, the best you can do is make an educated guess:
+
+>>> loc_dt = eastern.localize(datetime(2002, 10, 27, 1, 30, 00))
+>>> loc_dt.strftime(fmt)
+'2002-10-27 01:30:00 EST-0500'
+
+
+As you can see, the system has chosen one for you and there is a 50% chance of it being out by one hour. For some applications, this does not matter. However, if you are trying to schedule meetings with people in different timezones or analyze log files it is not acceptable.
+
+The best and simplest solution is to stick with using UTC. The pytz package encourages using UTC for internal timezone representation by including a special UTC implementation based on the standard Python reference implementation in the Python documentation.
+
+The UTC timezone unpickles to be the same instance, and pickles to a smaller size than other pytz tzinfo instances. The UTC implementation can be obtained as pytz.utc, pytz.UTC, or pytz.timezone(‘UTC’).
+
+>>> import pickle, pytz
+>>> dt = datetime(2005, 3, 1, 14, 13, 21, tzinfo=utc)
+>>> naive = dt.replace(tzinfo=None)
+>>> p = pickle.dumps(dt, 1)
+>>> naive_p = pickle.dumps(naive, 1)
+>>> len(p) - len(naive_p)
+17
+>>> new = pickle.loads(p)
+>>> new == dt
+True
+>>> new is dt
+False
+>>> new.tzinfo is dt.tzinfo
+True
+>>> pytz.utc is pytz.UTC is pytz.timezone('UTC')
+True
+
+
+Note that some other timezones are commonly thought of as the same (GMT, Greenwich, Universal, etc.). The definition of UTC is distinct from these other timezones, and they are not equivalent. For this reason, they will not compare the same in Python.
+
+>>> utc == pytz.timezone('GMT')
+False
+
+
+See the section What is UTC, below.
+
+If you insist on working with local times, this library provides a facility for constructing them unambiguously:
+
+>>> loc_dt = datetime(2002, 10, 27, 1, 30, 00)
+>>> est_dt = eastern.localize(loc_dt, is_dst=True)
+>>> edt_dt = eastern.localize(loc_dt, is_dst=False)
+>>> print(est_dt.strftime(fmt) + ' / ' + edt_dt.strftime(fmt))
+2002-10-27 01:30:00 EDT-0400 / 2002-10-27 01:30:00 EST-0500
+
+
+If you pass None as the is_dst flag to localize(), pytz will refuse to guess and raise exceptions if you try to build ambiguous or non-existent times.
+
+For example, 1:30am on 27th Oct 2002 happened twice in the US/Eastern timezone when the clocks where put back at the end of Daylight Saving Time:
+
+>>> dt = datetime(2002, 10, 27, 1, 30, 00)
+>>> try:
+...     eastern.localize(dt, is_dst=None)
+... except pytz.exceptions.AmbiguousTimeError:
+...     print('pytz.exceptions.AmbiguousTimeError: %s' % dt)
+pytz.exceptions.AmbiguousTimeError: 2002-10-27 01:30:00
+
+
+Similarly, 2:30am on 7th April 2002 never happened at all in the US/Eastern timezone, as the clocks where put forward at 2:00am skipping the entire hour:
+
+>>> dt = datetime(2002, 4, 7, 2, 30, 00)
+>>> try:
+...     eastern.localize(dt, is_dst=None)
+... except pytz.exceptions.NonExistentTimeError:
+...     print('pytz.exceptions.NonExistentTimeError: %s' % dt)
+pytz.exceptions.NonExistentTimeError: 2002-04-07 02:30:00
+
+
+Both of these exceptions share a common base class to make error handling easier:
+
+>>> isinstance(pytz.AmbiguousTimeError(), pytz.InvalidTimeError)
+True
+>>> isinstance(pytz.NonExistentTimeError(), pytz.InvalidTimeError)
+True
+
+
+A special case is where countries change their timezone definitions with no daylight savings time switch. For example, in 1915 Warsaw switched from Warsaw time to Central European time with no daylight savings transition. So at the stroke of midnight on August 5th 1915 the clocks were wound back 24 minutes creating an ambiguous time period that cannot be specified without referring to the timezone abbreviation or the actual UTC offset. In this case midnight happened twice, neither time during a daylight saving time period. pytz handles this transition by treating the ambiguous period before the switch as daylight savings time, and the ambiguous period after as standard time.
+
+>>> warsaw = pytz.timezone('Europe/Warsaw')
+>>> amb_dt1 = warsaw.localize(datetime(1915, 8, 4, 23, 59, 59), is_dst=True)
+>>> amb_dt1.strftime(fmt)
+'1915-08-04 23:59:59 WMT+0124'
+>>> amb_dt2 = warsaw.localize(datetime(1915, 8, 4, 23, 59, 59), is_dst=False)
+>>> amb_dt2.strftime(fmt)
+'1915-08-04 23:59:59 CET+0100'
+>>> switch_dt = warsaw.localize(datetime(1915, 8, 5, 00, 00, 00), is_dst=False)
+>>> switch_dt.strftime(fmt)
+'1915-08-05 00:00:00 CET+0100'
+>>> str(switch_dt - amb_dt1)
+'0:24:01'
+>>> str(switch_dt - amb_dt2)
+'0:00:01'
+
+
+The best way of creating a time during an ambiguous time period is by converting from another timezone such as UTC:
+
+>>> utc_dt = datetime(1915, 8, 4, 22, 36, tzinfo=pytz.utc)
+>>> utc_dt.astimezone(warsaw).strftime(fmt)
+'1915-08-04 23:36:00 CET+0100'
+
+
+The standard Python way of handling all these ambiguities is not to handle them, such as demonstrated in this example using the US/Eastern timezone definition from the Python documentation (Note that this implementation only works for dates between 1987 and 2006 - it is included for tests only!):
+
+>>> from pytz.reference import Eastern # pytz.reference only for tests
+>>> dt = datetime(2002, 10, 27, 0, 30, tzinfo=Eastern)
+>>> str(dt)
+'2002-10-27 00:30:00-04:00'
+>>> str(dt + timedelta(hours=1))
+'2002-10-27 01:30:00-05:00'
+>>> str(dt + timedelta(hours=2))
+'2002-10-27 02:30:00-05:00'
+>>> str(dt + timedelta(hours=3))
+'2002-10-27 03:30:00-05:00'
+
+
+Notice the first two results? At first glance you might think they are correct, but taking the UTC offset into account you find that they are actually two hours appart instead of the 1 hour we asked for.
+
+>>> from pytz.reference import UTC # pytz.reference only for tests
+>>> str(dt.astimezone(UTC))
+'2002-10-27 04:30:00+00:00'
+>>> str((dt + timedelta(hours=1)).astimezone(UTC))
+'2002-10-27 06:30:00+00:00'
+
+Country Information
+
+A mechanism is provided to access the timezones commonly in use for a particular country, looked up using the ISO 3166 country code. It returns a list of strings that can be used to retrieve the relevant tzinfo instance using pytz.timezone():
+
+>>> print(' '.join(pytz.country_timezones['nz']))
+Pacific/Auckland Pacific/Chatham
+
+
+The Olson database comes with a ISO 3166 country code to English country name mapping that pytz exposes as a dictionary:
+
+>>> print(pytz.country_names['nz'])
+New Zealand
+
+What is UTC
+
+‘UTC’ is Coordinated Universal Time. It is a successor to, but distinct from, Greenwich Mean Time (GMT) and the various definitions of Universal Time. UTC is now the worldwide standard for regulating clocks and time measurement.
+
+All other timezones are defined relative to UTC, and include offsets like UTC+0800 - hours to add or subtract from UTC to derive the local time. No daylight saving time occurs in UTC, making it a useful timezone to perform date arithmetic without worrying about the confusion and ambiguities caused by daylight saving time transitions, your country changing its timezone, or mobile computers that roam through multiple timezones.
+
+Helpers
+
+There are two lists of timezones provided.
+
+all_timezones is the exhaustive list of the timezone names that can be used.
+
+>>> from pytz import all_timezones
+>>> len(all_timezones) >= 500
+True
+>>> 'Etc/Greenwich' in all_timezones
+True
+
+
+common_timezones is a list of useful, current timezones. It doesn’t contain deprecated zones or historical zones, except for a few I’ve deemed in common usage, such as US/Eastern (open a bug report if you think other timezones are deserving of being included here). It is also a sequence of strings.
+
+>>> from pytz import common_timezones
+>>> len(common_timezones) < len(all_timezones)
+True
+>>> 'Etc/Greenwich' in common_timezones
+False
+>>> 'Australia/Melbourne' in common_timezones
+True
+>>> 'US/Eastern' in common_timezones
+True
+>>> 'Canada/Eastern' in common_timezones
+True
+>>> 'Australia/Yancowinna' in all_timezones
+True
+>>> 'Australia/Yancowinna' in common_timezones
+False
+
+
+Both common_timezones and all_timezones are alphabetically sorted:
+
+>>> common_timezones_dupe = common_timezones[:]
+>>> common_timezones_dupe.sort()
+>>> common_timezones == common_timezones_dupe
+True
+>>> all_timezones_dupe = all_timezones[:]
+>>> all_timezones_dupe.sort()
+>>> all_timezones == all_timezones_dupe
+True
+
+
+all_timezones and common_timezones are also available as sets.
+
+>>> from pytz import all_timezones_set, common_timezones_set
+>>> 'US/Eastern' in all_timezones_set
+True
+>>> 'US/Eastern' in common_timezones_set
+True
+>>> 'Australia/Victoria' in common_timezones_set
+False
+
+
+You can also retrieve lists of timezones used by particular countries using the country_timezones() function. It requires an ISO-3166 two letter country code.
+
+>>> from pytz import country_timezones
+>>> print(' '.join(country_timezones('ch')))
+Europe/Zurich
+>>> print(' '.join(country_timezones('CH')))
+Europe/Zurich
+
+Internationalization - i18n/l10n
+
+Pytz is an interface to the IANA database, which uses ASCII names. The Unicode Consortium’s Unicode Locales (CLDR) project provides translations. Python packages such as Babel and Thomas Khyn’s l18n package can be used to access these translations from Python.
+
+License
+
+MIT license.
+
+This code is also available as part of Zope 3 under the Zope Public License, Version 2.1 (ZPL).
+
+I’m happy to relicense this code if necessary for inclusion in other open source projects.
+
+Latest Versions
+
+This package will be updated after releases of the Olson timezone database. The latest version can be downloaded from the Python Package Index. The code that is used to generate this distribution is hosted on Github and available using git:
+
+git clone https://github.com/stub42/pytz.git
+
+Announcements of new releases are made on Launchpad, and the Atom feed hosted there.
+
+Bugs, Feature Requests & Patches
+
+Bugs should be reported on Github. Feature requests are unlikely to be considered, and efforts instead directed to timezone support now built into Python or packages that work with it.
+
+Security Issues
+
+Reports about security issues can be made via Tidelift.
+
+Issues & Limitations
+
+This project is in maintenance mode. Projects using Python 3.9 or later are best served by using the timezone functionality now included in core Python and packages that work with it such as tzdata.
+
+Offsets from UTC are rounded to the nearest whole minute, so timezones such as Europe/Amsterdam pre 1937 will be up to 30 seconds out. This was a limitation of the Python datetime library.
+
+If you think a timezone definition is incorrect, I probably can’t fix it. pytz is a direct translation of the Olson timezone database, and changes to the timezone definitions need to be made to this source. If you find errors they should be reported to the time zone mailing list, linked from http://www.iana.org/time-zones.
+
+Further Reading
+
+More info than you want to know about timezones: https://data.iana.org/time-zones/tz-link.html
+
+Contact
+
+Stuart Bishop <stuart@stuartbishop.net>",2026-11-09
+tabulate,tabulate · PyPI,tabulate 0.10.0,Pretty-print tabular data,"Released: Mar 4, 2026 ",Requires | Python >=3.10 ,License expression | MIT ,1 maintainer,Development Status :: 4 - Beta;Operating System :: OS Independent;Programming Language :: Python :: 3;Programming Language :: Python :: 3.10;Programming Language :: Python :: 3.11;Programming Language :: Python :: 3.12;Programming Language :: Python :: 3.13;Programming Language :: Python :: 3.14;Topic :: Software Development :: Libraries,79,38,"python-tabulate
+
+Pretty-print tabular data in Python, a library and a command-line utility.
+
+The main use cases of the library are:
+
+printing small tables without hassle: just one function call, formatting is guided by the data itself
+authoring tabular data for lightweight plain-text markup: multiple output formats suitable for further editing or transformation
+readable presentation of mixed textual and numeric data: smart column alignment, configurable number formatting, alignment by a decimal point
+Installation
+
+To install the Python library and the command line utility, run:
+
+pip install tabulate
+
+
+The command line utility will be installed as tabulate to bin on Linux (e.g. /usr/bin); or as tabulate.exe to Scripts in your Python installation on Windows (e.g. C:\Python39\Scripts\tabulate.exe).
+
+You may consider installing the library only for the current user:
+
+pip install tabulate --user
+
+
+In this case the command line utility will be installed to ~/.local/bin/tabulate on Linux and to %APPDATA%\Python\Scripts\tabulate.exe on Windows.
+
+To install just the library on Unix-like operating systems:
+
+TABULATE_INSTALL=lib-only pip install tabulate
+
+
+On Windows:
+
+set TABULATE_INSTALL=lib-only
+pip install tabulate
+
+Build status
+
+Library usage
+
+The module provides just one function, tabulate, which takes a list of lists or another tabular data type as the first argument, and outputs a nicely formatted plain-text table:
+
+>>> from tabulate import tabulate
+
+>>> table = [[""Sun"",696000,1989100000],[""Earth"",6371,5973.6],
+...          [""Moon"",1737,73.5],[""Mars"",3390,641.85]]
+>>> print(tabulate(table))
+-----  ------  -------------
+Sun    696000     1.9891e+09
+Earth    6371  5973.6
+Moon     1737    73.5
+Mars     3390   641.85
+-----  ------  -------------
+
+
+The following tabular data types are supported:
+
+list of lists or another iterable of iterables
+list or another iterable of dicts (keys as columns)
+dict of iterables (keys as columns)
+list of dataclasses (field names as columns)
+two-dimensional NumPy array
+NumPy record arrays (names as columns)
+pandas.DataFrame
+
+Tabulate is a Python3 library.
+
+Headers
+
+The second optional argument named headers defines a list of column headers to be used:
+
+>>> print(tabulate(table, headers=[""Planet"",""R (km)"", ""mass (x 10^29 kg)""]))
+Planet      R (km)    mass (x 10^29 kg)
+--------  --------  -------------------
+Sun         696000           1.9891e+09
+Earth         6371        5973.6
+Moon          1737          73.5
+Mars          3390         641.85
+
+
+If headers=""firstrow"", then the first row of data is used:
+
+>>> print(tabulate([[""Name"",""Age""],[""Alice"",24],[""Bob"",19]],
+...                headers=""firstrow""))
+Name      Age
+------  -----
+Alice      24
+Bob        19
+
+
+If headers=""keys"", then the keys of a dictionary/dataframe, or column indices are used. It also works for NumPy record arrays and lists of dictionaries or named tuples:
+
+>>> print(tabulate({""Name"": [""Alice"", ""Bob""],
+...                 ""Age"": [24, 19]}, headers=""keys""))
+Name      Age
+------  -----
+Alice      24
+Bob        19
+
+
+When data is a list of dictionaries, a dictionary can be passed as headers to replace the keys with other column labels:
+
+>>> print(tabulate([{1: ""Alice"", 2: 24}, {1: ""Bob"", 2: 19}],
+...                headers={1: ""Name"", 2: ""Age""}))
+Name      Age
+------  -----
+Alice      24
+Bob        19
+
+Row Indices
+
+By default, only pandas.DataFrame tables have an additional column called row index. To add a similar column to any other type of table, pass showindex=""always"" or showindex=True argument to tabulate(). To suppress row indices for all types of data, pass showindex=""never"" or showindex=False. To add a custom row index column, pass showindex=rowIDs, where rowIDs is some iterable:
+
+>>> print(tabulate([[""F"",24],[""M"",19]], showindex=""always""))
+-  -  --
+0  F  24
+1  M  19
+-  -  --
+
+Table format
+
+There is more than one way to format a table in plain text. The third optional argument named tablefmt defines how the table is formatted.
+
+Supported table formats are:
+
+""plain""
+""simple""
+""github""
+""grid""
+""simple_grid""
+""rounded_grid""
+""heavy_grid""
+""mixed_grid""
+""double_grid""
+""fancy_grid""
+""outline""
+""simple_outline""
+""rounded_outline""
+""heavy_outline""
+""mixed_outline""
+""double_outline""
+""fancy_outline""
+""pipe""
+""orgtbl""
+""asciidoc""
+""jira""
+""presto""
+""pretty""
+""psql""
+""rst""
+""mediawiki""
+""moinmoin""
+""youtrack""
+""html""
+""unsafehtml""
+""latex""
+""latex_raw""
+""latex_booktabs""
+""latex_longtable""
+""textile""
+""tsv""
+
+plain tables do not use any pseudo-graphics to draw lines:
+
+>>> table = [[""spam"",42],[""eggs"",451],[""bacon"",0]]
+>>> headers = [""item"", ""qty""]
+>>> print(tabulate(table, headers, tablefmt=""plain""))
+item      qty
+spam       42
+eggs      451
+bacon       0
+
+
+simple is the default format (the default may change in future versions). It corresponds to simple_tables in Pandoc Markdown extensions:
+
+>>> print(tabulate(table, headers, tablefmt=""simple""))
+item      qty
+------  -----
+spam       42
+eggs      451
+bacon       0
+
+
+github follows the conventions of GitHub flavored Markdown. It corresponds to the pipe format without alignment colons:
+
+>>> print(tabulate(table, headers, tablefmt=""github""))
+| item   |   qty |
+|--------|-------|
+| spam   |    42 |
+| eggs   |   451 |
+| bacon  |     0 |
+
+
+grid is like tables formatted by Emacs' table.el package. It corresponds to grid_tables in Pandoc Markdown extensions:
+
+>>> print(tabulate(table, headers, tablefmt=""grid""))
++--------+-------+
+| item   |   qty |
++========+=======+
+| spam   |    42 |
++--------+-------+
+| eggs   |   451 |
++--------+-------+
+| bacon  |     0 |
++--------+-------+
+
+
+simple_grid draws a grid using single-line box-drawing characters:
+
+>>> print(tabulate(table, headers, tablefmt=""simple_grid""))
+┌────────┬───────┐
+│ item   │   qty │
+├────────┼───────┤
+│ spam   │    42 │
+├────────┼───────┤
+│ eggs   │   451 │
+├────────┼───────┤
+│ bacon  │     0 │
+└────────┴───────┘
+
+
+rounded_grid draws a grid using single-line box-drawing characters with rounded corners:
+
+>>> print(tabulate(table, headers, tablefmt=""rounded_grid""))
+╭────────┬───────╮
+│ item   │   qty │
+├────────┼───────┤
+│ spam   │    42 │
+├────────┼───────┤
+│ eggs   │   451 │
+├────────┼───────┤
+│ bacon  │     0 │
+╰────────┴───────╯
+
+
+heavy_grid draws a grid using bold (thick) single-line box-drawing characters:
+
+>>> print(tabulate(table, headers, tablefmt=""heavy_grid""))
+┏━━━━━━━━┳━━━━━━━┓
+┃ item   ┃   qty ┃
+┣━━━━━━━━╋━━━━━━━┫
+┃ spam   ┃    42 ┃
+┣━━━━━━━━╋━━━━━━━┫
+┃ eggs   ┃   451 ┃
+┣━━━━━━━━╋━━━━━━━┫
+┃ bacon  ┃     0 ┃
+┗━━━━━━━━┻━━━━━━━┛
+
+
+mixed_grid draws a grid using a mix of light (thin) and heavy (thick) lines box-drawing characters:
+
+>>> print(tabulate(table, headers, tablefmt=""mixed_grid""))
+┍━━━━━━━━┯━━━━━━━┑
+│ item   │   qty │
+┝━━━━━━━━┿━━━━━━━┥
+│ spam   │    42 │
+├────────┼───────┤
+│ eggs   │   451 │
+├────────┼───────┤
+│ bacon  │     0 │
+┕━━━━━━━━┷━━━━━━━┙
+
+
+double_grid draws a grid using double-line box-drawing characters:
+
+>>> print(tabulate(table, headers, tablefmt=""double_grid""))
+╔════════╦═══════╗
+║ item   ║   qty ║
+╠════════╬═══════╣
+║ spam   ║    42 ║
+╠════════╬═══════╣
+║ eggs   ║   451 ║
+╠════════╬═══════╣
+║ bacon  ║     0 ║
+╚════════╩═══════╝
+
+
+fancy_grid draws a grid using a mix of single and double-line box-drawing characters:
+
+>>> print(tabulate(table, headers, tablefmt=""fancy_grid""))
+╒════════╤═══════╕
+│ item   │   qty │
+╞════════╪═══════╡
+│ spam   │    42 │
+├────────┼───────┤
+│ eggs   │   451 │
+├────────┼───────┤
+│ bacon  │     0 │
+╘════════╧═══════╛
+
+
+colon_grid is similar to grid but uses colons only to define columnwise content alignment , without whitespace padding, similar the alignment specification of Pandoc grid_tables:
+
+>>> print(tabulate([[""spam"", 41.9999], [""eggs"", ""451.0""]],
+...                [""strings"", ""numbers""], ""colon_grid"",
+...                colalign=[""right"", ""left""]))
++-----------+-----------+
+| strings   | numbers   |
++==========:+:==========+
+| spam      | 41.9999   |
++-----------+-----------+
+| eggs      | 451       |
++-----------+-----------+
+
+
+outline is the same as the grid format but doesn't draw lines between rows:
+
+>>> print(tabulate(table, headers, tablefmt=""outline""))
++--------+-------+
+| item   |   qty |
++========+=======+
+| spam   |    42 |
+| eggs   |   451 |
+| bacon  |     0 |
++--------+-------+
+
+
+simple_outline is the same as the simple_grid format but doesn't draw lines between rows:
+
+>>> print(tabulate(table, headers, tablefmt=""simple_outline""))
+┌────────┬───────┐
+│ item   │   qty │
+├────────┼───────┤
+│ spam   │    42 │
+│ eggs   │   451 │
+│ bacon  │     0 │
+└────────┴───────┘
+
+
+rounded_outline is the same as the rounded_grid format but doesn't draw lines between rows:
+
+>>> print(tabulate(table, headers, tablefmt=""rounded_outline""))
+╭────────┬───────╮
+│ item   │   qty │
+├────────┼───────┤
+│ spam   │    42 │
+│ eggs   │   451 │
+│ bacon  │     0 │
+╰────────┴───────╯
+
+
+heavy_outline is the same as the heavy_grid format but doesn't draw lines between rows:
+
+>>> print(tabulate(table, headers, tablefmt=""heavy_outline""))
+┏━━━━━━━━┳━━━━━━━┓
+┃ item   ┃   qty ┃
+┣━━━━━━━━╋━━━━━━━┫
+┃ spam   ┃    42 ┃
+┃ eggs   ┃   451 ┃
+┃ bacon  ┃     0 ┃
+┗━━━━━━━━┻━━━━━━━┛
+
+
+mixed_outline is the same as the mixed_grid format but doesn't draw lines between rows:
+
+>>> print(tabulate(table, headers, tablefmt=""mixed_outline""))
+┍━━━━━━━━┯━━━━━━━┑
+│ item   │   qty │
+┝━━━━━━━━┿━━━━━━━┥
+│ spam   │    42 │
+│ eggs   │   451 │
+│ bacon  │     0 │
+┕━━━━━━━━┷━━━━━━━┙
+
+
+double_outline is the same as the double_grid format but doesn't draw lines between rows:
+
+>>> print(tabulate(table, headers, tablefmt=""double_outline""))
+╔════════╦═══════╗
+║ item   ║   qty ║
+╠════════╬═══════╣
+║ spam   ║    42 ║
+║ eggs   ║   451 ║
+║ bacon  ║     0 ║
+╚════════╩═══════╝
+
+
+fancy_outline is the same as the fancy_grid format but doesn't draw lines between rows:
+
+>>> print(tabulate(table, headers, tablefmt=""fancy_outline""))
+╒════════╤═══════╕
+│ item   │   qty │
+╞════════╪═══════╡
+│ spam   │    42 │
+│ eggs   │   451 │
+│ bacon  │     0 │
+╘════════╧═══════╛
+
+
+presto is like tables formatted by Presto cli:
+
+>>> print(tabulate(table, headers, tablefmt=""presto""))
+ item   |   qty
+--------+-------
+ spam   |    42
+ eggs   |   451
+ bacon  |     0
+
+
+pretty attempts to be close to the format emitted by the PrettyTables library:
+
+>>> print(tabulate(table, headers, tablefmt=""pretty""))
++-------+-----+
+| item  | qty |
++-------+-----+
+| spam  | 42  |
+| eggs  | 451 |
+| bacon |  0  |
++-------+-----+
+
+
+psql is like tables formatted by Postgres' psql cli:
+
+>>> print(tabulate(table, headers, tablefmt=""psql""))
++--------+-------+
+| item   |   qty |
+|--------+-------|
+| spam   |    42 |
+| eggs   |   451 |
+| bacon  |     0 |
++--------+-------+
+
+
+pipe follows the conventions of PHP Markdown Extra extension. It corresponds to pipe_tables in Pandoc. This format uses colons to indicate column alignment:
+
+>>> print(tabulate(table, headers, tablefmt=""pipe""))
+| item   |   qty |
+|:-------|------:|
+| spam   |    42 |
+| eggs   |   451 |
+| bacon  |     0 |
+
+
+asciidoc formats data like a simple table of the AsciiDoctor format:
+
+>>> print(tabulate(table, headers, tablefmt=""asciidoc""))
+[cols=""<8,>7"",options=""header""]
+|====
+| item   |   qty
+| spam   |    42
+| eggs   |   451
+| bacon  |     0
+|====
+
+
+orgtbl follows the conventions of Emacs org-mode, and is editable also in the minor orgtbl-mode. Hence its name:
+
+>>> print(tabulate(table, headers, tablefmt=""orgtbl""))
+| item   |   qty |
+|--------+-------|
+| spam   |    42 |
+| eggs   |   451 |
+| bacon  |     0 |
+
+
+jira follows the conventions of Atlassian Jira markup language:
+
+>>> print(tabulate(table, headers, tablefmt=""jira""))
+|| item   ||   qty ||
+| spam   |    42 |
+| eggs   |   451 |
+| bacon  |     0 |
+
+
+rst formats data like a simple table of the reStructuredText format:
+
+>>> print(tabulate(table, headers, tablefmt=""rst""))
+======  =====
+item      qty
+======  =====
+spam       42
+eggs      451
+bacon       0
+======  =====
+
+
+mediawiki format produces a table markup used in Wikipedia and on other MediaWiki-based sites:
+
+>>> print(tabulate(table, headers, tablefmt=""mediawiki""))
+{| class=""wikitable"" style=""text-align: left;""
+|+ <!-- caption -->
+|-
+! item   !! style=""text-align: right;""|   qty
+|-
+| spam   || style=""text-align: right;""|    42
+|-
+| eggs   || style=""text-align: right;""|   451
+|-
+| bacon  || style=""text-align: right;""|     0
+|}
+
+
+moinmoin format produces a table markup used in MoinMoin wikis:
+
+>>> print(tabulate(table, headers, tablefmt=""moinmoin""))
+|| ''' item   ''' ||<style=""text-align: right;""> '''   qty ''' ||
+||  spam    ||<style=""text-align: right;"">     42  ||
+||  eggs    ||<style=""text-align: right;"">    451  ||
+||  bacon   ||<style=""text-align: right;"">      0  ||
+
+
+youtrack format produces a table markup used in Youtrack tickets:
+
+>>> print(tabulate(table, headers, tablefmt=""youtrack""))
+||  item    ||    qty  ||
+|  spam    |     42  |
+|  eggs    |    451  |
+|  bacon   |      0  |
+
+
+textile format produces a table markup used in Textile format:
+
+>>> print(tabulate(table, headers, tablefmt=""textile""))
+|_.  item   |_.   qty |
+|<. spam    |>.    42 |
+|<. eggs    |>.   451 |
+|<. bacon   |>.     0 |
+
+
+html produces standard HTML markup as an html.escape'd str with a .repr_html method so that Jupyter Lab and Notebook display the HTML and a .str property so that the raw HTML remains accessible. unsafehtml table format can be used if an unescaped HTML is required:
+
+>>> print(tabulate(table, headers, tablefmt=""html""))
+<table>
+<thead>
+<tr><th>item  </th><th style=""text-align: right;"">  qty</th></tr>
+</thead>
+<tbody>
+<tr><td>spam  </td><td style=""text-align: right;"">   42</td></tr>
+<tr><td>eggs  </td><td style=""text-align: right;"">  451</td></tr>
+<tr><td>bacon </td><td style=""text-align: right;"">    0</td></tr>
+</tbody>
+</table>
+
+
+latex format creates a tabular environment for LaTeX markup, replacing special characters like _ or \ to their LaTeX correspondents:
+
+>>> print(tabulate(table, headers, tablefmt=""latex""))
+\begin{tabular}{lr}
+\hline
+ item   &   qty \\
+\hline
+ spam   &    42 \\
+ eggs   &   451 \\
+ bacon  &     0 \\
+\hline
+\end{tabular}
+
+
+latex_raw behaves like latex but does not escape LaTeX commands and special characters.
+
+latex_booktabs creates a tabular environment for LaTeX markup using spacing and style from the booktabs package.
+
+latex_longtable creates a table that can stretch along multiple pages, using the longtable package.
+
+Column alignment
+
+tabulate is smart about column alignment. It detects columns which contain only numbers, and aligns them by a decimal point (or flushes them to the right if they appear to be integers). Text columns are flushed to the left.
+
+You can override the default alignment with numalign and stralign named arguments. Possible column alignments are: right, center, left, decimal (only for numbers), and None (to disable alignment).
+
+Aligning by a decimal point works best when you need to compare numbers at a glance:
+
+>>> print(tabulate([[1.2345],[123.45],[12.345],[12345],[1234.5]]))
+----------
+    1.2345
+  123.45
+   12.345
+12345
+ 1234.5
+----------
+
+
+Compare this with a more common right alignment:
+
+>>> print(tabulate([[1.2345],[123.45],[12.345],[12345],[1234.5]], numalign=""right""))
+------
+1.2345
+123.45
+12.345
+ 12345
+1234.5
+------
+
+
+For tabulate, anything which can be parsed as a number is a number. Even numbers represented as strings are aligned properly. This feature comes in handy when reading a mixed table of text and numbers from a file:
+
+>>> import csv; from io import StringIO
+>>> table = list(csv.reader(StringIO(""spam, 42\neggs, 451\n"")))
+>>> table
+[['spam', ' 42'], ['eggs', ' 451']]
+>>> print(tabulate(table))
+----  ----
+spam    42
+eggs   451
+----  ----
+
+
+To disable this feature use disable_numparse=True.
+
+>>> print(tabulate([[""Ver1"", ""18.0""], [""Ver2"",""19.2""]], tablefmt=""simple"", disable_numparse=True))
+----  ----
+Ver1  18.0
+Ver2  19.2
+----  ----
+
+Custom column alignment
+
+tabulate allows a custom column alignment to override the smart alignment described above. Use colglobalalign to define a global setting. Possible alignments are: right, center, left, decimal (only for numbers). Furthermore, you can define colalign for column-specific alignment as a list or a tuple. Possible values are global (keeps global setting), right, center, left, decimal (only for numbers), None (to disable alignment). Missing alignments are treated as global.
+
+>>> print(tabulate([[1,2,3,4],[111,222,333,444]], colglobalalign='center', colalign = ('global','left','right')))
+---  ---  ---  ---
+ 1   2      3   4
+111  222  333  444
+---  ---  ---  ---
+
+Custom header alignment
+
+Headers' alignment can be defined separately from columns'. Like for columns, you can use:
+
+headersglobalalign to define a header-specific global alignment setting. Possible values are right, center, left, None (to follow column alignment),
+headersalign list or tuple to further specify header-wise alignment. Possible values are global (keeps global setting), same (follow column alignment), right, center, left, None (to disable alignment). Missing alignments are treated as global.
+>>> print(tabulate([[1,2,3,4,5,6],[111,222,333,444,555,666]], colglobalalign = 'center', colalign = ('left',), headers = ['h','e','a','d','e','r'], headersglobalalign = 'right', headersalign = ('same','same','left','global','center')))
+h     e   a      d   e     r
+---  ---  ---  ---  ---  ---
+1     2    3    4    5    6
+111  222  333  444  555  666
+
+Number formatting
+
+tabulate allows to define custom number formatting applied to all columns of decimal numbers. Use floatfmt named argument:
+
+>>> print(tabulate([[""pi"",3.141593],[""e"",2.718282]], floatfmt="".4f""))
+--  ------
+pi  3.1416
+e   2.7183
+--  ------
+
+
+floatfmt argument can be a list or a tuple of format strings, one per column, in which case every column may have different number formatting:
+
+>>> print(tabulate([[0.12345, 0.12345, 0.12345]], floatfmt=("".1f"", "".3f"")))
+---  -----  -------
+0.1  0.123  0.12345
+---  -----  -------
+
+
+intfmt works similarly for integers
+
+>>> print(tabulate([[""a"",1000],[""b"",90000]], intfmt="",""))
+-  ------
+a   1,000
+b  90,000
+-  ------
+
+Type Deduction and Missing Values
+
+When tabulate sees numerical data (with our without comma separators), it attempts to align the column on the decimal point. However, if it observes non-numerical data in the column, it aligns it to the left by default. If data is missing in a column (either None or empty values), the remaining data in the column is used to infer the type:
+
+>>> from fractions import Fraction
+>>> test_table = [
+...    [None, ""1.23423515351"", Fraction(1, 3)],
+...    [Fraction(56789, 1000000), 12345.1, b""abc""],
+...    ["""", b"""", None],
+...    [Fraction(10000, 3), None, """"],
+... ]
+>>> print(tabulate(test_table, floatfmt="",.5g"", missingval=""?""))
+------------  -----------  ---
+    ?              1.2342  1/3
+    0.056789  12,345       abc
+                           ?
+3,333.3            ?
+------------  -----------  ---
+
+
+The deduced type (eg. str, float) influences the rendering of any types that have alternative representations. For example, since Fraction has methods __str__ and __float__ defined (and hence is convertible to a float and also has a str representation), the appropriate representation is selected for the column's deduced type. In order to not lose precision accidentally, types having both an __int__ and __float__ representation will be considered a float.
+
+Therefore, if your table contains types convertible to int/float but you'd prefer they be represented as strings, or your strings might all look like numbers such as ""1e23"": either convert them to the desired representation before you tabulate, or ensure that the column always contains at least one other str.
+
+Text formatting
+
+By default, tabulate removes leading and trailing whitespace from text columns. To disable whitespace removal, pass preserve_whitespace=True. Older versions of the library used a global module-level flag PRESERVE_WHITESPACE.
+
+Wide (fullwidth CJK) symbols
+
+To properly align tables which contain wide characters (typically fullwidth glyphs from Chinese, Japanese or Korean languages), the user should install wcwidth library. To install it together with tabulate:
+
+pip install tabulate[widechars]
+
+
+Wide character support is enabled automatically if wcwidth library is already installed. To disable wide characters support without uninstalling wcwidth, set the global module-level flag WIDE_CHARS_MODE:
+
+import tabulate
+tabulate.WIDE_CHARS_MODE = False
+
+Multiline cells
+
+Most table formats support multiline cell text (text containing newline characters). The newline characters are honored as line break characters.
+
+Multiline cells are supported for data rows and for header rows.
+
+Further automatic line breaks are not inserted. Of course, some output formats such as latex or html handle automatic formatting of the cell content on their own, but for those that don't, the newline characters in the input cell text are the only means to break a line in cell text.
+
+Note that some output formats (e.g. simple, or plain) do not represent row delimiters, so that the representation of multiline cells in such formats may be ambiguous to the reader.
+
+The following examples of formatted output use the following table with a multiline cell, and headers with a multiline cell:
+
+>>> table = [[""eggs"",451],[""more\nspam"",42]]
+>>> headers = [""item\nname"", ""qty""]
+
+
+plain tables:
+
+>>> print(tabulate(table, headers, tablefmt=""plain""))
+item      qty
+name
+eggs      451
+more       42
+spam
+
+
+simple tables:
+
+>>> print(tabulate(table, headers, tablefmt=""simple""))
+item      qty
+name
+------  -----
+eggs      451
+more       42
+spam
+
+
+grid tables:
+
+>>> print(tabulate(table, headers, tablefmt=""grid""))
++--------+-------+
+| item   |   qty |
+| name   |       |
++========+=======+
+| eggs   |   451 |
++--------+-------+
+| more   |    42 |
+| spam   |       |
++--------+-------+
+
+
+fancy_grid tables:
+
+>>> print(tabulate(table, headers, tablefmt=""fancy_grid""))
+╒════════╤═══════╕
+│ item   │   qty │
+│ name   │       │
+╞════════╪═══════╡
+│ eggs   │   451 │
+├────────┼───────┤
+│ more   │    42 │
+│ spam   │       │
+╘════════╧═══════╛
+
+
+pipe tables:
+
+>>> print(tabulate(table, headers, tablefmt=""pipe""))
+| item   |   qty |
+| name   |       |
+|:-------|------:|
+| eggs   |   451 |
+| more   |    42 |
+| spam   |       |
+
+
+orgtbl tables:
+
+>>> print(tabulate(table, headers, tablefmt=""orgtbl""))
+| item   |   qty |
+| name   |       |
+|--------+-------|
+| eggs   |   451 |
+| more   |    42 |
+| spam   |       |
+
+
+jira tables:
+
+>>> print(tabulate(table, headers, tablefmt=""jira""))
+|| item   ||   qty ||
+|| name   ||       ||
+| eggs   |   451 |
+| more   |    42 |
+| spam   |       |
+
+
+presto tables:
+
+>>> print(tabulate(table, headers, tablefmt=""presto""))
+ item   |   qty
+ name   |
+--------+-------
+ eggs   |   451
+ more   |    42
+ spam   |
+
+
+pretty tables:
+
+>>> print(tabulate(table, headers, tablefmt=""pretty""))
++------+-----+
+| item | qty |
+| name |     |
++------+-----+
+| eggs | 451 |
+| more | 42  |
+| spam |     |
++------+-----+
+
+
+psql tables:
+
+>>> print(tabulate(table, headers, tablefmt=""psql""))
++--------+-------+
+| item   |   qty |
+| name   |       |
+|--------+-------|
+| eggs   |   451 |
+| more   |    42 |
+| spam   |       |
++--------+-------+
+
+
+rst tables:
+
+>>> print(tabulate(table, headers, tablefmt=""rst""))
+======  =====
+item      qty
+name
+======  =====
+eggs      451
+more       42
+spam
+======  =====
+
+
+Multiline cells are not well-supported for the other table formats.
+
+Automating Multilines
+
+While tabulate supports data passed in with multilines entries explicitly provided, it also provides some support to help manage this work internally.
+
+The maxcolwidths argument is a list where each entry specifies the max width for it's respective column. Any cell that will exceed this will automatically wrap the content. To assign the same max width for all columns, a singular int scaler can be used.
+
+Use None for any columns where an explicit maximum does not need to be provided, and thus no automate multiline wrapping will take place.
+
+The wrapping uses the python standard textwrap.wrap function with default parameters - aside from width.
+
+This example demonstrates usage of automatic multiline wrapping, though typically the lines being wrapped would probably be significantly longer than this.
+
+>>> print(tabulate([[""John Smith"", ""Middle Manager""]], headers=[""Name"", ""Title""], tablefmt=""grid"", maxcolwidths=[None, 8]))
++------------+---------+
+| Name       | Title   |
++============+=========+
+| John Smith | Middle  |
+|            | Manager |
++------------+---------+
+
+
+Text is preferably wrapped on whitespaces and right after the hyphens in hyphenated words.
+
+break_long_words (default: True) If true, then words longer than width will be broken in order to ensure that no lines are longer than width. If it is false, long words will not be broken, and some lines may be longer than width. (Long words will be put on a line by themselves, in order to minimize the amount by which width is exceeded.)
+
+break_on_hyphens (default: True) If true, wrapping will occur preferably on whitespaces and right after hyphens in compound words, as it is customary in English. If false, only whitespaces will be considered as potentially good places for line breaks.
+
+>>> print(tabulate([[""John Smith"", ""Middle-Manager""]], headers=[""Name"", ""Title""], tablefmt=""grid"", maxcolwidths=[None, 5], break_long_words=False))
++------------+---------+
+| Name       | Title   |
++============+=========+
+| John Smith | Middle- |
+|            | Manager |
++------------+---------+
+>>> print(tabulate([[""John Smith"", ""Middle-Manager""]], headers=[""Name"", ""Title""], tablefmt=""grid"", maxcolwidths=[None, 5], break_long_words=False, break_on_hyphens=False))
++------------+----------------+
+| Name       | Title          |
++============+================+
+| John Smith | Middle-Manager |
++------------+----------------+
+
+Adding Separating lines
+
+One might want to add one or more separating lines to highlight different sections in a table.
+
+The separating lines will be of the same type as the one defined by the specified formatter as either the linebetweenrows, linebelowheader, linebelow, lineabove or just a simple empty line when none is defined for the formatter
+
+>>> from tabulate import tabulate, SEPARATING_LINE
+
+table = [[""Earth"",6371],
+         [""Mars"",3390],
+         SEPARATING_LINE,
+         [""Moon"",1737]]
+print(tabulate(table, tablefmt=""simple""))
+-----  ----
+Earth  6371
+Mars   3390
+-----  ----
+Moon   1737
+-----  ----
+
+ANSI support
+
+ANSI escape codes are non-printable byte sequences usually used for terminal operations like setting color output or modifying cursor positions. Because multi-byte ANSI sequences are inherently non-printable, they can still introduce unwanted extra length to strings. For example:
+
+>>> len('\033[31mthis text is red\033[0m')  # printable length is 16
+25
+
+
+To deal with this, string lengths are calculated after first removing all ANSI escape sequences. This ensures that the actual printable length is used for column widths, rather than the byte length. In the final, printable table, however, ANSI escape sequences are not removed so the original styling is preserved.
+
+Some terminals support a special grouping of ANSI escape sequences that are intended to display hyperlinks much in the same way they are shown in browsers. These are handled just as mentioned before: non-printable ANSI escape sequences are removed prior to string length calculation. The only difference with escaped hyperlinks is that column width will be based on the length of the URL text rather than the URL itself (terminals would show this text). For example:
+
+>>> len('\x1b]8;;https://example.com\x1b\\example\x1b]8;;\x1b\\')  # display length is 7, showing 'example'
+40
+
+Usage of the command line utility
+Usage: tabulate [options] [FILE ...]
+
+FILE                      a filename of the file with tabular data;
+                          if ""-"" or missing, read data from stdin.
+
+Options:
+
+-h, --help                show this message
+-1, --header              use the first row of data as a table header
+-o FILE, --output FILE    print table to FILE (default: stdout)
+-s REGEXP, --sep REGEXP   use a custom column separator (default: whitespace)
+-F FPFMT, --float FPFMT   floating point number format (default: g)
+-I INTFMT, --int INTFMT   integer point number format (default: """")
+-f FMT, --format FMT      set output table format; supported formats:
+                          plain, simple, github, grid, fancy_grid, pipe,
+                          orgtbl, rst, mediawiki, html, latex, latex_raw,
+                          latex_booktabs, latex_longtable, tsv
+                          (default: simple)
+
+Performance considerations
+
+Such features as decimal point alignment and trying to parse everything as a number imply that tabulate:
+
+has to ""guess"" how to print a particular tabular data type
+needs to keep the entire table in-memory
+has to ""transpose"" the table twice
+does much more work than it may appear
+
+It may not be suitable for serializing really big tables (but who's going to do that, anyway?) or printing tables in performance sensitive applications. tabulate is about two orders of magnitude slower than simply joining lists of values with a tab, comma, or other separator.
+
+At the same time, tabulate is comparable to other table pretty-printers. Given a 10x10 table (a list of lists) of mixed text and numeric data, tabulate appears to be faster than PrettyTable and texttable. The following mini-benchmark was run in Python 3.13.7 on Windows 11 (x64):
+
+==================================  ==========  ===========
+Table formatter                       time, μs    rel. time
+==================================  ==========  ===========
+csv to StringIO                           11.9          1.0
+join with tabs and newlines               12.1          1.0
+PrettyTable (3.17.0)                     468.0         39.3
+tabulate (0.10.0)                        553.4         46.5
+tabulate (0.10.0, WIDE_CHARS_MODE)       612.2         51.4
+texttable (1.7.0)                       1071.4         90.0
+==================================  ==========  ===========
+
+Version history
+
+The full version history can be found at the changelog.
+
+How to contribute
+
+Contributions should include tests and an explanation for the changes they propose. Documentation (examples, docstrings, README.md) should be updated accordingly.
+
+This project uses pytest testing framework and tox to automate testing in different environments. Add tests to one of the files in the test/ folder.
+
+To run tests on all supported Python versions, make sure all Python interpreters, pytest and tox are installed, then run tox in the root of the project source tree.
+
+On Linux tox expects to find executables like python3.11, python3.12 etc. On Windows it looks for C:\Python311\python.exe, C:\Python312\python.exe etc. respectively.
+
+One way to install all the required versions of the Python interpreter is to use pyenv. All versions can then be easily installed with something like:
+
+ pyenv install 3.11.7
+ pyenv install 3.12.1
+ ...
+
+
+Don't forget to change your PATH so that tox knows how to find all the installed versions. Something like
+
+ export PATH=""${PATH}:${HOME}/.pyenv/shims""
+
+
+To test only some Python environments, use -e option. For example, to test only against Python 3.11 and Python 3.12, run:
+
+tox -e py311,py312
+
+
+in the root of the project source tree.
+
+To enable NumPy and Pandas tests, run:
+
+tox -e py311-extra,py312-extra
+
+
+(this may take a long time the first time, because NumPy and Pandas will have to be installed in the new virtual environments)
+
+To fix code formatting:
+
+tox -e lint
+
+
+See tox.ini file to learn how to use to test individual Python versions.
+
+To test the ""doctest"" examples and their outputs in README.md:
+
+python3 -m pip install pytest-doctestplus[md]
+python3 -m doctest README.md
+
+Contributors
+
+Sergey Astanin, Pau Tallada Crespí, Erwin Marsi, Mik Kocikowski, Bill Ryder, Zach Dwiel, Frederik Rietdijk, Philipp Bogensberger, Greg (anonymous), Stefan Tatschner, Emiel van Miltenburg, Brandon Bennett, Amjith Ramanujam, Jan Schulz, Simon Percivall, Javier Santacruz López-Cepero, Sam Denton, Alexey Ziyangirov, acaird, Cesar Sanchez, naught101, John Vandenberg, Zack Dever, Christian Clauss, Benjamin Maier, Andy MacKinlay, Thomas Roten, Jue Wang, Joe King, Samuel Phan, Nick Satterly, Daniel Robbins, Dmitry B, Lars Butler, Andreas Maier, Dick Marinus, Sébastien Celles, Yago González, Andrew Gaul, Wim Glenn, Jean Michel Rouly, Tim Gates, John Vandenberg, Sorin Sbarnea, Wes Turner, Andrew Tija, Marco Gorelli, Sean McGinnis, danja100, endolith, Dominic Davis-Foster, pavlocat, Daniel Aslau, paulc, Felix Yan, Shane Loretz, Frank Busse, Harsh Singh, Derek Weitzel, Vladimir Vrzić, 서승우 (chrd5273), Georgy Frolov, Christian Cwienk, Bart Broere, Vilhelm Prytz, Alexander Gažo, Hugo van Kemenade, jamescooke, Matt Warner, Jérôme Provensal, Michał Górny, Kevin Deldycke, Kian-Meng Ang, Kevin Patterson, Shodhan Save, cleoold, KOLANICH, Vijaya Krishna Kasula, Furcy Pin, Christian Fibich, Shaun Duncan, Dimitri Papadopoulos, Élie Goudout, Racerroar888, Phill Zarfos, Keyacom, Andrew Coffey, Arpit Jain, Israel Roldan, ilya112358, Dan Nicholson, Frederik Scheerer, cdar07 (cdar), Racerroar888, Perry Kundert.",2026-11-09
+simplejson,Client Challenge,NA,NA,NA,NA,NA,NA,,NA,NA,NA,2026-11-09
+docutils,docutils · PyPI,docutils 0.23,Docutils -- Python Documentation Utilities,"Released: May 27, 2026 ",Requires | Python >=3.9 ,NA,5 maintainers,Development Status :: 4 - Beta;Environment :: Console;Intended Audience :: Developers;Intended Audience :: End Users/Desktop;Intended Audience :: Information Technology;Intended Audience :: Other Audience;Intended Audience :: System Administrators;License :: OSI Approved :: BSD License;License :: OSI Approved :: GNU General Public License (GPL);License :: Public Domain;Natural Language :: Afrikaans;Natural Language :: Arabic;Natural Language :: Catalan;Natural Language :: Catalan (Valencian);Natural Language :: Chinese (Simplified);Natural Language :: Chinese (Traditional);Natural Language :: Czech;Natural Language :: Danish;Natural Language :: Dutch;Natural Language :: English;Natural Language :: Esperanto;Natural Language :: Finnish;Natural Language :: French;Natural Language :: Galician;Natural Language :: Georgian;Natural Language :: German;Natural Language :: Hebrew;Natural Language :: Italian;Natural Language :: Japanese;Natural Language :: Korean;Natural Language :: Latvian;Natural Language :: Lithuanian;Natural Language :: Persian;Natural Language :: Polish;Natural Language :: Portuguese (Brazilian);Natural Language :: Russian;Natural Language :: Slovak;Natural Language :: Spanish;Natural Language :: Swedish;Natural Language :: Ukrainian;Operating System :: OS Independent;Programming Language :: Python;Programming Language :: Python :: 3;Programming Language :: Python :: 3 :: Only;Programming Language :: Python :: 3.9;Programming Language :: Python :: 3.10;Programming Language :: Python :: 3.11;Programming Language :: Python :: 3.12;Programming Language :: Python :: 3.13;Programming Language :: Python :: 3.14;Topic :: Documentation;Topic :: Software Development;Topic :: Software Development :: Documentation;Topic :: Text Editors :: Documentation;Topic :: Text Processing;Topic :: Text Processing :: General;Topic :: Text Processing :: Markup;Topic :: Text Processing :: Markup :: HTML;Topic :: Text Processing :: Markup :: LaTeX;Topic :: Text Processing :: Markup :: Markdown;Topic :: Text Processing :: Markup :: XML;Topic :: Text Processing :: Markup :: reStructuredText;Topic :: Utilities,14,92,"README: Docutils 0.23
+Author:
+
+David Goodger
+
+Contact:
+
+goodger@python.org
+
+Date:
+
+$Date: 2026-05-27 19:20:40 +0200 (Mi, 27. Mai 2026) $
+
+Web site:
+
+https://docutils.sourceforge.io/
+
+Copyright:
+
+This document has been placed in the public domain.
+
+Abstract:
+
+Docutils is a modular system for processing documentation into useful formats, such as HTML, XML, and LaTeX. For input Docutils supports reStructuredText, an easy-to-read, what-you-see-is-what-you-get plaintext markup syntax.
+
+Contents
+
+README: Docutils 0.23
+
+Quick-Start
+
+Purpose
+
+Dependencies
+
+Recommendations
+
+Installation
+
+GNU/Linux, BSDs, Unix, Mac OS X, etc.
+
+Windows
+
+Usage
+
+Project Files & Directories
+
+Development version
+
+Converting the documentation
+
+Running the Test Suite
+
+Getting Help
+
+Quick-Start
+
+This is for those who want to get up & running quickly.
+
+Docutils requires Python, available from https://www.python.org/. See Dependencies below for details.
+
+Install the latest stable release from PyPi with pip:
+
+pip install docutils
+
+For alternatives and details, see section Installation below.
+
+Use the front-end scripts to convert reStructuredText documents. Try for example:
+
+docutils FAQ.rst FAQ.html
+
+See Usage below for details.
+
+Purpose
+
+The purpose of the Docutils project is to provide a set of tools for processing plaintext documentation into useful formats, such as HTML, LaTeX, troff (man pages), OpenOffice, and native XML. Support for the following sources has been implemented:
+
+Standalone files.
+
+PEPs (Python Enhancement Proposals).
+
+Support for the following sources is planned or provided by third party tools:
+
+Inline documentation from Python modules and packages, extracted with namespace context.
+
+Email (RFC-822 headers, quoted excerpts, signatures, MIME parts).
+
+Wikis, with global reference lookups of “wiki links”.
+
+Compound documents, such as multiple chapter files merged into a book.
+
+And others as discovered.
+
+Dependencies
+
+To run the code, Python must be installed. (Python is pre-installed with most Linux distributions.)
+
+Since version 0.21, Docutils requires Python 3.9 or later.
+
+Docutils versions 0.19 to 0.20.1 require Python 3.7 or later.
+
+Docutils versions 0.16 to 0.18 require Python 2.7 or 3.5+.
+
+The type hints added in version 0.22 use Python 3.10 syntax. However, the Python interpreter treats them as annotations unless typing.TYPE_CHECKING is set to True.
+
+Recommendations
+
+Docutils uses the following packages for enhanced functionality, if they are installed:
+
+The recommended installer is pip, setuptools works, too.
+
+The Python Imaging Library (PIL) is used for some image manipulation operations.
+
+The Pygments package provides syntax highlight of “code” directives and roles.
+
+The myst, pycmark, or recommonmark parsers can be used to parse input in “Markdown” (CommonMark) format.
+
+The Docutils Link List records projects that users of Docutils and reStructuredText may find useful.
+
+Installation
+
+The Python Packaging User Guide gives details how to use pip for installing.
+
+The simplest way is to install the latest stable release from PyPi:
+
+pip install docutils
+
+To install a pre-relase, append the option --pre.
+
+To install a development version from source:
+
+Open a shell
+
+Go to the directory containing the pyproject.toml file.
+
+Install the package with one of the following commands:
+
+pip install -e .  # editable install
+pip install .     # regular install
+
+or do a “manual” install.
+
+Optional steps:
+
+Running the test suite
+
+Converting the documentation
+
+See also the OS-specific installation instructions below and the Docutils version repository documentation.
+
+To install for a specific Python version, use this version in the setup call, e.g.
+
+python3.11 -m pip install docutils
+
+If the python executable isn’t on your path, you’ll have to specify the complete path, such as /usr/local/bin/python3.11.
+
+To install for different Python versions, repeat step 3 for every required version. The last installed version will be used for the docutils command line application.
+
+GNU/Linux, BSDs, Unix, Mac OS X, etc.
+
+Use su or sudo for a system-wide installation as root, e.g.:
+
+sudo pip install docutils
+Windows
+
+The Python FAQ explains how to run a Python program under Windows.
+
+Usually, pip is automatically installed if you are using Python downloaded from https://python.org. If not, see the pip documentation.
+
+The command window should recognise the word py as an instruction to start the interpreter, e.g.
+
+py -m pip install docutils
+
+If this does not work, you may have to specify the full path to the Python executable.
+
+Usage
+
+Start the “docutils” command line application with:
+
+docutils [options] [<source> [<destination>]]
+
+The default action is to convert a reStructuredText document to HTML5, for example:
+
+docutils test.rst test.html
+
+Read the --help option output for details on options and arguments and Docutils Front-End Tools for the full documentation of the various tools.
+
+For programmatic use of the docutils Python package, read the API Reference Material and the source code. Remaining questions may be answered in the Docutils Project Documentation or the Docutils-users mailing list.
+
+Contributions are welcome!
+
+Project Files & Directories
+
+README.rst: You’re reading it.
+
+COPYING.rst: Public Domain Dedication and copyright details for non-public-domain files (most are PD).
+
+FAQ.rst: Frequently Asked Questions (with answers!).
+
+RELEASE-NOTES.rst: Summary of the major changes in recent releases.
+
+HISTORY.rst: A detailed change log, for the current and all previous project releases.
+
+BUGS.rst: Known bugs, and how to report a bug.
+
+THANKS.rst: List of contributors.
+
+pyproject.toml: Project metadata. See “Installation” above.
+
+docutils: The project source directory, installed as a Python package.
+
+docs: The project documentation directory. Read docs/index.rst for an overview.
+
+docs/user: The project user documentation directory. Contains the following documents, among others:
+
+docs/user/tools.rst: Docutils Front-End Tools
+
+docs/user/latex.rst: Docutils LaTeX Writer
+
+docs/user/rst/quickstart.rst: A ReStructuredText Primer
+
+docs/user/rst/quickref.html: Quick reStructuredText (HTML only)
+
+docs/ref: The project reference directory. docs/ref/rst/restructuredtext.rst is the reStructuredText reference.
+
+licenses: Directory containing copies of license files for non-public-domain files.
+
+tools: Directory for Docutils front-end tools. See docs/user/tools.rst for documentation.
+
+test: Unit tests. Not required to use the software, but very useful if you’re planning to modify it. See Running the Test Suite below.
+
+Development version
+
+While we are trying to follow a “release early & often” policy, features are added frequently. We recommend using a current snapshot or a working copy of the repository.
+
+Repository check-out:
+
+To keep up to date on the latest developments, use a working copy of the Docutils version repository.
+
+Snapshots:
+
+To get a repository snapshot, go to https://sourceforge.net/p/docutils/code/HEAD/tree/trunk/docutils/ and click the download snapshot button.
+
+Unpack in a temporary directory, not directly in Python’s site-packages.
+
+See the Installation instructions above.
+
+Converting the documentation
+
+After unpacking and installing the Docutils package, the following shell commands will generate HTML for all included documentation:
+
+cd <archive_directory_path>
+tools/buildhtml.py .
+
+On Windows systems, type:
+
+cd <archive_directory_path>
+py tools\buildhtml.py ..
+
+The final directory name of the <archive_directory_path> is “docutils” for snapshots. For official releases, the directory may be called “docutils-X.Y.Z”, where “X.Y.Z” is the release version.
+
+Some files may generate system messages (warnings and errors). The docs/user/rst/demo.rst file (under the archive directory) contains five intentional errors. (They test the error reporting mechanism!)
+
+Running the Test Suite
+
+The test suite is documented in Docutils Testing (docs/dev/testing.rst).
+
+To run the entire test suite, open a shell and use the following commands:
+
+cd <archive_directory_path>/test
+./alltests.py
+
+Under Windows, type:
+
+cd <archive_directory_path>\test
+python alltests.py
+
+You should see a long line of periods, one for each test, and then a summary like this:
+
+Ran 1744 tests in 5.859s
+
+OK (skipped=1)
+Elapsed time: 6.235 seconds
+
+The number of tests will grow over time, and the times reported will depend on the computer running the tests. Some test are skipped, if optional dependencies (recommendations) are missing. The difference between the two times represents the time required to set up the tests (import modules, create data structures, etc.).
+
+A copy of the test output is written to the file alltests.out.
+
+If any of the tests fail, please open a bug report or send an email (see Bugs). Please include all relevant output, information about your operating system, Python version, and Docutils version. To see the Docutils version, look at the test output or use
+
+docutils --version
+Getting Help
+
+All documentation can be reached from the Project Documentation Overview.
+
+The SourceForge project page has links to the tracker, mailing lists, and code repository.
+
+If you have further questions or need assistance with Docutils or reStructuredText, please post a message to the Docutils-users mailing list.",2026-11-09
+mock,mock · PyPI,mock 5.2.0,Rolling backport of unittest.mock for all Pythons,"Released: Mar 3, 2025 ",Requires | Python >=3.6 ,NA,6 maintainers,Development Status :: 5 - Production/Stable;Environment :: Console;Intended Audience :: Developers;License :: OSI Approved :: BSD License;Operating System :: OS Independent;Programming Language :: Python;Programming Language :: Python :: 3.6;Programming Language :: Python :: 3.7;Programming Language :: Python :: 3.8;Programming Language :: Python :: 3.9;Programming Language :: Python :: 3.10;Programming Language :: Python :: 3.11;Programming Language :: Python :: 3.12;Programming Language :: Python :: 3.13;Programming Language :: Python :: Implementation :: CPython;Programming Language :: Python :: Implementation :: PyPy;Topic :: Software Development :: Libraries;Topic :: Software Development :: Libraries :: Python Modules;Topic :: Software Development :: Testing,0,10,"mock is a library for testing in Python. It allows you to replace parts of your system under test with mock objects and make assertions about how they have been used.
+
+mock is now part of the Python standard library, available as unittest.mock in Python 3.3 onwards.
+
+This package contains a rolling backport of the standard library mock code compatible with Python 3.6 and up.
+
+Please see the standard library documentation for more details.
+
+Homepage:
+
+Mock Homepage
+
+Download:
+
+Mock on PyPI
+
+Documentation:
+
+Python Docs
+
+License:
+
+BSD License
+
+Support:
+
+Mailing list (testing-in-python@lists.idyll.org)
+
+Code:
+
+GitHub
+
+Issue tracker:
+
+GitHub Issues
+
+Build status:",2026-11-09
+nose,Client Challenge,NA,NA,NA,NA,NA,NA,,NA,NA,NA,2026-11-09

@@ -1,0 +1,61 @@
+Title: transformers · PyPI 
+Blocks extracted: 86  Characters: 5895 
+# A tibble: 8 × 3
+  block_id tag   text                                                           
+     <int> <chr> <chr>                                                          
+1        1 p     "\n\n"                                                         
+2        2 p     ""                                                             
+3        3 h4    ""                                                             
+4        4 p     "English | 简体中文 | 繁體中文 | 한국어 | Español | 日本語 | हिन्दी | मराठी | Русс…
+5        5 h3    ""                                                             
+6        6 p     "State-of-the-art pretrained models for inference and training"
+7        7 h3    ""                                                             
+8        8 p     "Transformers acts as the model-definition framework for state…
+
+Blocks kept after cleaning: 71 of 86 
+Words before: 905  after: 868 
+Candidate sentences: 46  Tokens kept: 293 
+
+=== Summary 1: word-frequency scoring ===
+1. There are over 1M+ Transformers model checkpoints on the Hugging Face Hub you can use.
+2. Explore the Hub today to find a model and use Transformers to help you get started right away.
+3. Easily customize a model or an example to your needs:
+4. You can test most of our models directly on their Hub model pages.
+5. Expand each modality below to see a few example models for various use cases.
+
+=== Summary 2: TextRank ===
+1. Transformers acts as the model-definition framework for state-of-the-art machine learning with text, computer vision, audio, video, and multimodal models, for both inference and training.
+2. There are over 1M+ Transformers model checkpoints on the Hugging Face Hub you can use.
+3. Get started with Transformers right away with the Pipeline API.
+4. The training API is optimized to work with PyTorch models provided by Transformers.
+5. Transformers is more than a toolkit to use pretrained models, it's a community of projects built around it and the Hugging Face Hub.
+
+Sentences chosen by both methods: 1 of 5 
+Original words: 637  Summary words (freq / TextRank): 70 / 85 
+
+Twenty most frequent words
+           word  n
+1         model 15
+2  transformers 13
+3        models 10
+4          text  6
+5         audio  5
+6       library  5
+7      pipeline  5
+8           hub  4
+9      training  4
+10 abstractions  3
+11          api  3
+12          art  3
+13        files  3
+14    framework  3
+15   multimodal  3
+16   pretrained  3
+17     projects  3
+18      pytorch  3
+19  researchers  3
+20        tasks  3
+null device 
+          1 
+
+Saved figures, summaries and cleaned text to outputs/

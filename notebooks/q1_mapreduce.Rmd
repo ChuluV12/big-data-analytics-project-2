@@ -1,0 +1,39 @@
+---
+title: "Question 1 - Keyword location search with MapReduce (R, Hadoop Streaming)"
+output:
+  html_document:
+    pandoc_args: ["--resource-path=.:.."]
+---
+
+The mapper and reducer are plain R scripts. Hadoop Streaming runs them as the map and
+reduce tasks; here the same two scripts run in a local pipeline (map, sort by key, reduce),
+which is the data flow Hadoop performs on a cluster.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, comment = "")
+```
+
+## Mapper
+```{r, echo=FALSE, results='asis'}
+cat("```r\n", paste(readLines("q1_mapreduce/mapper.R"), collapse = "\n"), "\n```\n", sep = "")
+```
+
+## Reducer
+```{r, echo=FALSE, results='asis'}
+cat("```r\n", paste(readLines("q1_mapreduce/reducer.R"), collapse = "\n"), "\n```\n", sep = "")
+```
+
+## Run with the keyword "africa"
+```{bash}
+./q1_mapreduce/run_local.sh africa
+```
+
+## Run with a different keyword, supplied at run time
+```{bash}
+./q1_mapreduce/run_local.sh mtn
+```
+
+## Layout diagram
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("outputs/q1_layout.png")
+```

@@ -1,0 +1,23 @@
+---
+title: "Question 2 - LDA topic modelling of the news files"
+output:
+  html_document:
+    pandoc_args: ["--resource-path=.:.."]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, comment = "", message = FALSE, warning = FALSE)
+```
+
+The script `q2_lda.R` builds the data frame, cleans the text, fits the model and saves the figures.
+Running it here prints each step.
+
+```{r}
+source("q2_lda.R", echo = TRUE, max.deparse.length = Inf)
+```
+
+## Figures
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics(c("outputs/q2_topic_bars.png", "outputs/q2_topic_wordclouds.png",
+                          "outputs/q2_doc_topic_heatmap.png"))
+```
